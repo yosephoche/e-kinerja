@@ -98,7 +98,7 @@
                 <div class="menu">
                     <!-- <div> -->
                     <ul class="nav nav-pills" id="myTab" role="tablist">
-                        <li><a class="listSelect active" data-toggle="tab" href="#user1" role="tab" aria-selected="true"><span
+                        <li><a class="listItems" data-toggle="tab" href="#user1" role="tab" aria-selected="true"><span
                                     class="img-user" id="img-user1" style="background-image: url('assets/images/img-user.png');">
                                 </span>
                                 <span>
@@ -107,7 +107,7 @@
                                 <div class="float-right badge badge-green text-white mr-2">75 %</div>
                             </a>
                         </li>
-                        <li><a class="listSelect" data-toggle="tab" href="#user2" role="tab" aria-selected="false">
+                        <li><a class="listItems" data-toggle="tab" href="#user2" role="tab" aria-selected="false">
                                 <span class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
                                 </span>
                                 <span>
@@ -117,7 +117,7 @@
                             </a>
                         </li>
 
-                        <li><a class="listSelect" data-toggle="tab" href="#user3" role="tab" aria-selected="false"><span
+                        <li><a class="listItems" data-toggle="tab" href="#user3" role="tab" aria-selected="false"><span
                                     class="img-user" id="img-user3" style="background-image: url('assets/images/img-user.png');">
                                 </span>
                                 <span>
@@ -126,7 +126,7 @@
                                 <div class="float-right badge badge-red text-white mr-2">15 %</div>
                             </a>
                         </li>
-                        <li><a class="listSelect" data-toggle="tab" href="#user4" role="tab" aria-selected="false">
+                        <li><a class="listItems" data-toggle="tab" href="#user4" role="tab" aria-selected="false">
                                 <span class="img-user" id="img-user4" style="background-image: url('assets/images/bill.jpg');">
                                 </span>
                                 <span>
@@ -136,7 +136,7 @@
                             </a>
                         </li>
 
-                        <li><a class="listSelect" data-toggle="tab" href="#user5" role="tab" aria-selected="false">
+                        <li><a class="listItems" data-toggle="tab" href="#user5" role="tab" aria-selected="false">
                                 <span class="img-user" id="img-user5" style="background-image: url('assets/images/steve.jpg');">
                                 </span>
                                 <span>
@@ -150,7 +150,7 @@
             <!-- isi tab pane -->
             <div class="main-content tab-content">
                 <!-- start tab pane -->
-                <div class="tab-pane active" id="user1" role="tabpanel">
+                <div class="tab-pane detailItem" id="user1" role="tabpanel">
                     <div class="container">
 
                         <div class="row">
@@ -162,8 +162,8 @@
                                     <span>1929298282929000</span>
                                 </div>
                                 <div class="btn-control float-right">
-                                    <button class="btn btn-rounded prev"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded next active" onclick="nextName()"><i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -266,7 +266,7 @@
                 <!-- end tab pane -->
 
                 <!-- start pane -->
-                <div class="tab-pane" id="user2" role="tabpanel">
+                <div class="tab-pane detailItem" id="user2" role="tabpanel">
                     <div class="container">
 
                         <div class="row">
@@ -278,8 +278,8 @@
                                     <span>1929298282929000</span>
                                 </div>
                                 <div class="btn-control float-right">
-                                    <button class="btn btn-rounded"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded active"><i class="fas fa-angle-right"></i></button>
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
                                 </div>
                                 <div class="clearfix"></div>
                             </div>
@@ -379,8 +379,360 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end tab pane -->
                 </div>
+                <!-- end tab pane -->
+
+                <!-- start pane -->
+                <div class="tab-pane detailItem" id="user3" role="tabpanel">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/img-user.png');">
+                                </div>
+                                <div class="nama-id">
+                                    <h6>Alfian Labeda</h6>
+                                    <span>1929298282929000</span>
+                                </div>
+                                <div class="btn-control float-right">
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-12 mt-3 control-date-btn">
+                                <div class="date-group float-left">
+                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+                                </div>
+
+                                <div class="float-right">
+                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <table class="table table-responsive table-pegawai">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Hari, Tanggal</th>
+                                            <th scope="col">Absen</th>
+                                            <th scope="col">Kinerja</th>
+                                            <th scope="col">Etika</th>
+                                            <th scope="col">Detail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Senin, 23/09/2018</td>
+                                            <td>Hadir</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Selasa, 24/09/2018</td>
+                                            <td>Sakit</td>
+                                            <td>
+                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-green text-white mr-2">75 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Rabu, 25/09/2018</td>
+                                            <td>Hadir</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Kamis, 26/09/2018</td>
+                                            <td>Perjalanan Dinas</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end tab pane -->
+
+                <!-- start pane -->
+                <div class="tab-pane detailItem" id="user4" role="tabpanel">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
+                                </div>
+                                <div class="nama-id">
+                                    <h6>Bill Gates</h6>
+                                    <span>1929298282929000</span>
+                                </div>
+                                <div class="btn-control float-right">
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-12 mt-3 control-date-btn">
+                                <div class="date-group float-left">
+                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+                                </div>
+
+                                <div class="float-right">
+                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <table class="table table-responsive table-pegawai">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Hari, Tanggal</th>
+                                            <th scope="col">Absen</th>
+                                            <th scope="col">Kinerja</th>
+                                            <th scope="col">Etika</th>
+                                            <th scope="col">Detail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Senin, 23/09/2018</td>
+                                            <td>Hadir</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Selasa, 24/09/2018</td>
+                                            <td>Sakit</td>
+                                            <td>
+                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-green text-white mr-2">75 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Rabu, 25/09/2018</td>
+                                            <td>Hadir</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Kamis, 26/09/2018</td>
+                                            <td>Perjalanan Dinas</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end tab pane -->
+
+                <!-- start pane -->
+                <div class="tab-pane detailItem" id="user3" role="tabpanel">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/steve.jpg');">
+                                </div>
+                                <div class="nama-id">
+                                    <h6>Steve Jobs</h6>
+                                    <span>1929298282929000</span>
+                                </div>
+                                <div class="btn-control float-right">
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-12 mt-3 control-date-btn">
+                                <div class="date-group float-left">
+                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+                                </div>
+
+                                <div class="float-right">
+                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <table class="table table-responsive table-pegawai">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Hari, Tanggal</th>
+                                            <th scope="col">Absen</th>
+                                            <th scope="col">Kinerja</th>
+                                            <th scope="col">Etika</th>
+                                            <th scope="col">Detail</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Senin, 23/09/2018</td>
+                                            <td>Hadir</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Selasa, 24/09/2018</td>
+                                            <td>Sakit</td>
+                                            <td>
+                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-green text-white mr-2">75 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Rabu, 25/09/2018</td>
+                                            <td>Hadir</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Kamis, 26/09/2018</td>
+                                            <td>Perjalanan Dinas</td>
+                                            <td>
+                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                            </td>
+                                            <td>
+                                                <div class="badge badge-blue text-white mr-2">100 %</div>
+                                            </td>
+                                            <td>
+                                                <button class="btn rounded btn-detail" title="Detail">
+                                                    <i class="fas fa-search-plus"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end tab pane -->
+
             </div>
 
             <!-- MODAL DETAIL -->
