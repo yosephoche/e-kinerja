@@ -2,983 +2,977 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-Kinerja Kabupaten Kolaka</title>
-    <!-- inject:css -->
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <!-- endinject -->
-    <link rel="stylesheet" href="assets/css/datepicker3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>E-Kinerja Kabupaten Kolaka</title>
+<!-- inject:css -->
+<link rel="stylesheet" href="assets/css/app.min.css">
+<!-- endinject -->
+<link rel="stylesheet" href="assets/css/datepicker3.css">
 </head>
 
 <body>
-    <section class="rekap-bulanan">
+<section class="rekap-bulanan">
 
-        <div class="burgerBtn">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+<div class="burgerBtn">
+<div class="bar1"></div>
+<div class="bar2"></div>
+<div class="bar3"></div>
+</div>
+
+<!-- profile dan Ganti Password -->
+
+<div class="overlayProfile"></div>
+<div class="profile">
+<div class="imgProfile">
+<div class="closeProfile">&times;</div>
+<img src="assets/images/bg_login_whitebase.png" class="bgImg" />
+<div
+  class="imgUser"
+  style="background-image: url('assets/images/img-user.png')"
+></div>
+<div class="descUser mt-2">
+  <h5 class="mb-1">Alfian Labeda</h5>
+  <p>19782717326726672</p>
+</div>
+</div>
+
+<div class="descProfile">
+<div class="dataForm">
+  <h5 class="mb-2">Informasi</h5>
+  <div>
+    <span>Jabatan</span>
+    <p>Kepala Dinas</p>
+  </div>
+  <div>
+    <span>Tempat, Tgl.Lahir</span>
+    <p>Pinrang, 17 Oktober 1982</p>
+  </div>
+  <div>
+    <span>Agama</span>
+    <p>Islam</p>
+  </div>
+  <div>
+    
+      <label for="password">Kata Sandi</label>
+      <div class="input-group">
+        <input
+          id="password"
+          type="password"
+          disabled
+          value="password"
+          class="form-control"
+        />
+        <div class="input-group-prepend">
+          <button class="btn btn-warning btn-changePassword" title="Ganti Password">
+            <i class="fa fa-edit"></i>
+          </button>
         </div>
+      </div>
+</div>
+<form>
+    <button class="btn btn-block btn-out">
+      Logout</i>
+    </button>
+  </form>
+</div>
 
-        <!-- profile dan Ganti Password -->
+<div class="formChangePassword">
+  <h5 class="mb-3">Ubah Kata Sandi</h5>
+  <form>
+      <div class="form-group">
+          <label for="oldPassword">Kata Sandi Lama</label>
+          <input type="password" class="form-control" id="oldPassword"placeholder="Kata Sandi Lama">
+        </div>
+      <div class="form-group">
+              <label for="newPassword">Kata Sandi Baru</label>
+              <input type="password" class="form-control" id="newPassword"placeholder="Kata Sandi Baru">
+      </div>
+      <div class="pt-4">
+          <button class="btn btn-custom-2 btn-cancelChange">Batal</button>
+          <button class="btn btn-custom">Simpan</button>
+      </div>
+  </form>
+</div>
+</div>
+</div>
 
-        <div class="overlayProfile"></div>
-        <div class="profile">
-                <div class="imgProfile">
-                  <div class="closeProfile">&times;</div>
-                  <img src="assets/images/bg_login_whitebase.png" class="bgImg" />
-                  <div
-                    class="imgUser"
-                    style="background-image: url('assets/images/img-user.png')"
-                  ></div>
-                  <div class="descUser mt-2">
-                    <h5 class="mb-1">Alfian Labeda</h5>
-                    <p>19782717326726672</p>
-                  </div>
-                </div>
-        
-                <div class="descProfile">
-                  <div class="dataForm">
-                    <h5 class="mb-2">Informasi</h5>
-                    <div>
-                      <span>Jabatan</span>
-                      <p>Kepala Dinas</p>
-                    </div>
-                    <div>
-                      <span>Tempat, Tgl.Lahir</span>
-                      <p>Pinrang, 17 Oktober 1982</p>
-                    </div>
-                    <div>
-                      <span>Agama</span>
-                      <p>Islam</p>
-                    </div>
-                    <div>
-                      
-                        <label for="password">Kata Sandi</label>
-                        <div class="input-group">
-                          <input
-                            id="password"
-                            type="password"
-                            disabled
-                            value="password"
-                            class="form-control"
-                          />
-                          <div class="input-group-prepend">
-                            <button class="btn btn-warning btn-changePassword" title="Ganti Password">
-                              <i class="fa fa-edit"></i>
-                            </button>
-                          </div>
-                        </div>
-                  </div>
-                  <form>
-                      <button class="btn btn-block btn-out">
-                        Logout</i>
-                      </button>
-                    </form>
-                  </div>
+<!-- End Profile dan Ganti Password -->
 
-                  <div class="formChangePassword">
-                    <h5 class="mb-3">Ubah Kata Sandi</h5>
-                    <form>
-                        <div class="form-group">
-                            <label for="oldPassword">Kata Sandi Lama</label>
-                            <input type="password" class="form-control" id="oldPassword"placeholder="Kata Sandi Lama">
-                         </div>
-                        <div class="form-group">
-                                <label for="newPassword">Kata Sandi Baru</label>
-                                <input type="password" class="form-control" id="newPassword"placeholder="Kata Sandi Baru">
-                        </div>
-                        <div class="pt-4">
-                            <button class="btn btn-custom-2 btn-cancelChange">Batal</button>
-                            <button class="btn btn-custom">Simpan</button>
-                        </div>
-                    </form>
+<div class="overlay">
+<div class="close-side"><i class="fas fa-times"></i></div>
+</div>
+
+
+<div class="sidebar1">
+<div class="brand">
+<img src="assets/images/logo_ekinerja.png" width="120">
+</div>
+
+<ul>
+<li><a href="index.html">
+      <i class="far fa-calendar-alt"></i>
+      Monitoring Absen
+  </a></li>
+<li><a href="rekap-bulanan.html" class="active"> <i class="fas fa-file-signature"></i> Rekap
+      Bulanan</a></li>
+<li><a href="input-kinerja.html"> <i class="far fa-file-alt"></i> Input
+      Kinerja</a></li>
+<li><a href="penilaian-kinerja.html"><i class="fas fa-user-check"></i>
+      Penilaian Kinerja</a></li>
+<li><a href="penilaian-etika.html"> <i class="far fa-thumbs-up"></i>
+      Penilaian Etika</a></li>
+<li><a href="tunjangan-kinerja.html"> <i class="fas fa-chart-pie"></i>
+      Tunjangan Kinerja</a></li>
+</ul>
+<div class="toggleSwitch">
+<label class="mr-2">Mode Malam</label>
+<label class="switch">
+  <input id="toggle-switch" type="checkbox">
+  <span class="slider round"></span>
+</label>
+</div>
+</div>
+
+
+<div class="main">
+<div class="nav-top-container">
+<div class="nav-top">
+  <div class="title-nav">
+              <h4 class="mr-4 float-left">Rekap Bulanan</h4>
+      <span class="badge text-white">23 September 2018</span>
+
+  </div>
+  <div class="img-profile" id="user-profile" style="background-image: url('assets/images/img-user.png');">
+  </div>
+
+</div>
+</div>
+<div class="sidebar2">
+
+  
+<div class="group-search">
+  <span><i class="fas fa-search"></i></span>
+  <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
+</div>
+
+<div class="row">
+                  <div class="col-md-12 mb-2">
+                      <div class="skpd-rekap">
+                          <div class="input-group mb-3 skpd-option">
+                                  <div class="input-group-prepend">
+                                    <label class="input-group-text">SKPD</label>
+                                  </div>
+                                  <select class="custom-select select-custome">
+                                    <option selected>Dinas Sample A</option>
+                                    <option value="1">Dinas Sample B</option>
+                                    <option value="2">Dinas Sample C</option>
+                                    <option value="3">Dinas Sample D</option>
+                                  </select>
+                                </div>
+                      </div>
                   </div>
-                </div>
               </div>
 
-              <!-- End Profile dan Ganti Password -->
+<div class="menu">
+  <!-- <div> -->
+  <ul class="nav nav-pills" id="myTab" role="tablist">
+      <li><a class="listItems" data-toggle="tab" href="#user1" role="tab" aria-selected="true"><span
+                  class="img-user" id="img-user1" style="background-image: url('assets/images/img-user.png');">
+              </span>
+              <span>
+                  <label>Alfian Labeda <br><small>1929298282929000</small></label>
+              </span>
+              <div class="float-right badge badge-green text-white mr-2">75 %</div>
+          </a>
+      </li>
+      <li><a class="listItems" data-toggle="tab" href="#user2" role="tab" aria-selected="false">
+              <span class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
+              </span>
+              <span>
+                  <label>Bill <br><small>1929298282929000</small></label>
+              </span>
+              <div class="float-right badge badge-blue text-white mr-2">100 %</div>
+          </a>
+      </li>
 
-        <div class="overlay">
-            <div class="close-side"><i class="fas fa-times"></i></div>
-        </div>
+      <li><a class="listItems" data-toggle="tab" href="#user3" role="tab" aria-selected="false"><span
+                  class="img-user" id="img-user3" style="background-image: url('assets/images/img-user.png');">
+              </span>
+              <span>
+                  <label>Alfian Labeda <br><small>1929298282929000</small></label>
+              </span>
+              <div class="float-right badge badge-red text-white mr-2">15 %</div>
+          </a>
+      </li>
+      <li><a class="listItems" data-toggle="tab" href="#user4" role="tab" aria-selected="false">
+              <span class="img-user" id="img-user4" style="background-image: url('assets/images/bill.jpg');">
+              </span>
+              <span>
+                  <label>Bill <br><small>1929298282929000</small></label>
+              </span>
+              <div class="float-right badge badge-orange text-white mr-2">45 %</div>
+          </a>
+      </li>
 
+      <li><a class="listItems" data-toggle="tab" href="#user5" role="tab" aria-selected="false">
+              <span class="img-user" id="img-user5" style="background-image: url('assets/images/steve.jpg');">
+              </span>
+              <span>
+                  <label>Jobs <br><small>1929298282929000</small></label>
+              </span>
+          </a></li>
+  </ul>
+  <!-- </div> -->
+</div>
+</div>
+<!-- isi tab pane -->
+<div class="main-content tab-content">
+<!-- start tab pane -->
+<div class="tab-pane detailItem" id="user1" role="tabpanel">
+  <div class="container">
 
-        <div class="sidebar1">
-            <div class="brand">
-                <img src="assets/images/logo_ekinerja.png" width="120">
-            </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="img-user" id="img-user1" style="background-image: url('assets/images/img-user.png');">
+              </div>
+              <div class="nama-id">
+                  <h6>Alfian Labeda</h6>
+                  <span>1929298282929000</span>
+              </div>
+          </div>
 
-            <ul>
-                <li><a href="index.html">
-                        <i class="far fa-calendar-alt"></i>
-                        Monitoring Absen
-                    </a></li>
-                <li><a href="rekap-bulanan.html" class="active"> <i class="fas fa-file-signature"></i> Rekap
-                        Bulanan</a></li>
-                <li><a href="input-kinerja.html"> <i class="far fa-file-alt"></i> Input
-                        Kinerja</a></li>
-                <li><a href="penilaian-kinerja.html"><i class="fas fa-user-check"></i>
-                        Penilaian Kinerja</a></li>
-                <li><a href="penilaian-etika.html"> <i class="far fa-thumbs-up"></i>
-                        Penilaian Etika</a></li>
-                <li><a href="tunjangan-kinerja.html"> <i class="fas fa-chart-pie"></i>
-                        Tunjangan Kinerja</a></li>
-            </ul>
-            <div class="toggleSwitch">
-                <label class="mr-2">Mode Malam</label>
-                <label class="switch">
-                    <input id="toggle-switch" type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
+          <div class="col-md-3 col-6 btnDownloads">
+              <button class="btn btn-primary"> <img src="assets/images/icons/pdf.svg"> Download</button>
+          </div>
 
+          <div class="col-md-3 col-6">
+              <div class="btn-control float-right">
+                  <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                  <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+              </div>
+          </div>
+          
+          <div class="clearfix"></div>
+      </div>
+      <div class="row">
+          <div class="col-md-12 mt-3 control-date-btn">
+              <div class="date-group float-left">
+                  <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                  <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+              </div>
 
-        <div class="main">
-            <div class="nav-top-container">
-                <div class="nav-top">
-                    <div class="title-nav">
-                                <h4 class="mr-4 float-left">Rekap Bulanan</h4>
-                        <span class="badge text-white">23 September 2018</span>
-        
-                    </div>
-                    <div class="img-profile" id="user-profile" style="background-image: url('assets/images/img-user.png');">
-                    </div>
+              <div class="float-right">
+                  <button class="btn"><i class="fas fa-angle-left"></i></button>
+                  <button class="btn"><i class="fas fa-angle-right"></i></button>
+              </div>
 
-                </div>
-            </div>
-            <div class="sidebar2">
+          </div>
+          <div class="clearfix"></div>
+      </div>
+      <div class="row">
 
-                    
-                <div class="group-search">
-                    <span><i class="fas fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
-                </div>
+          <div class="col-md-12">
+                  <table class="table table-responsive table-pegawai">
+                      <thead>
+                          <tr>
+                              <th scope="col">Hari, Tanggal</th>
+                              <th scope="col">Absen</th>
+                              <th scope="col">Kinerja</th>
+                              <th scope="col">Detail</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>Senin, 23/09/2018</td>
+                              <td>Hadir <img src="assets/images/icons/upacara.svg" class="iconUpacara"></td>
+                              <td>
+                                  <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                              </td>
+                              <td>
+                                  <button class="btn rounded btn-detail" title="Detail">
+                                      <i class="fas fa-search-plus"></i>
+                                  </button>
+                              </td>
+                          </tr>
 
-                <div class="row">
-                                    <div class="col-md-12 mb-2">
-                                        <div class="skpd-rekap">
-                                            <div class="input-group mb-3 skpd-option">
-                                                    <div class="input-group-prepend">
-                                                      <label class="input-group-text">SKPD</label>
-                                                    </div>
-                                                    <select class="custom-select select-custome">
-                                                      <option selected>Dinas Sample A</option>
-                                                      <option value="1">Dinas Sample B</option>
-                                                      <option value="2">Dinas Sample C</option>
-                                                      <option value="3">Dinas Sample D</option>
-                                                    </select>
+                          <tr>
+                              <td>Selasa, 24/09/2018</td>
+                              <td>Sakit</td>
+                              <td>
+                                  <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                              </td>
+                              <td>
+                                  <button class="btn rounded btn-detail" title="Detail">
+                                      <i class="fas fa-search-plus"></i>
+                                  </button>
+                              </td>
+                          </tr>
+
+                          <tr>
+                              <td>Rabu, 25/09/2018</td>
+                              <td>Hadir</td>
+                              <td>
+                                  <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                              </td>
+                              <td>
+                                  <button class="btn rounded btn-detail" title="Detail">
+                                      <i class="fas fa-search-plus"></i>
+                                  </button>
+                              </td>
+                          </tr>
+
+                          <tr>
+                              <td>Kamis, 26/09/2018</td>
+                              <td>Perjalanan Dinas</td>
+                              <td>
+                                  <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                              </td>
+                              <td>
+                                  <button class="btn rounded btn-detail" title="Detail">
+                                      <i class="fas fa-search-plus"></i>
+                                  </button>
+                              </td>
+                          </tr>
+
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+
+<!-- end tab pane -->
+
+<!-- start tab pane -->
+<div class="tab-pane detailItem" id="user2" role="tabpanel">
+<div class="container">
+
+<div class="row">
+<div class="col-md-6">
+  <div class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
+  </div>
+  <div class="nama-id">
+      <h6>Bill Gates</h6>
+      <span>1929298282929000</span>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 btnDownloads">
+<button class="btn btn-primary"> <img src="assets/images/icons/pdf.svg"> Download</button>
+</div>
+
+<div class="col-md-3 col-6">
+  <div class="btn-control float-right">
+      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+</div>
+<div class="row">
+<div class="col-md-12 mt-3 control-date-btn">
+  <div class="date-group float-left">
+      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+  </div>
+
+  <div class="float-right">
+      <button class="btn"><i class="fas fa-angle-left"></i></button>
+      <button class="btn"><i class="fas fa-angle-right"></i></button>
+  </div>
+
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="row">
+
+<div class="col-md-12">
+      <table class="table table-responsive table-pegawai">
+          <thead>
+              <tr>
+                  <th scope="col">Hari, Tanggal</th>
+                  <th scope="col">Absen</th>
+                  <th scope="col">Kinerja</th>
+                  <th scope="col">Detail</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Senin, 23/09/2018</td>
+                  <td>Hadir <img src="assets/images/icons/upacara.svg" class="iconUpacara"></td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Selasa, 24/09/2018</td>
+                  <td>Sakit</td>
+                  <td>
+                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Rabu, 25/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Kamis, 26/09/2018</td>
+                  <td>Perjalanan Dinas</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- end tab pane -->
+
+<!-- start tab pane -->
+<div class="tab-pane detailItem" id="user3" role="tabpanel">
+<div class="container">
+
+<div class="row">
+<div class="col-md-6">
+  <div class="img-user" id="img-user3" style="background-image: url('assets/images/img-user.png');">
+  </div>
+  <div class="nama-id">
+      <h6>Alfian Labeda</h6>
+      <span>1929298282929000</span>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 btnDownloads">
+<button class="btn btn-primary"> <img src="assets/images/icons/pdf.svg"> Download</button>
+</div>
+
+<div class="col-md-3 col-6">
+  <div class="btn-control float-right">
+      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+</div>
+<div class="row">
+<div class="col-md-12 mt-3 control-date-btn">
+  <div class="date-group float-left">
+      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+  </div>
+
+  <div class="float-right">
+      <button class="btn"><i class="fas fa-angle-left"></i></button>
+      <button class="btn"><i class="fas fa-angle-right"></i></button>
+  </div>
+
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="row">
+
+<div class="col-md-12">
+      <table class="table table-responsive table-pegawai">
+          <thead>
+              <tr>
+                  <th scope="col">Hari, Tanggal</th>
+                  <th scope="col">Absen</th>
+                  <th scope="col">Kinerja</th>
+                  <th scope="col">Detail</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Senin, 23/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Selasa, 24/09/2018</td>
+                  <td>Sakit</td>
+                  <td>
+                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Rabu, 25/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Kamis, 26/09/2018</td>
+                  <td>Perjalanan Dinas</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- end tab pane -->
+
+<!-- start tab pane -->
+<div class="tab-pane detailItem" id="user4" role="tabpanel">
+<div class="container">
+
+<div class="row">
+<div class="col-md-6">
+  <div class="img-user" id="img-user4" style="background-image: url('assets/images/bill.jpg');">
+  </div>
+  <div class="nama-id">
+      <h6>Bill Gates</h6>
+      <span>1929298282929000</span>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 btnDownloads">
+<button class="btn btn-primary"> <img src="assets/images/icons/pdf.svg"> Download</button>
+</div>
+
+<div class="col-md-3 col-6">
+  <div class="btn-control float-right">
+      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+</div>
+<div class="row">
+<div class="col-md-12 mt-3 control-date-btn">
+  <div class="date-group float-left">
+      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+  </div>
+
+  <div class="float-right">
+      <button class="btn"><i class="fas fa-angle-left"></i></button>
+      <button class="btn"><i class="fas fa-angle-right"></i></button>
+  </div>
+
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="row">
+
+<div class="col-md-12">
+      <table class="table table-responsive table-pegawai">
+          <thead>
+              <tr>
+                  <th scope="col">Hari, Tanggal</th>
+                  <th scope="col">Absen</th>
+                  <th scope="col">Kinerja</th>
+                  <th scope="col">Detail</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Senin, 23/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Selasa, 24/09/2018</td>
+                  <td>Sakit</td>
+                  <td>
+                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Rabu, 25/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Kamis, 26/09/2018</td>
+                  <td>Perjalanan Dinas</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- end tab pane -->
+
+<!-- start tab pane -->
+<div class="tab-pane detailItem" id="user5" role="tabpanel">
+<div class="container">
+
+<div class="row">
+<div class="col-md-6">
+  <div class="img-user" id="img-user5" style="background-image: url('assets/images/steve.jpg');">
+  </div>
+  <div class="nama-id">
+      <h6>Steve Jobs</h6>
+      <span>1929298282929000</span>
+  </div>
+</div>
+
+<div class="col-md-3 col-6 btnDownloads">
+<button class="btn btn-primary"> <img src="assets/images/icons/pdf.svg"> Download</button>
+</div>
+
+<div class="col-md-3 col-6">
+  <div class="btn-control float-right">
+      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+</div>
+<div class="row">
+<div class="col-md-12 mt-3 control-date-btn">
+  <div class="date-group float-left">
+      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
+  </div>
+
+  <div class="float-right">
+      <button class="btn"><i class="fas fa-angle-left"></i></button>
+      <button class="btn"><i class="fas fa-angle-right"></i></button>
+  </div>
+
+</div>
+<div class="clearfix"></div>
+</div>
+<div class="row">
+
+<div class="col-md-12">
+      <table class="table table-responsive table-pegawai">
+          <thead>
+              <tr>
+                  <th scope="col">Hari, Tanggal</th>
+                  <th scope="col">Absen</th>
+                  <th scope="col">Kinerja</th>
+                  <th scope="col">Detail</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Senin, 23/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Selasa, 24/09/2018</td>
+                  <td>Sakit</td>
+                  <td>
+                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Rabu, 25/09/2018</td>
+                  <td>Hadir</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+              <tr>
+                  <td>Kamis, 26/09/2018</td>
+                  <td>Perjalanan Dinas</td>
+                  <td>
+                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                  </td>
+                  <td>
+                      <button class="btn rounded btn-detail" title="Detail">
+                          <i class="fas fa-search-plus"></i>
+                      </button>
+                  </td>
+              </tr>
+
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>
+</div>
+</div>
+<!-- end tab pane -->
+
+<!-- MODAL DETAIL -->
+<div class="modal-detail">
+<div class="modal-overlay">
+  <!-- button close -->
+  <div class="close">
+      <i class="fas fa-times"></i>
+  </div>
+  <!-- button control -->
+  <a class="control-left" onclick="plusSlides(-1)">
+      <i class="fas fa-angle-left"></i>
+  </a>
+  <a class="control-right" onclick="plusSlides(1)">
+      <i class="fas fa-angle-right"></i>
+  </a>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="modal-konten mySlides">
+                  <div class="title-name">
+                      <div class="img-user" id="user-modal" style="background-image: url('assets/images/img-user.png');">
+                      </div>
+                      <h6>Alfian Labeda</h6>
+                      <span>1929298282929000</span>
+                      <span class="badge text-white float-right">23 September 2018</span>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="desc-detail">
+                      <h4>Hadir</h4>
+                      <small>Jam Masuk - Jam Pulang</small>
+                      <br>
+                      <label>07:15 - 16:00</label>
+                      <hr>
+                      <h4>Penilaian Kinerja</h4>
+                      <span class="check-list float-right"><i class="fas fa-lg fa-check"></i></span>
+                      <h6>Rincian Kinerja</h6>
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
+                          possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
+                          saepe odit officiis, ipspsa delectus tempora? Magni, atque totam dicta
+                          accusantium, velit itaque dolores magnam nihil repellendus!</p>
+                      <h6>Keterangan Penilaian</h6>
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
+                          possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
+                          saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
+                          excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
+                          accusantium, velit itaque dolores magnam nihil repellendus!</p>
+                      <hr>
+                      <div class="wrap-modal-value table-responsive">
+                          <h4 class="float-left">Penilaian Etika</h4>
+                          <span class="badge text-white float-right">September 2018</span>
+                          <table>
+                              <tr>
+                                  <td>Upacara dan Apel 30(%)</td>
+                                  <td>15%</td>
+                                  <td colspan="3" rowspan="3">
+                                          <div class="value-percent">
+                                              <div class="values">
+                                                  <h2>75%</h2>
+                                                  <div class="clearfix"></div>
+                                              </div>
+                                              <div class="ket">Cukup Baik</div>
+                                          </div>
+                                  </td>
+                              </tr>
+
+                              <tr>
+                                  <td>Perilaku Kerja 30(%)</td>
+                                  <td>20%</td>
+                              </tr>
+
+                              <tr>
+                                  <td>Kegiatan Kebersamaan 40(%)</td>
+                                  <td>40%</td>
+                              </tr>
+
+                          </table>                                           
+                          <h6>Keterangan Penilaian</h6>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat
+                              doloremque error aliquid consequuntur, nostrum deleniti incidunt
+                              perferendis quasi explicabo dolorum repellat, esse minus ipsam alias
+                              impedit sapiente culpa aspernatur?</p>
+                      </div>
+                  </div>
+              </div>
+
+              <!--  -->
+              <div class="modal-konten mySlides">
+                  <div class="title-name">
+                      <div class="img-user" id="user-modal" style="background-image: url('assets/images/bill.jpg');">
+                      </div>
+                      <h6>Bill Gates</h6>
+                      <span>1929298282929000</span>
+                      <span class="badge text-white float-right">23 September 2018</span>
+                      <div class="clearfix"></div>
+                  </div>
+                  <div class="desc-detail">
+                      <h4>Hadir</h4>
+                      <small>Jam Masuk - Jam Pulang</small>
+                      <br>
+                      <label>07:15 - 16:00</label>
+                      <hr>
+                      <h4>Penilaian Kinerja</h4>
+                      <span class="check-list float-right"><i class="fas fa-lg fa-check"></i></span>
+                      <h6>Rincian Kinerja</h6>
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
+                          possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
+                          saepe odit officiis, ipspsa delectus tempora? Magni, atque totam dicta
+                          accusantium, velit itaque dolores magnam nihil repellendus!</p>
+                      <h6>Keterangan Penilaian</h6>
+                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
+                          possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
+                          saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
+                          excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
+                          accusantium, velit itaque dolores magnam nihil repellendus!</p>
+                      <hr>
+                      <div class="wrap-modal-value table-responsive">
+                              <h4 class="float-left">Penilaian Etika</h4>
+                              <span class="badge text-white float-right">September 2018</span>
+                              <table>
+                                  <tr>
+                                      <td>Upacara dan Apel 30(%)</td>
+                                      <td>15%</td>
+                                      <td colspan="3" rowspan="3">
+                                              <div class="value-percent">
+                                                  <div class="values">
+                                                      <h2>75%</h2>
+                                                      <div class="clearfix"></div>
                                                   </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                                  <div class="ket">Cukup Baik</div>
+                                              </div>
+                                      </td>
+                                  </tr>
 
-                <div class="menu">
-                    <!-- <div> -->
-                    <ul class="nav nav-pills" id="myTab" role="tablist">
-                        <li><a class="listItems" data-toggle="tab" href="#user1" role="tab" aria-selected="true"><span
-                                    class="img-user" id="img-user1" style="background-image: url('assets/images/img-user.png');">
-                                </span>
-                                <span>
-                                    <label>Alfian Labeda <br><small>1929298282929000</small></label>
-                                </span>
-                                <div class="float-right badge badge-green text-white mr-2">75 %</div>
-                            </a>
-                        </li>
-                        <li><a class="listItems" data-toggle="tab" href="#user2" role="tab" aria-selected="false">
-                                <span class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
-                                </span>
-                                <span>
-                                    <label>Bill <br><small>1929298282929000</small></label>
-                                </span>
-                                <div class="float-right badge badge-blue text-white mr-2">100 %</div>
-                            </a>
-                        </li>
+                                  <tr>
+                                      <td>Perilaku Kerja 30(%)</td>
+                                      <td>20%</td>
+                                  </tr>
 
-                        <li><a class="listItems" data-toggle="tab" href="#user3" role="tab" aria-selected="false"><span
-                                    class="img-user" id="img-user3" style="background-image: url('assets/images/img-user.png');">
-                                </span>
-                                <span>
-                                    <label>Alfian Labeda <br><small>1929298282929000</small></label>
-                                </span>
-                                <div class="float-right badge badge-red text-white mr-2">15 %</div>
-                            </a>
-                        </li>
-                        <li><a class="listItems" data-toggle="tab" href="#user4" role="tab" aria-selected="false">
-                                <span class="img-user" id="img-user4" style="background-image: url('assets/images/bill.jpg');">
-                                </span>
-                                <span>
-                                    <label>Bill <br><small>1929298282929000</small></label>
-                                </span>
-                                <div class="float-right badge badge-orange text-white mr-2">45 %</div>
-                            </a>
-                        </li>
+                                  <tr>
+                                      <td>Kegiatan Kebersamaan 40(%)</td>
+                                      <td>40%</td>
+                                  </tr>
 
-                        <li><a class="listItems" data-toggle="tab" href="#user5" role="tab" aria-selected="false">
-                                <span class="img-user" id="img-user5" style="background-image: url('assets/images/steve.jpg');">
-                                </span>
-                                <span>
-                                    <label>Jobs <br><small>1929298282929000</small></label>
-                                </span>
-                            </a></li>
-                    </ul>
-                    <!-- </div> -->
-                </div>
-            </div>
-            <!-- isi tab pane -->
-            <div class="main-content tab-content">
-                <!-- start tab pane -->
-                <div class="tab-pane detailItem" id="user1" role="tabpanel">
-                    <div class="container">
+                              </table>                                           
+                              <h6>Keterangan Penilaian</h6>
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat
+                                  doloremque error aliquid consequuntur, nostrum deleniti incidunt
+                                  perferendis quasi explicabo dolorum repellat, esse minus ipsam alias
+                                  impedit sapiente culpa aspernatur?</p>
+                          </div>
+                  </div>
+              </div>
+              <!--  -->
+          </div>
+      </div>
 
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-user" id="img-user1" style="background-image: url('assets/images/img-user.png');">
-                                </div>
-                                <div class="nama-id">
-                                    <h6>Alfian Labeda</h6>
-                                    <span>1929298282929000</span>
-                                </div>
-                                <div class="btn-control float-right">
-                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="col-md-12 mt-3 control-date-btn">
-                                <div class="date-group float-left">
-                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
-                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
-                                </div>
+  </div>
+</div>
+</div>
 
-                                <div class="float-right">
-                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-                            <div class="col-md-12">
-                                <table class="table table-responsive table-pegawai">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Hari, Tanggal</th>
-                                            <th scope="col">Absen</th>
-                                            <th scope="col">Kinerja</th>
-                                            <th scope="col">Etika</th>
-                                            <th scope="col">Detail</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Senin, 23/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Selasa, 24/09/2018</td>
-                                            <td>Sakit</td>
-                                            <td>
-                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-green text-white mr-2">75 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Rabu, 25/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Kamis, 26/09/2018</td>
-                                            <td>Perjalanan Dinas</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- end tab pane -->
-
-                <!-- start pane -->
-                <div class="tab-pane detailItem" id="user2" role="tabpanel">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
-                                </div>
-                                <div class="nama-id">
-                                    <h6>Bill Gates</h6>
-                                    <span>1929298282929000</span>
-                                </div>
-                                <div class="btn-control float-right">
-                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12 mt-3 control-date-btn">
-                                <div class="date-group float-left">
-                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
-                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
-                                </div>
-
-                                <div class="float-right">
-                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <table class="table table-responsive table-pegawai">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Hari, Tanggal</th>
-                                            <th scope="col">Absen</th>
-                                            <th scope="col">Kinerja</th>
-                                            <th scope="col">Etika</th>
-                                            <th scope="col">Detail</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Senin, 23/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Selasa, 24/09/2018</td>
-                                            <td>Sakit</td>
-                                            <td>
-                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-green text-white mr-2">75 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Rabu, 25/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Kamis, 26/09/2018</td>
-                                            <td>Perjalanan Dinas</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end tab pane -->
-
-                <!-- start pane -->
-                <div class="tab-pane detailItem" id="user3" role="tabpanel">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/img-user.png');">
-                                </div>
-                                <div class="nama-id">
-                                    <h6>Alfian Labeda</h6>
-                                    <span>1929298282929000</span>
-                                </div>
-                                <div class="btn-control float-right">
-                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12 mt-3 control-date-btn">
-                                <div class="date-group float-left">
-                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
-                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
-                                </div>
-
-                                <div class="float-right">
-                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <table class="table table-responsive table-pegawai">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Hari, Tanggal</th>
-                                            <th scope="col">Absen</th>
-                                            <th scope="col">Kinerja</th>
-                                            <th scope="col">Etika</th>
-                                            <th scope="col">Detail</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Senin, 23/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Selasa, 24/09/2018</td>
-                                            <td>Sakit</td>
-                                            <td>
-                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-green text-white mr-2">75 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Rabu, 25/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Kamis, 26/09/2018</td>
-                                            <td>Perjalanan Dinas</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end tab pane -->
-
-                <!-- start pane -->
-                <div class="tab-pane detailItem" id="user4" role="tabpanel">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/bill.jpg');">
-                                </div>
-                                <div class="nama-id">
-                                    <h6>Bill Gates</h6>
-                                    <span>1929298282929000</span>
-                                </div>
-                                <div class="btn-control float-right">
-                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12 mt-3 control-date-btn">
-                                <div class="date-group float-left">
-                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
-                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
-                                </div>
-
-                                <div class="float-right">
-                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <table class="table table-responsive table-pegawai">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Hari, Tanggal</th>
-                                            <th scope="col">Absen</th>
-                                            <th scope="col">Kinerja</th>
-                                            <th scope="col">Etika</th>
-                                            <th scope="col">Detail</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Senin, 23/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Selasa, 24/09/2018</td>
-                                            <td>Sakit</td>
-                                            <td>
-                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-green text-white mr-2">75 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Rabu, 25/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Kamis, 26/09/2018</td>
-                                            <td>Perjalanan Dinas</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end tab pane -->
-
-                <!-- start pane -->
-                <div class="tab-pane detailItem" id="user3" role="tabpanel">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="img-user" id="img-user2" style="background-image: url('assets/images/steve.jpg');">
-                                </div>
-                                <div class="nama-id">
-                                    <h6>Steve Jobs</h6>
-                                    <span>1929298282929000</span>
-                                </div>
-                                <div class="btn-control float-right">
-                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12 mt-3 control-date-btn">
-                                <div class="date-group float-left">
-                                    <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
-                                    <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
-                                </div>
-
-                                <div class="float-right">
-                                    <button class="btn"><i class="fas fa-angle-left"></i></button>
-                                    <button class="btn"><i class="fas fa-angle-right"></i></button>
-                                </div>
-
-                                <div class="clearfix"></div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <table class="table table-responsive table-pegawai">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Hari, Tanggal</th>
-                                            <th scope="col">Absen</th>
-                                            <th scope="col">Kinerja</th>
-                                            <th scope="col">Etika</th>
-                                            <th scope="col">Detail</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Senin, 23/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Selasa, 24/09/2018</td>
-                                            <td>Sakit</td>
-                                            <td>
-                                                <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-green text-white mr-2">75 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Rabu, 25/09/2018</td>
-                                            <td>Hadir</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>Kamis, 26/09/2018</td>
-                                            <td>Perjalanan Dinas</td>
-                                            <td>
-                                                <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
-                                            </td>
-                                            <td>
-                                                <div class="badge badge-blue text-white mr-2">100 %</div>
-                                            </td>
-                                            <td>
-                                                <button class="btn rounded btn-detail" title="Detail">
-                                                    <i class="fas fa-search-plus"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end tab pane -->
-
-            </div>
-
-            <!-- MODAL DETAIL -->
-            <div class="modal-detail">
-                <div class="modal-overlay">
-                    <!-- button close -->
-                    <div class="close">
-                        <i class="fas fa-times"></i>
-                    </div>
-                    <!-- button control -->
-                    <a class="control-left" onclick="plusSlides(-1)">
-                        <i class="fas fa-angle-left"></i>
-                    </a>
-                    <a class="control-right" onclick="plusSlides(1)">
-                        <i class="fas fa-angle-right"></i>
-                    </a>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="modal-konten mySlides">
-                                    <div class="title-name">
-                                        <div class="img-user" id="user-modal" style="background-image: url('assets/images/img-user.png');">
-                                        </div>
-                                        <h6>Alfian Labeda</h6>
-                                        <span>1929298282929000</span>
-                                        <span class="badge text-white float-right">23 September 2018</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="desc-detail">
-                                        <h4>Hadir</h4>
-                                        <small>Jam Masuk - Jam Pulang</small>
-                                        <br>
-                                        <label>07:15 - 16:00</label>
-                                        <hr>
-                                        <h4>Penilaian Kinerja</h4>
-                                        <span class="check-list float-right"><i class="fas fa-lg fa-check"></i></span>
-                                        <h6>Rincian Kinerja</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
-                                            possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
-                                            saepe odit officiis, ipspsa delectus tempora? Magni, atque totam dicta
-                                            accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                                        <h6>Keterangan Penilaian</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
-                                            possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
-                                            saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
-                                            excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
-                                            accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                                        <hr>
-                                        <div class="wrap-modal-value table-responsive">
-                                            <h4 class="float-left">Penilaian Etika</h4>
-                                            <span class="badge text-white float-right">September 2018</span>
-                                            <table>
-                                                <tr>
-                                                    <td>Upacara dan Apel 30(%)</td>
-                                                    <td>15%</td>
-                                                    <td colspan="3" rowspan="3">
-                                                            <div class="value-percent">
-                                                                <div class="values">
-                                                                    <h2>75%</h2>
-                                                                    <div class="clearfix"></div>
-                                                                </div>
-                                                                <div class="ket">Cukup Baik</div>
-                                                            </div>
-                                                    </td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>Perilaku Kerja 30(%)</td>
-                                                    <td>20%</td>
-                                                </tr>
-
-                                                <tr>
-                                                    <td>Kegiatan Kebersamaan 40(%)</td>
-                                                    <td>40%</td>
-                                                </tr>
-
-                                            </table>                                           
-                                            <h6>Keterangan Penilaian</h6>
-                                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat
-                                                doloremque error aliquid consequuntur, nostrum deleniti incidunt
-                                                perferendis quasi explicabo dolorum repellat, esse minus ipsam alias
-                                                impedit sapiente culpa aspernatur?</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!--  -->
-                                <div class="modal-konten mySlides">
-                                    <div class="title-name">
-                                        <div class="img-user" id="user-modal" style="background-image: url('assets/images/bill.jpg');">
-                                        </div>
-                                        <h6>Bill Gates</h6>
-                                        <span>1929298282929000</span>
-                                        <span class="badge text-white float-right">23 September 2018</span>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="desc-detail">
-                                        <h4>Hadir</h4>
-                                        <small>Jam Masuk - Jam Pulang</small>
-                                        <br>
-                                        <label>07:15 - 16:00</label>
-                                        <hr>
-                                        <h4>Penilaian Kinerja</h4>
-                                        <span class="check-list float-right"><i class="fas fa-lg fa-check"></i></span>
-                                        <h6>Rincian Kinerja</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
-                                            possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
-                                            saepe odit officiis, ipspsa delectus tempora? Magni, atque totam dicta
-                                            accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                                        <h6>Keterangan Penilaian</h6>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
-                                            possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
-                                            saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
-                                            excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
-                                            accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                                        <hr>
-                                        <div class="wrap-modal-value table-responsive">
-                                                <h4 class="float-left">Penilaian Etika</h4>
-                                                <span class="badge text-white float-right">September 2018</span>
-                                                <table>
-                                                    <tr>
-                                                        <td>Upacara dan Apel 30(%)</td>
-                                                        <td>15%</td>
-                                                        <td colspan="3" rowspan="3">
-                                                                <div class="value-percent">
-                                                                    <div class="values">
-                                                                        <h2>75%</h2>
-                                                                        <div class="clearfix"></div>
-                                                                    </div>
-                                                                    <div class="ket">Cukup Baik</div>
-                                                                </div>
-                                                        </td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>Perilaku Kerja 30(%)</td>
-                                                        <td>20%</td>
-                                                    </tr>
-    
-                                                    <tr>
-                                                        <td>Kegiatan Kebersamaan 40(%)</td>
-                                                        <td>40%</td>
-                                                    </tr>
-    
-                                                </table>                                           
-                                                <h6>Keterangan Penilaian</h6>
-                                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat
-                                                    doloremque error aliquid consequuntur, nostrum deleniti incidunt
-                                                    perferendis quasi explicabo dolorum repellat, esse minus ipsam alias
-                                                    impedit sapiente culpa aspernatur?</p>
-                                            </div>
-                                    </div>
-                                </div>
-                                <!--  -->
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- end Modal Detail -->
-    </section>
-    <!-- inject:js -->
-    <script src="assets/js/bundle.min.js"></script>
-    <!-- endinject -->
+<!-- end Modal Detail -->
+</section>
+<!-- inject:js -->
+<script src="assets/js/bundle.min.js"></script>
+<!-- endinject -->
 </body>
 
 </html>
