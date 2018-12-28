@@ -71,6 +71,7 @@
                           <form id='formReply'>
                             <input id="id" type='hidden' name='id' required>
                             <input id="nip" type='hidden' name='nip' required>
+                            <input id="nilai_kinerja" type='text' name='nilai_kinerja' class="form-control" required>
                             <textarea autofocus rows="8" name="keterangan_approve" class="form-control"></textarea>
                           </form>
                           <div class="mt-2 float-right">
@@ -145,6 +146,7 @@
                     if (res.response.now != null) {
                       $('#id').val(res.response.now.id);
                       $('#nip').val(res.response.now.nip);
+                      $('#nilai_kinerja').val(res.response.now.nilai_kinerja);
                       $('#ket_kinerja').html(res.response.now.rincian_kinerja);
                       $('textarea').val(res.response.now.keterangan_approve);
                     } else {
