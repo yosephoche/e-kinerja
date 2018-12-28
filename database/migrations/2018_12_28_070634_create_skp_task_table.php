@@ -17,7 +17,7 @@ class CreateSkpTaskTable extends Migration
             $table->increments('id');
             $table->uuid('uuid');
             $table->string('task');
-            $table->integer('id_skp')->index();
+            $table->integer('id_skp')->unsigned()->index();
             $table->timestamps();
         });
         Schema::table('skp_task',function (Blueprint $table){

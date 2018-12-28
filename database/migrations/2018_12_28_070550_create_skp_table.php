@@ -17,7 +17,7 @@ class CreateSkpTable extends Migration
             $table->increments('id');
             $table->uuid('uuid');
             $table->string('nama');
-            $table->integer('id_skpd')->index();
+            $table->integer('id_skpd')->unsigned()->index();
             $table->timestamps();
         });
         Schema::table('skp',function (Blueprint $table){
