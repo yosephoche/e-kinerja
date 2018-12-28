@@ -28,7 +28,6 @@ class RoleSeeder extends Seeder
                 'permissions' => json_encode([
                     'monitoring-absen'=> true,
                     'penilaian-kinerja' => true,
-                    'penilaian-etika' => true,
                     'rekap-bulanan' => true,
 
                     'input-kinerja' => false,
@@ -45,7 +44,6 @@ class RoleSeeder extends Seeder
 
                     'input-kinerja' => false,
                     'penilaian-kinerja' => false,
-                    'penilaian-etika' => false,
                     'tunjangan-kinerja' => false,
                 ])
             ],
@@ -57,7 +55,6 @@ class RoleSeeder extends Seeder
                     'monitoring-absen'=> true,
                     'input-kinerja' => true,
                     'penilaian-kinerja' => true,
-                    'penilaian-etika' => true,
                     'rekap-bulanan' => true,
                     'tunjangan-kinerja' => true
                 ])
@@ -70,7 +67,6 @@ class RoleSeeder extends Seeder
                     'monitoring-absen'=> true,
                     'input-kinerja' => true,
                     'penilaian-kinerja' => true,
-                    'penilaian-etika' => true,
                     'rekap-bulanan' => true,
                     'tunjangan-kinerja' => true
                 ])
@@ -83,7 +79,6 @@ class RoleSeeder extends Seeder
                     'monitoring-absen'=> true,
                     'input-kinerja' => true,
                     'penilaian-kinerja' => true,
-                    'penilaian-etika' => true,
                     'tunjangan-kinerja' => true,
                     'rekap-bulanan' => true
                 ])
@@ -97,10 +92,17 @@ class RoleSeeder extends Seeder
 
                     'monitoring-absen'=> false,
                     'penilaian-kinerja' => false,
-                    'penilaian-etika' => false,
                     'rekap-bulanan' => false
                 ])
-            ]
+                ],
+                [
+                    'id' => 8,
+                    'nama_role' => 'Admin SKP',
+                    'uuid' => (string)\Illuminate\Support\Str::uuid(),
+                    'permissions' => json_encode([
+                        'master-skp' => true,
+                    ])
+                ]
 
         ];
 
