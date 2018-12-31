@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>E-Kinerja Kabupaten Kolaka</title>
+    <!-- inject:css -->
+    <link rel="stylesheet" href="assets/css/app.min.css" />
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="assets/js/bundle.min.js"></script>
+    <!-- endinject -->
+    <link rel="stylesheet" href="assets/css/datepicker3.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js"
+      type="text/javascript"
+    ></script>
+  </head>
+
+  <body>
+    <!-- start sidebar -->
+
+    <div id="preload">
+      <img src="assets/images/loading_ekinerja.svg" width="150" />
+      <script>
+        $("#preload")
+          .delay(500)
+          .fadeOut("slow");
+      </script>
+    </div>
+
+    <!-- mobile burger btn -->
+
+    <div class="sidebarPanduan">
+      <ul>
+        <li>
+          <a class="active" href="panduan-monitoring-absen.html">
+            <i class="far fa-calendar-alt"></i> Monitoring Absen
+          </a>
+        </li>
+        <li>
+          <a href="panduan-rekap-bulanan.html">
+            <i class="fas fa-file-signature"></i> Rekap Bulanan</a
+          >
+        </li>
+        <li>
+          <a href="#"> <i class="far fa-file-alt"></i> Input Kinerja</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-user-check"></i> Penilaian Kinerja</a>
+        </li>
+        <li>
+          <a href="#"> <i class="far fa-thumbs-up"></i> Penilaian Etika</a>
+        </li>
+        <li>
+          <a href="#"> <i class="fas fa-chart-pie"></i> Tunjangan Kinerja</a>
+        </li>
+        <li>
+          <a href="#"> <i class="fas fa-user-lock"></i> Ubah Kata Sandi</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- wrap main component -->
+    <section class="panduan">
+      <div class="overlay">
+        <div class="close-side"><i class="fas fa-times"></i></div>
+      </div>
+
+      <div class="brand">
+        <a href="index.html"><img src="assets/images/logo_ekinerja.png"/></a>
+        <div class="burgerBtnGuide">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </div>
+      <div class="contentPanduan">
+        <div class="title"><h1>Panduan Pengguna</h1></div>
+        <div class="subTitle">
+          <h2>Monitoring Absen</h2>
+          <div class="line"></div>
+        </div>
+        <div class="contents mt-4">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi non
+            sed, minima ut odit iure cupiditate recusandae sint. Cumque neque
+            tempora fuga ad quisquam in omnis commodi quam ratione consequatur!
+          </p>
+
+          <div class="wrapImage mt-4 mb-4">
+            <img class="img-fluid" src="assets/images/monitoring.png" alt="" />
+          </div>
+
+          <div class="detail">
+            <ol>
+              <h4><li>Memilih SKPD</li></h4>
+            </ol>
+            <ul>
+              <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae omnis, quo nemo commodi officiis laborum voluptas
+                quaerat voluptatum earum ea minus quos nulla quam deleniti sed
+                quisquam possimus amet fuga?
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae omnis, quo nemo commodi officiis laborum voluptas
+                quaerat voluptatum earum ea minus quos nulla quam deleniti sed
+                quisquam possimus amet fuga?
+              </li>
+              <li>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repudiandae omnis, quo nemo commodi officiis laborum voluptas
+                quaerat voluptatum earum ea minus quos nulla quam deleniti sed
+                quisquam possimus amet fuga?
+              </li>
+            </ul>
+          </div>
+
+          <div class="accordion" id="accordionExample">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                  </button>
+                </h5>
+              </div>
+
+              <div
+                id="collapseOne"
+                class="collapse show"
+                aria-labelledby="headingOne"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa
+                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                  aliqua put a bird on it squid single-origin coffee nulla
+                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                  beer labore wes anderson cred nesciunt sapiente ea proident.
+                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                  beer farm-to-table, raw denim aesthetic synth nesciunt you
+                  probably haven't heard of them accusamus labore sustainable
+                  VHS.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Lorem ipsum dolor sit amet, consectetur adipisicing.
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseTwo"
+                class="collapse"
+                aria-labelledby="headingTwo"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa
+                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                  aliqua put a bird on it squid single-origin coffee nulla
+                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                  beer labore wes anderson cred nesciunt sapiente ea proident.
+                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                  beer farm-to-table, raw denim aesthetic synth nesciunt you
+                  probably haven't heard of them accusamus labore sustainable
+                  VHS.
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button
+                    class="btn btn-link collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Collapsible Group Item #3
+                  </button>
+                </h5>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#accordionExample"
+              >
+                <div class="card-body">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life
+                  accusamus terry richardson ad squid. 3 wolf moon officia aute,
+                  non cupidatat skateboard dolor brunch. Food truck quinoa
+                  nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt
+                  aliqua put a bird on it squid single-origin coffee nulla
+                  assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                  beer labore wes anderson cred nesciunt sapiente ea proident.
+                  Ad vegan excepteur butcher vice lomo. Leggings occaecat craft
+                  beer farm-to-table, raw denim aesthetic synth nesciunt you
+                  probably haven't heard of them accusamus labore sustainable
+                  VHS.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- inject:js -->
+    <script src="assets/js/bundle.min.js"></script>
+    <!-- endinject -->
+  </body>
+</html>

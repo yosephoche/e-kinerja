@@ -2,377 +2,428 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-Kinerja Kabupaten Kolaka</title>
-    <!-- inject:css -->
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <!-- endinject -->
-    <link rel="stylesheet" href="assets/css/datepicker3.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>E-Kinerja Kabupaten Kolaka</title>
+<!-- inject:css -->
+<link rel="stylesheet" href="assets/css/app.min.css">
+<!-- endinject -->
+<link rel="stylesheet" href="assets/css/datepicker3.css">
 </head>
 
 <body>
-    <section class="penilaian-kinerja">
+<section class="penilaian-kinerja">
 
-        <div class="burgerBtn">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+  <div class="burgerBtn">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+  </div>
+
+          <!-- profile dan Ganti Password -->
+
+          <div class="overlayProfile"></div>
+          <div class="profile">
+                  <div class="imgProfile">
+                    <div class="closeProfile">&times;</div>
+                    <img src="assets/images/bg_login_whitebase.png" class="bgImg" />
+                    <div
+                      class="imgUser"
+                      style="background-image: url('assets/images/img-user.png')"
+                    ></div>
+                    <div class="descUser mt-2">
+                      <h5 class="mb-1">Alfian Labeda</h5>
+                      <p>19782717326726672</p>
+                    </div>
+                  </div>
+          
+                  <div class="descProfile">
+                    <div class="dataForm">
+                      <h5 class="mb-2">Informasi</h5>
+                      <div>
+                        <span>Jabatan</span>
+                        <p>Kepala Dinas</p>
+                      </div>
+                      <div>
+                        <span>Tempat, Tgl.Lahir</span>
+                        <p>Pinrang, 17 Oktober 1982</p>
+                      </div>
+                      <div>
+                        <span>Agama</span>
+                        <p>Islam</p>
+                      </div>
+                      <div>
+                        
+                          <label for="password">Kata Sandi</label>
+                          <div class="input-group">
+                            <input
+                              id="password"
+                              type="password"
+                              disabled
+                              value="password"
+                              class="form-control"
+                            />
+                            <div class="input-group-prepend">
+                              <button class="btn btn-warning btn-changePassword" title="Ganti Password">
+                                <i class="fa fa-edit"></i>
+                              </button>
+                            </div>
+                          </div>
+                    </div>
+                    <form>
+                        <button class="btn btn-block btn-out">
+                          Logout</i>
+                        </button>
+                      </form>
+                    </div>
+  
+                    <div class="formChangePassword">
+                      <h5 class="mb-3">Ubah Kata Sandi</h5>
+                      <form>
+                          <div class="form-group">
+                              <label for="oldPassword">Kata Sandi Lama</label>
+                              <input type="password" class="form-control" id="oldPassword"placeholder="Kata Sandi Lama">
+                            </div>
+                          <div class="form-group">
+                                  <label for="newPassword">Kata Sandi Baru</label>
+                                  <input type="password" class="form-control" id="newPassword"placeholder="Kata Sandi Baru">
+                          </div>
+                          <div class="pt-4">
+                              <button class="btn btn-custom-2 btn-cancelChange">Batal</button>
+                              <button class="btn btn-custom">Simpan</button>
+                          </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- End Profile dan Ganti Password -->
+
+  <div class="overlay">
+      <div class="close-side"><i class="fas fa-times"></i></div>
+  </div>
+
+  <div class="sidebar1">
+          <div class="brand"><img src="assets/images/logo_ekinerja.png" /></div>
+  
+          <ul>
+            <li>
+              <a href="index.html">
+                <i class="material-icons">recent_actors</i>
+                <span>Monitoring Absen</span>
+              </a>
+            </li>
+            <li>
+              <a href="rekap-bulanan.html">
+                <i class="material-icons">library_books</i>
+                <span>Rekap Bulanan</span>
+              </a>
+            </li>
+            <li>
+              <a href="input-kinerja.html">
+                <i class="material-icons">assignment</i>
+                <span>Input Kinerja</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="penilaian-kinerja.html">
+                  <i class="material-icons">how_to_reg</i>
+                  <span>Penilaian Kinerja</span>
+              </a>
+            </li>
+            <li>
+              <a href="tunjangan-kinerja.html">
+                  <i class="material-icons">insert_chart</i>
+                  <span>Tunjangan Kinerja</span>
+              </a>
+            </li>
+          </ul>
+          
+          <ul class="wrapToggle">
+              <li>
+                  <a href="panduan-monitoring-absen.html">
+                      Panduan Pengguna
+                      <i class="material-icons">help_outline</i>
+                  </a>
+              </li>
+              <li>
+                  <div class="toggleSwitch">
+                  <label class="mr-2">Mode Malam</label>
+                  <label class="switch">
+                      <input id="toggle-switch" type="checkbox">
+                      <span class="slider round"></span>
+                  </label>
+                  </div>
+              </li>
+          </ul>
+  
         </div>
 
-                <!-- profile dan Ganti Password -->
 
-                <div class="overlayProfile"></div>
-                <div class="profile">
-                        <div class="imgProfile">
-                          <div class="closeProfile">&times;</div>
-                          <img src="assets/images/bg_login_whitebase.png" class="bgImg" />
-                          <div
-                            class="imgUser"
-                            style="background-image: url('assets/images/img-user.png')"
-                          ></div>
-                          <div class="descUser mt-2">
-                            <h5 class="mb-1">Alfian Labeda</h5>
-                            <p>19782717326726672</p>
+  <div class="main">
+      <div class="nav-top-container">
+          <div class="nav-top">
+              <div class="title-nav">
+                  <h4 class="mr-3">Penilaian Kinerja</h4>
+                  <span class="badge text-white">23 September 2018</span>
+              </div>
+
+              <div class="img-profile" id="user-profile" style="background-image: url('assets/images/img-user.png');">
+              </div>
+          </div>
+      </div>
+      <div class="sidebar2">
+          <div class="burgerBtn">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+          </div>
+
+          <div class="group-search">
+              <span><i class="material-icons">search</i></span>
+              <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
+          </div>
+
+          <div class="menu">
+              <!-- <div> -->
+              <ul class="nav nav-pills" id="myTab" role="tablist">
+                  <li><a class="listItems" data-toggle="tab" href="#user1" role="tab" aria-selected="true"><span
+                              class="img-user" style="background-image: url('assets/images/img-user.png');">
+                          </span>
+                          <span>
+                              <label>Alfian Labeda <br><small>1929298282929000</small></label>
+                          </span>
+                          <div class="check-list float-right mr-3"><i class="material-icons">check</i></div>
+                      </a>
+                  </li>
+                  <li><a class="listItems" data-toggle="tab" href="#user2" role="tab" aria-selected="false">
+                          <span class="img-user" style="background-image: url('assets/images/bill.jpg');">
+                          </span>
+                          <span>
+                              <label>Bill <br><small>1929298282929000</small></label>
+                          </span>
+                          <div class="not-list float-right mr-3"><i class="material-icons">close</i></div>
+                      </a>
+                  </li>
+
+                  <li><a class="listItems" data-toggle="tab" href="#user3" role="tab" aria-selected="false"><span
+                              class="img-user" id="img-user3" style="background-image: url('assets/images/steve.jpg');">
+                          </span>
+                          
+                          <span>
+                              <label>Jobs<br><small>1929298282929000</small></label>
+                          </span>
+                      </a>
+                  </li>
+              </ul>
+              <!-- </div> -->
+          </div>
+      </div>
+
+      <!-- isi tab pane -->
+      <div class="main-content tab-content">
+          <!-- start tab pane -->
+          <div class="tab-pane detailItem" id="user1" role="tabpanel">
+              <div class="container">
+
+                  <div class="row">
+                      <div class="col-md-6 wrap-user">
+                          <div class="img-user" style="background-image: url('assets/images/img-user.png');">
                           </div>
-                        </div>
-                
-                        <div class="descProfile">
-                          <div class="dataForm">
-                            <h5 class="mb-2">Informasi</h5>
-                            <div>
-                              <span>Jabatan</span>
-                              <p>Kepala Dinas</p>
-                            </div>
-                            <div>
-                              <span>Tempat, Tgl.Lahir</span>
-                              <p>Pinrang, 17 Oktober 1982</p>
-                            </div>
-                            <div>
-                              <span>Agama</span>
-                              <p>Islam</p>
-                            </div>
-                            <div>
-                              
-                                <label for="password">Kata Sandi</label>
-                                <div class="input-group">
-                                  <input
-                                    id="password"
-                                    type="password"
-                                    disabled
-                                    value="password"
-                                    class="form-control"
-                                  />
-                                  <div class="input-group-prepend">
-                                    <button class="btn btn-warning btn-changePassword" title="Ganti Password">
-                                      <i class="fa fa-edit"></i>
-                                    </button>
-                                  </div>
-                                </div>
+                          <div class="nama-id">
+                              <h6>Alfian Labeda</h6>
+                              <span>1929298282929000</span>
                           </div>
-                          <form>
-                              <button class="btn btn-block btn-out">
-                                Logout</i>
-                              </button>
-                            </form>
-                          </div>
-        
-                          <div class="formChangePassword">
-                            <h5 class="mb-3">Ubah Kata Sandi</h5>
-                            <form>
-                                <div class="form-group">
-                                    <label for="oldPassword">Kata Sandi Lama</label>
-                                    <input type="password" class="form-control" id="oldPassword"placeholder="Kata Sandi Lama">
-                                 </div>
-                                <div class="form-group">
-                                        <label for="newPassword">Kata Sandi Baru</label>
-                                        <input type="password" class="form-control" id="newPassword"placeholder="Kata Sandi Baru">
-                                </div>
-                                <div class="pt-4">
-                                    <button class="btn btn-custom-2 btn-cancelChange">Batal</button>
-                                    <button class="btn btn-custom">Simpan</button>
-                                </div>
-                            </form>
-                          </div>
+                      </div>
+                      
+                      <div class="col-md-4 col-8 select-date">
+                        <select class="custom-select">
+                            <option selected>Pilih Tanggal Penilaian</option>
+                            <option>Senin, 18 September</option>
+                            <option>Rabu, 20 September</option>
+                            <option>Jumat, 22 September</option>
+                        </select>
+                      </div>
+                      <div class="col-md-2 col-4">
+                        <div class="btn-control float-right">
+                            <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                            <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
                         </div>
                       </div>
-        
-                      <!-- End Profile dan Ganti Password -->
-
-        <div class="overlay">
-            <div class="close-side"><i class="fas fa-times"></i></div>
-        </div>
-
-        <div class="sidebar1">
-            <div class="brand">
-                <img src="assets/images/logo_ekinerja.png" width="120">
-            </div>
-
-            <ul>
-                <li><a href="index.html">
-                        <i class="far fa-calendar-alt"></i>
-                        Monitoring Absen
-                    </a></li>
-                <li><a href="rekap-bulanan.html"> <i class="fas fa-file-signature"></i> Rekap
-                        Bulanan</a></li>
-                <li><a href="input-kinerja.html"> <i class="far fa-file-alt"></i> Input
-                        Kinerja</a></li>
-                <li><a href="penilaian-kinerja.html" class="active"><i class="fas fa-user-check"></i>
-                        Penilaian Kinerja</a></li>
-                <li><a href="penilaian-etika.html"> <i class="far fa-thumbs-up"></i>
-                        Penilaian Etika</a></li>
-                <li><a href="tunjangan-kinerja.html"> <i class="fas fa-chart-pie"></i>
-                        Tunjangan Kinerja</a></li>
-            </ul>
-            <div class="toggleSwitch">
-                <label class="mr-2">Mode Malam</label>
-                <label class="switch">
-                    <input id="toggle-switch" type="checkbox">
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
-
-
-        <div class="main">
-            <div class="nav-top-container">
-                <div class="nav-top">
-                    <div class="title-nav">
-                        <h4 class="mr-4">Penilaian Kinerja</h4>
-                        <span class="badge text-white">23 September 2018</span>
-                    </div>
-
-                    <div class="img-profile" id="user-profile" style="background-image: url('assets/images/img-user.png');">
-                    </div>
-                </div>
-            </div>
-            <div class="sidebar2">
-                <div class="burgerBtn">
-                    <div class="bar1"></div>
-                    <div class="bar2"></div>
-                    <div class="bar3"></div>
-                </div>
-
-                <div class="group-search">
-                    <span><i class="fas fa-search"></i></span>
-                    <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
-                </div>
-
-                <div class="menu">
-                    <!-- <div> -->
-                    <ul class="nav nav-pills" id="myTab" role="tablist">
-                        <li><a class="listItems" data-toggle="tab" href="#user1" role="tab" aria-selected="true"><span
-                                    class="img-user" style="background-image: url('assets/images/img-user.png');">
-                                </span>
-                                <span>
-                                    <label>Alfian Labeda <br><small>1929298282929000</small></label>
-                                </span>
-                                <div class="check-list float-right mr-3"><i class="fas fa-lg fa-check"></i></div>
-                            </a>
-                        </li>
-                        <li><a class="listItems" data-toggle="tab" href="#user2" role="tab" aria-selected="false">
-                                <span class="img-user" style="background-image: url('assets/images/bill.jpg');">
-                                </span>
-                                <span>
-                                    <label>Bill <br><small>1929298282929000</small></label>
-                                </span>
-                                <div class="not-list float-right mr-3"><i class="fas fa-lg fa-times"></i></div>
-                            </a>
-                        </li>
-
-                        <li><a class="listItems" data-toggle="tab" href="#user3" role="tab" aria-selected="false"><span
-                                    class="img-user" id="img-user3" style="background-image: url('assets/images/steve.jpg');">
-                                </span>
-                                
-                                <span>
-                                    <label>Jobs<br><small>1929298282929000</small></label>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- </div> -->
-                </div>
-            </div>
-
-            <!-- isi tab pane -->
-            <div class="main-content tab-content">
-                <!-- start tab pane -->
-                <div class="tab-pane detailItem" id="user1" role="tabpanel">
-                    <div class="container">
-
-                        <div class="row">
-                            <div class="col-md-6 wrap-user">
-                                <div class="img-user" style="background-image: url('assets/images/img-user.png');">
-                                </div>
-                                <div class="nama-id">
-                                    <h6>Alfian Labeda</h6>
-                                    <span>1929298282929000</span>
-                                </div>
-                            </div>
-                            
-                            <div class="col-md-4 col-8 select-date">
-                              <select class="custom-select">
-                                  <option selected>Pilih Tanggal Penilaian</option>
-                                  <option>Senin, 18 September</option>
-                                  <option>Rabu, 20 September</option>
-                                  <option>Jumat, 22 September</option>
-                              </select>
-                            </div>
-                            <div class="col-md-2 col-4">
-                              <div class="btn-control float-right">
-                                  <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                  <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+                          <div class="clearfix"></div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
+                          <div class="desc-kinerja">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam sunt
+                                  nesciunt
+                                  unde harum sequi ratione inventore facilis accusantium. Facere voluptates
+                                  nostrum,
+                                  at officia veniam illum blanditiis aut doloribus sit.</p>
+                          </div>
+                      </div>
+                  </div>
+                  
+                  <div class="row">
+                      <div class="col-md-9">
+                          <h6 class="mt-4">Nilai Kinerja</h6>
+                          <div class="btn-slider">
+                              <div class="slidecontainer">
+                                  <form onsubmit="return false" oninput="amount.value = (principal.valueAsNumber * re.vaatlueAsNumber) / 100">
+      
+                                      <input type="range" class="slider" min="0" step="5" max="100" id="rate" name="rate"
+                                          value="0" oninput="thisRate.value = rate.value">
                               </div>
-                            </div>
-                                <div class="clearfix"></div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
-                                <div class="desc-kinerja">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam sunt
-                                        nesciunt
-                                        unde harum sequi ratione inventore facilis accusantium. Facere voluptates
-                                        nostrum,
-                                        at officia veniam illum blanditiis aut doloribus sit.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
-                                <textarea autofocus rows="8" class="form-control"></textarea>
-                                <div class="mt-2 float-right">
-                                    <button class="btn btn-custom-2">Tolak</button>
-                                    <button class="btn btn-custom">Simpan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                          </div>
+                      </div>
+                      
+      
+                      <div class="col-md-3 mt-4 value-slider">
+                          <div class="values">
+                              <output name="thisRate" for="rate">0</output><span>%</span></p>
+                              </form>
+                              <div class="clearfix"></div>
+                          </div>
+                          <!-- <div class="ket">Cukup Baik</div> -->
+                      </div>
+                  </div>
+                  
+                      <div class="row">
+                      <div class="col-md-12">
+                          <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
+                          <textarea autofocus rows="5" class="form-control"></textarea>
+                          <div class="mt-2 float-right">
+                              <button class="btn btn-custom-2">Tolak</button>
+                              <button class="btn btn-custom">Simpan</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
-                <!-- start tab pane -->
-                <div class="tab-pane detailItem" id="user2" role="tabpanel">
-                    <div class="container">
+          <!-- start tab pane -->
+          <div class="tab-pane detailItem" id="user2" role="tabpanel">
+              <div class="container">
 
-                            <div class="row">
-                                    <div class="col-md-6 wrap-user">
-                                        <div class="img-user" style="background-image: url('assets/images/bill.jpg');">
-                                        </div>
-                                        <div class="nama-id">
-                                            <h6>Bill Gates</h6>
-                                            <span>1929298282929000</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4 select-date">
-                                      <select class="custom-select">
-                                          <option selected>Pilih Tanggal Penilaian</option>
-                                          <option>Senin, 18 September</option>
-                                          <option>Rabu, 20 September</option>
-                                          <option>Jumat, 22 September</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <div class="btn-control float-right">
-                                          <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                          <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                      </div>
-                                    </div>
-                                        <div class="clearfix"></div>
+                      <div class="row">
+                              <div class="col-md-6 wrap-user">
+                                  <div class="img-user" style="background-image: url('assets/images/bill.jpg');">
+                                  </div>
+                                  <div class="nama-id">
+                                      <h6>Bill Gates</h6>
+                                      <span>1929298282929000</span>
+                                  </div>
+                              </div>
+                              
+                              <div class="col-md-4 select-date">
+                                <select class="custom-select">
+                                    <option selected>Pilih Tanggal Penilaian</option>
+                                    <option>Senin, 18 September</option>
+                                    <option>Rabu, 20 September</option>
+                                    <option>Jumat, 22 September</option>
+                                </select>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="btn-control float-right">
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
                                 </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
-                                <div class="desc-kinerja">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam sunt
-                                        nesciunt
-                                        unde harum sequi ratione inventore facilis accusantium. Facere voluptates
-                                        nostrum,
-                                        at officia veniam illum blanditiis aut doloribus sit.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
-                                <textarea autofocus rows="8" class="form-control"></textarea>
-                                <div class="mt-2 float-right">
-                                    <button class="btn btn-custom-2">Tolak</button>
-                                    <button class="btn btn-custom">Simpan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                              </div>
+                                  <div class="clearfix"></div>
+                          </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
+                          <div class="desc-kinerja">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam sunt
+                                  nesciunt
+                                  unde harum sequi ratione inventore facilis accusantium. Facere voluptates
+                                  nostrum,
+                                  at officia veniam illum blanditiis aut doloribus sit.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
+                          <textarea autofocus rows="8" class="form-control"></textarea>
+                          <div class="mt-2 float-right">
+                              <button class="btn btn-custom-2">Tolak</button>
+                              <button class="btn btn-custom">Simpan</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
 
 
-                <!-- end tab pane -->
+          <!-- end tab pane -->
 
-                <!-- start tab pane -->
-                <div class="tab-pane detailItem" id="user3" role="tabpanel">
-                    <div class="container">
+          <!-- start tab pane -->
+          <div class="tab-pane detailItem" id="user3" role="tabpanel">
+              <div class="container">
 
-                            <div class="row">
-                                    <div class="col-md-6 wrap-user">
-                                        <div class="img-user" style="background-image: url('assets/images/steve.jpg');">
-                                        </div>
-                                        <div class="nama-id">
-                                            <h6>Steve Jobs</h6>
-                                            <span>1929298282929000</span>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="col-md-4 select-date">
-                                      <select class="custom-select">
-                                          <option selected>Pilih Tanggal Penilaian</option>
-                                          <option>Senin, 18 September</option>
-                                          <option>Rabu, 20 September</option>
-                                          <option>Jumat, 22 September</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-2">
-                                      <div class="btn-control float-right">
-                                          <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                                          <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
-                                      </div>
-                                    </div>
-                                        <div class="clearfix"></div>
+                      <div class="row">
+                              <div class="col-md-6 wrap-user">
+                                  <div class="img-user" style="background-image: url('assets/images/steve.jpg');">
+                                  </div>
+                                  <div class="nama-id">
+                                      <h6>Steve Jobs</h6>
+                                      <span>1929298282929000</span>
+                                  </div>
+                              </div>
+                              
+                              <div class="col-md-4 select-date">
+                                <select class="custom-select">
+                                    <option selected>Pilih Tanggal Penilaian</option>
+                                    <option>Senin, 18 September</option>
+                                    <option>Rabu, 20 September</option>
+                                    <option>Jumat, 22 September</option>
+                                </select>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="btn-control float-right">
+                                    <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
+                                    <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
                                 </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
-                                <div class="desc-kinerja">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam sunt
-                                        nesciunt
-                                        unde harum sequi ratione inventore facilis accusantium. Facere voluptates
-                                        nostrum,
-                                        at officia veniam illum blanditiis aut doloribus sit.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
-                                <textarea autofocus rows="8" class="form-control"></textarea>
-                                <div class="mt-2 float-right">
-                                    <button class="btn btn-custom-2">Tolak</button>
-                                    <button class="btn btn-custom">Simpan</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- end tab pane -->
+                              </div>
+                                  <div class="clearfix"></div>
+                          </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
+                          <div class="desc-kinerja">
+                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam sunt
+                                  nesciunt
+                                  unde harum sequi ratione inventore facilis accusantium. Facere voluptates
+                                  nostrum,
+                                  at officia veniam illum blanditiis aut doloribus sit.</p>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-12">
+                          <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
+                          <textarea autofocus rows="8" class="form-control"></textarea>
+                          <div class="mt-2 float-right">
+                              <button class="btn btn-custom-2">Tolak</button>
+                              <button class="btn btn-custom">Simpan</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- end tab pane -->
 
-            </div>
-        </div>
-        </div>
-    </section>
-    <!-- inject:js -->
-    <script src="assets/js/bundle.min.js"></script>
-    <!-- endinject -->
+      </div>
+  </div>
+  </div>
+</section>
+<!-- inject:js -->
+<script src="assets/js/bundle.min.js"></script>
+<!-- endinject -->
 </body>
 
 </html>

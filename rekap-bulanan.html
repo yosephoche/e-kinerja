@@ -106,35 +106,60 @@
 
 
 <div class="sidebar1">
-<div class="brand">
-<img src="assets/images/logo_ekinerja.png" width="120">
-</div>
+        <div class="brand"><img src="assets/images/logo_ekinerja.png" /></div>
 
-<ul>
-<li><a href="index.html">
-      <i class="far fa-calendar-alt"></i>
-      Monitoring Absen
-  </a></li>
-<li><a href="rekap-bulanan.html" class="active"> <i class="fas fa-file-signature"></i> Rekap
-      Bulanan</a></li>
-<li><a href="input-kinerja.html"> <i class="far fa-file-alt"></i> Input
-      Kinerja</a></li>
-<li><a href="penilaian-kinerja.html"><i class="fas fa-user-check"></i>
-      Penilaian Kinerja</a></li>
-<li><a href="penilaian-etika.html"> <i class="far fa-thumbs-up"></i>
-      Penilaian Etika</a></li>
-<li><a href="tunjangan-kinerja.html"> <i class="fas fa-chart-pie"></i>
-      Tunjangan Kinerja</a></li>
-</ul>
-<div class="toggleSwitch">
-<label class="mr-2">Mode Malam</label>
-<label class="switch">
-  <input id="toggle-switch" type="checkbox">
-  <span class="slider round"></span>
-</label>
-</div>
-</div>
+        <ul>
+          <li>
+            <a href="index.html">
+              <i class="material-icons">recent_actors</i>
+              <span>Monitoring Absen</span>
+            </a>
+          </li>
+          <li class="active">
+            <a href="rekap-bulanan.html">
+              <i class="material-icons">library_books</i>
+              <span>Rekap Bulanan</span>
+            </a>
+          </li>
+          <li>
+            <a href="input-kinerja.html">
+              <i class="material-icons">assignment</i>
+              <span>Input Kinerja</span>
+            </a>
+          </li>
+          <li>
+            <a href="penilaian-kinerja.html">
+                <i class="material-icons">how_to_reg</i>
+                <span>Penilaian Kinerja</span>
+            </a>
+          </li>
+          <li>
+            <a href="tunjangan-kinerja.html">
+                <i class="material-icons">insert_chart</i>
+                <span>Tunjangan Kinerja</span>
+            </a>
+          </li>
+        </ul>
+        
+        <ul class="wrapToggle">
+            <li>
+                <a href="panduan-monitoring-absen.html">
+                    Panduan Pengguna
+                    <i class="material-icons">help_outline</i>
+                </a>
+            </li>
+            <li>
+                <div class="toggleSwitch">
+                <label class="mr-2">Mode Malam</label>
+                <label class="switch">
+                    <input id="toggle-switch" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+            </li>
+        </ul>
 
+      </div>
 
 <div class="main">
 <div class="nav-top-container">
@@ -153,14 +178,14 @@
 
   
 <div class="group-search">
-  <span><i class="fas fa-search"></i></span>
+   <span><i class="material-icons">search</i></span>
   <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
 </div>
 
 <div class="row">
                   <div class="col-md-12 mb-2">
                       <div class="skpd-rekap">
-                          <div class="input-group mb-3 skpd-option">
+                          <div class="input-group skpd-option">
                                   <div class="input-group-prepend">
                                     <label class="input-group-text">SKPD</label>
                                   </div>
@@ -249,8 +274,8 @@
 
           <div class="col-md-3 col-6">
               <div class="btn-control float-right">
-                  <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-                  <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+                  <button class="btn btn-rounded prevItem"><i class="material-icons">chevron_left</i></button>
+                  <button class="btn btn-rounded nextItem active"><i class="material-icons">chevron_right</i></button>
               </div>
           </div>
           
@@ -259,13 +284,13 @@
       <div class="row">
           <div class="col-md-12 mt-3 control-date-btn">
               <div class="date-group float-left">
-                  <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                  <span class="icon-date"><i class="material-icons">event</i></i></span>
                   <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
               </div>
 
               <div class="float-right">
-                  <button class="btn"><i class="fas fa-angle-left"></i></button>
-                  <button class="btn"><i class="fas fa-angle-right"></i></button>
+                  <button class="btn btn-rounded"><i class="material-icons">chevron_left</i></button>
+                  <button class="btn btn-rounded"><i class="material-icons">chevron_right</i></button>
               </div>
 
           </div>
@@ -277,10 +302,10 @@
                   <table class="table table-responsive table-pegawai">
                       <thead>
                           <tr>
-                              <th scope="col">Hari, Tanggal</th>
-                              <th scope="col">Absen</th>
-                              <th scope="col">Kinerja</th>
-                              <th scope="col">Detail</th>
+                              <th scope="col">HARI, TANGGAL</th>
+                              <th scope="col">ABSEN</th>
+                              <th scope="col">KINERJA</th>
+                              <th scope="col">DETAIL</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -288,11 +313,11 @@
                               <td>Senin, 23/09/2018</td>
                               <td>Hadir <img src="assets/images/icons/upacara.svg" class="iconUpacara"></td>
                               <td>
-                                  <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                  <span class="check-list"><i class="material-icons">check</i></span>
                               </td>
                               <td>
                                   <button class="btn rounded btn-detail" title="Detail">
-                                      <i class="fas fa-search-plus"></i>
+                                      <i class="material-icons">more_horiz</i>
                                   </button>
                               </td>
                           </tr>
@@ -301,11 +326,11 @@
                               <td>Selasa, 24/09/2018</td>
                               <td>Sakit</td>
                               <td>
-                                  <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                                  <span class="not-list"><i class="material-icons">close</i></i></span>
                               </td>
                               <td>
                                   <button class="btn rounded btn-detail" title="Detail">
-                                      <i class="fas fa-search-plus"></i>
+                                      <i class="material-icons">more_horiz</i>
                                   </button>
                               </td>
                           </tr>
@@ -314,11 +339,11 @@
                               <td>Rabu, 25/09/2018</td>
                               <td>Hadir</td>
                               <td>
-                                  <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                  <span class="check-list"><i class="material-icons">check</i></span>
                               </td>
                               <td>
                                   <button class="btn rounded btn-detail" title="Detail">
-                                      <i class="fas fa-search-plus"></i>
+                                      <i class="material-icons">more_horiz</i>
                                   </button>
                               </td>
                           </tr>
@@ -327,11 +352,11 @@
                               <td>Kamis, 26/09/2018</td>
                               <td>Perjalanan Dinas</td>
                               <td>
-                                  <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                                  <span class="check-list"><i class="material-icons">check</i></span>
                               </td>
                               <td>
                                   <button class="btn rounded btn-detail" title="Detail">
-                                      <i class="fas fa-search-plus"></i>
+                                      <i class="material-icons">more_horiz</i>
                                   </button>
                               </td>
                           </tr>
@@ -365,8 +390,8 @@
 
 <div class="col-md-3 col-6">
   <div class="btn-control float-right">
-      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded prevItem"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded nextItem active"><i class="material-icons">chevron_right</i></button>
   </div>
 </div>
 
@@ -375,13 +400,13 @@
 <div class="row">
 <div class="col-md-12 mt-3 control-date-btn">
   <div class="date-group float-left">
-      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <span class="icon-date"><i class="material-icons">event</i></i></span>
       <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
   </div>
 
   <div class="float-right">
-      <button class="btn"><i class="fas fa-angle-left"></i></button>
-      <button class="btn"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_right</i></button>
   </div>
 
 </div>
@@ -393,10 +418,10 @@
       <table class="table table-responsive table-pegawai">
           <thead>
               <tr>
-                  <th scope="col">Hari, Tanggal</th>
-                  <th scope="col">Absen</th>
-                  <th scope="col">Kinerja</th>
-                  <th scope="col">Detail</th>
+                  <th scope="col">HARI, TANGGAL</th>
+                  <th scope="col">ABSEN</th>
+                  <th scope="col">KINERJA</th>
+                  <th scope="col">DETAIL</th>
               </tr>
           </thead>
           <tbody>
@@ -404,11 +429,11 @@
                   <td>Senin, 23/09/2018</td>
                   <td>Hadir <img src="assets/images/icons/upacara.svg" class="iconUpacara"></td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -417,11 +442,11 @@
                   <td>Selasa, 24/09/2018</td>
                   <td>Sakit</td>
                   <td>
-                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                      <span class="not-list"><i class="material-icons">close</i></i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -430,11 +455,11 @@
                   <td>Rabu, 25/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -443,11 +468,11 @@
                   <td>Kamis, 26/09/2018</td>
                   <td>Perjalanan Dinas</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -481,8 +506,8 @@
 
 <div class="col-md-3 col-6">
   <div class="btn-control float-right">
-      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded prevItem"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded nextItem active"><i class="material-icons">chevron_right</i></button>
   </div>
 </div>
 
@@ -491,13 +516,13 @@
 <div class="row">
 <div class="col-md-12 mt-3 control-date-btn">
   <div class="date-group float-left">
-      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <span class="icon-date"><i class="material-icons">event</i></i></span>
       <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
   </div>
 
   <div class="float-right">
-      <button class="btn"><i class="fas fa-angle-left"></i></button>
-      <button class="btn"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_right</i></button>
   </div>
 
 </div>
@@ -509,10 +534,10 @@
       <table class="table table-responsive table-pegawai">
           <thead>
               <tr>
-                  <th scope="col">Hari, Tanggal</th>
-                  <th scope="col">Absen</th>
-                  <th scope="col">Kinerja</th>
-                  <th scope="col">Detail</th>
+                  <th scope="col">HARI, TANGGAL</th>
+                  <th scope="col">ABSEN</th>
+                  <th scope="col">KINERJA</th>
+                  <th scope="col">DETAIL</th>
               </tr>
           </thead>
           <tbody>
@@ -520,11 +545,11 @@
                   <td>Senin, 23/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -533,11 +558,11 @@
                   <td>Selasa, 24/09/2018</td>
                   <td>Sakit</td>
                   <td>
-                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                      <span class="not-list"><i class="material-icons">close</i></i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -546,11 +571,11 @@
                   <td>Rabu, 25/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -559,11 +584,11 @@
                   <td>Kamis, 26/09/2018</td>
                   <td>Perjalanan Dinas</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -597,8 +622,8 @@
 
 <div class="col-md-3 col-6">
   <div class="btn-control float-right">
-      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded prevItem"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded nextItem active"><i class="material-icons">chevron_right</i></button>
   </div>
 </div>
 
@@ -607,13 +632,13 @@
 <div class="row">
 <div class="col-md-12 mt-3 control-date-btn">
   <div class="date-group float-left">
-      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <span class="icon-date"><i class="material-icons">event</i></i></span>
       <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
   </div>
 
   <div class="float-right">
-      <button class="btn"><i class="fas fa-angle-left"></i></button>
-      <button class="btn"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_right</i></button>
   </div>
 
 </div>
@@ -625,10 +650,10 @@
       <table class="table table-responsive table-pegawai">
           <thead>
               <tr>
-                  <th scope="col">Hari, Tanggal</th>
-                  <th scope="col">Absen</th>
-                  <th scope="col">Kinerja</th>
-                  <th scope="col">Detail</th>
+                  <th scope="col">HARI, TANGGAL</th>
+                  <th scope="col">ABSEN</th>
+                  <th scope="col">KINERJA</th>
+                  <th scope="col">DETAIL</th>
               </tr>
           </thead>
           <tbody>
@@ -636,11 +661,11 @@
                   <td>Senin, 23/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -649,11 +674,11 @@
                   <td>Selasa, 24/09/2018</td>
                   <td>Sakit</td>
                   <td>
-                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                      <span class="not-list"><i class="material-icons">close</i></i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -662,11 +687,11 @@
                   <td>Rabu, 25/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -675,11 +700,11 @@
                   <td>Kamis, 26/09/2018</td>
                   <td>Perjalanan Dinas</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -713,8 +738,8 @@
 
 <div class="col-md-3 col-6">
   <div class="btn-control float-right">
-      <button class="btn btn-rounded prevItem"><i class="fas fa-angle-left"></i></button>
-      <button class="btn btn-rounded nextItem active"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded prevItem"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded nextItem active"><i class="material-icons">chevron_right</i></button>
   </div>
 </div>
 
@@ -723,13 +748,13 @@
 <div class="row">
 <div class="col-md-12 mt-3 control-date-btn">
   <div class="date-group float-left">
-      <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+      <span class="icon-date"><i class="material-icons">event</i></i></span>
       <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan" />
   </div>
 
   <div class="float-right">
-      <button class="btn"><i class="fas fa-angle-left"></i></button>
-      <button class="btn"><i class="fas fa-angle-right"></i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_left</i></button>
+      <button class="btn btn-rounded"><i class="material-icons">chevron_right</i></button>
   </div>
 
 </div>
@@ -741,10 +766,10 @@
       <table class="table table-responsive table-pegawai">
           <thead>
               <tr>
-                  <th scope="col">Hari, Tanggal</th>
-                  <th scope="col">Absen</th>
-                  <th scope="col">Kinerja</th>
-                  <th scope="col">Detail</th>
+                  <th scope="col">HARI, TANGGAL</th>
+                  <th scope="col">ABSEN</th>
+                  <th scope="col">KINERJA</th>
+                  <th scope="col">DETAIL</th>
               </tr>
           </thead>
           <tbody>
@@ -752,11 +777,11 @@
                   <td>Senin, 23/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -765,11 +790,11 @@
                   <td>Selasa, 24/09/2018</td>
                   <td>Sakit</td>
                   <td>
-                      <span class="not-list"><i class="fas fa-lg fa-times"></i></span>
+                      <span class="not-list"><i class="material-icons">close</i></i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -778,11 +803,11 @@
                   <td>Rabu, 25/09/2018</td>
                   <td>Hadir</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -791,11 +816,11 @@
                   <td>Kamis, 26/09/2018</td>
                   <td>Perjalanan Dinas</td>
                   <td>
-                      <span class="check-list"><i class="fas fa-lg fa-check"></i></span>
+                      <span class="check-list"><i class="material-icons">check</i></span>
                   </td>
                   <td>
                       <button class="btn rounded btn-detail" title="Detail">
-                          <i class="fas fa-search-plus"></i>
+                          <i class="material-icons">more_horiz</i>
                       </button>
                   </td>
               </tr>
@@ -818,10 +843,10 @@
   </div>
   <!-- button control -->
   <a class="control-left" onclick="plusSlides(-1)">
-      <i class="fas fa-angle-left"></i>
+      <i class="material-icons">chevron_left</i>
   </a>
   <a class="control-right" onclick="plusSlides(1)">
-      <i class="fas fa-angle-right"></i>
+      <i class="material-icons">chevron_right</i>
   </a>
   <div class="container">
       <div class="row">
@@ -836,13 +861,21 @@
                       <div class="clearfix"></div>
                   </div>
                   <div class="desc-detail">
-                      <h4>Hadir</h4>
+                      <div class="title-detail">
+                        <h4>Hadir</h4>
+                        <img src="assets/images/icons/upacara.svg" class="iconUpacara">
+                      </div>
                       <small>Jam Masuk - Jam Pulang</small>
                       <br>
                       <label>07:15 - 16:00</label>
                       <hr>
-                      <h4>Penilaian Kinerja</h4>
-                      <span class="check-list float-right"><i class="fas fa-lg fa-check"></i></span>
+                      <div class="title-values">
+                        <h4>Penilaian Kinerja</h4>
+                        <span class="check-list"><i class="material-icons">check</i></span>
+                        <div class="value-kinerja">
+                          <h2>100%</h2>
+                        </div>
+                      </div>
                       <h6>Rincian Kinerja</h6>
                       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
                           possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
@@ -854,112 +887,48 @@
                           saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
                           excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
                           accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                      <hr>
-                      <div class="wrap-modal-value table-responsive">
-                          <h4 class="float-left">Penilaian Etika</h4>
-                          <span class="badge text-white float-right">September 2018</span>
-                          <table>
-                              <tr>
-                                  <td>Upacara dan Apel 30(%)</td>
-                                  <td>15%</td>
-                                  <td colspan="3" rowspan="3">
-                                          <div class="value-percent">
-                                              <div class="values">
-                                                  <h2>75%</h2>
-                                                  <div class="clearfix"></div>
-                                              </div>
-                                              <div class="ket">Cukup Baik</div>
-                                          </div>
-                                  </td>
-                              </tr>
-
-                              <tr>
-                                  <td>Perilaku Kerja 30(%)</td>
-                                  <td>20%</td>
-                              </tr>
-
-                              <tr>
-                                  <td>Kegiatan Kebersamaan 40(%)</td>
-                                  <td>40%</td>
-                              </tr>
-
-                          </table>                                           
-                          <h6>Keterangan Penilaian</h6>
-                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat
-                              doloremque error aliquid consequuntur, nostrum deleniti incidunt
-                              perferendis quasi explicabo dolorum repellat, esse minus ipsam alias
-                              impedit sapiente culpa aspernatur?</p>
-                      </div>
                   </div>
               </div>
 
               <!--  -->
               <div class="modal-konten mySlides">
-                  <div class="title-name">
-                      <div class="img-user" id="user-modal" style="background-image: url('assets/images/bill.jpg');">
-                      </div>
-                      <h6>Bill Gates</h6>
-                      <span>1929298282929000</span>
-                      <span class="badge text-white float-right">23 September 2018</span>
-                      <div class="clearfix"></div>
-                  </div>
-                  <div class="desc-detail">
+                <div class="title-name">
+                    <div class="img-user" id="user-modal" style="background-image: url('assets/images/steve.jpg');">
+                    </div>
+                    <h6>Steve Jobs</h6>
+                    <span>1929298282929000</span>
+                    <span class="badge text-white float-right">23 September 2018</span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="desc-detail">
+                    <div class="title-detail">
                       <h4>Hadir</h4>
-                      <small>Jam Masuk - Jam Pulang</small>
-                      <br>
-                      <label>07:15 - 16:00</label>
-                      <hr>
+                      <img src="assets/images/icons/upacara.svg" class="iconUpacara">
+                    </div>
+                    <small>Jam Masuk - Jam Pulang</small>
+                    <br>
+                    <label>07:15 - 16:00</label>
+                    <hr>
+                    <div class="title-values">
                       <h4>Penilaian Kinerja</h4>
-                      <span class="check-list float-right"><i class="fas fa-lg fa-check"></i></span>
-                      <h6>Rincian Kinerja</h6>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
-                          possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
-                          saepe odit officiis, ipspsa delectus tempora? Magni, atque totam dicta
-                          accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                      <h6>Keterangan Penilaian</h6>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
-                          possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
-                          saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
-                          excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
-                          accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                      <hr>
-                      <div class="wrap-modal-value table-responsive">
-                              <h4 class="float-left">Penilaian Etika</h4>
-                              <span class="badge text-white float-right">September 2018</span>
-                              <table>
-                                  <tr>
-                                      <td>Upacara dan Apel 30(%)</td>
-                                      <td>15%</td>
-                                      <td colspan="3" rowspan="3">
-                                              <div class="value-percent">
-                                                  <div class="values">
-                                                      <h2>75%</h2>
-                                                      <div class="clearfix"></div>
-                                                  </div>
-                                                  <div class="ket">Cukup Baik</div>
-                                              </div>
-                                      </td>
-                                  </tr>
-
-                                  <tr>
-                                      <td>Perilaku Kerja 30(%)</td>
-                                      <td>20%</td>
-                                  </tr>
-
-                                  <tr>
-                                      <td>Kegiatan Kebersamaan 40(%)</td>
-                                      <td>40%</td>
-                                  </tr>
-
-                              </table>                                           
-                              <h6>Keterangan Penilaian</h6>
-                              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, fugiat
-                                  doloremque error aliquid consequuntur, nostrum deleniti incidunt
-                                  perferendis quasi explicabo dolorum repellat, esse minus ipsam alias
-                                  impedit sapiente culpa aspernatur?</p>
-                          </div>
-                  </div>
-              </div>
+                      <span class="check-list"><i class="material-icons">check</i></span>
+                      <div class="value-kinerja">
+                        <h2>100,9%</h2>
+                      </div>
+                    </div>
+                    <h6>Rincian Kinerja</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
+                        possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
+                        saepe odit officiis, ipspsa delectus tempora? Magni, atque totam dicta
+                        accusantium, velit itaque dolores magnam nihil repellendus!</p>
+                    <h6>Keterangan Penilaian</h6>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus nostrum
+                        possimus asperiores aliquid eaque iusto aut aspernatur earum nihil magnam
+                        saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
+                        excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
+                        accusantium, velit itaque dolores magnam nihil repellendus!</p>
+                </div>
+            </div>
               <!--  -->
           </div>
       </div>

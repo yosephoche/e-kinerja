@@ -118,44 +118,56 @@
         <div class="brand"><img src="assets/images/logo_ekinerja.png" /></div>
 
         <ul>
-          <li>
-            <a href="index.html" class="active">
-              <i class="far fa-calendar-alt"></i> Monitoring Absen
+          <li class="active">
+            <a href="index.html">
+              <i class="material-icons">recent_actors</i>
+              <span>Monitoring Absen</span>
             </a>
           </li>
           <li>
             <a href="rekap-bulanan.html">
-              <i class="fas fa-file-signature"></i> Rekap Bulanan</a
-            >
+              <i class="material-icons">library_books</i>
+              <span>Rekap Bulanan</span>
+            </a>
           </li>
           <li>
             <a href="input-kinerja.html">
-              <i class="far fa-file-alt"></i> Input Kinerja</a
-            >
+              <i class="material-icons">assignment</i>
+              <span>Input Kinerja</span>
+            </a>
           </li>
           <li>
-            <a href="penilaian-kinerja.html"
-              ><i class="fas fa-user-check"></i> Penilaian Kinerja</a
-            >
-          </li>
-          <li>
-            <a href="penilaian-etika.html">
-              <i class="far fa-thumbs-up"></i> Penilaian Etika</a
-            >
+            <a href="penilaian-kinerja.html">
+                <i class="material-icons">how_to_reg</i>
+                <span>Penilaian Kinerja</span>
+            </a>
           </li>
           <li>
             <a href="tunjangan-kinerja.html">
-              <i class="fas fa-chart-pie"></i> Tunjangan Kinerja</a
-            >
+                <i class="material-icons">insert_chart</i>
+                <span>Tunjangan Kinerja</span>
+            </a>
           </li>
         </ul>
-        <div class="toggleSwitch">
-          <label class="mr-2">Mode Malam</label>
-          <label class="switch">
-            <input id="toggle-switch" type="checkbox" />
-            <span class="slider round"></span>
-          </label>
-        </div>
+        
+        <ul class="wrapToggle">
+            <li>
+                <a href="panduan-monitoring-absen.html">
+                    Panduan Pengguna
+                    <i class="material-icons">help_outline</i>
+                </a>
+            </li>
+            <li>
+                <div class="toggleSwitch">
+                <label class="mr-2">Mode Malam</label>
+                <label class="switch">
+                    <input id="toggle-switch" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+                </div>
+            </li>
+        </ul>
+
       </div>
 
       <div class="main">
@@ -164,7 +176,7 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="group-search">
-                  <span><i class="fas fa-search"></i></span>
+                  <span><i class="material-icons">search</i></span>
                   <input
                     type="text"
                     class="form-control"
@@ -176,7 +188,7 @@
               <div class="offset-md-1 col-md-4 float-left">
                 <div class="input-group mb-3 skpd-option">
                   <div class="input-group-prepend">
-                    <label class="input-group-text">SKPD</label>
+                    <label class="input-group-text">Nama Dinas</label>
                   </div>
                   <select class="custom-select select-custome">
                     <option selected>Dinas Sample A</option>
@@ -210,18 +222,18 @@
                     </div>
                     <div class="btn-control float-right mt-1">
                       <div class="date-group float-left">
-                        <span class="icon-date"
-                          ><i class="fas fa-calendar-alt"></i
-                        ></span>
+                        <span class="icon-date">
+                          <i class="material-icons">event</i>
+                        </span>
                         <input class="datepicker" placeholder="Pilih Tanggal" />
                       </div>
 
                       <div class="float-right">
                         <button class="btn btn-rounded">
-                          <i class="fas fa-angle-left"></i>
+                          <i class="material-icons">chevron_left</i>
                         </button>
                         <button class="btn btn-rounded active">
-                          <i class="fas fa-angle-right"></i>
+                            <i class="material-icons">chevron_right</i>
                         </button>
                       </div>
                     </div>
@@ -235,9 +247,9 @@
                         <thead>
                           <tr>
                             <th scope="col"></th>
-                            <th scope="col">NIP Pegawai</th>
-                            <th scope="col">Nama Pegawai</th>
-                            <th scope="col">Jam Masuk - Jam Pulang</th>
+                            <th scope="col">NIP PEGAWAI</th>
+                            <th scope="col">NAMA PEGAWAI</th>
+                            <th scope="col">JAM MASUK - JAM PULANG</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -251,7 +263,14 @@
                             </td>
                             <td>1929298282929000</td>
                             <td><a href="">Alfian Labeda</a> <img src="assets/images/icons/upacara.svg" class="iconUpacara"></td>
-                            <td>07:15 <span>-</span> 16:00</td>
+                            <td>
+                                <div class="presents">
+                                  <div>Hadir</div>
+                                  <div>7:15</div>
+                                  <div class="lines"></div>
+                                  <div>16:00</div>
+                                </div>
+                            </td>
                           </tr>
                           <tr>
                             <td>

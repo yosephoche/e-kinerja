@@ -103,50 +103,60 @@
       </div>
 
       <div class="sidebar1">
-        <div class="brand">
-          <img src="assets/images/logo_ekinerja.png" width="120" />
+          <div class="brand"><img src="assets/images/logo_ekinerja.png" /></div>
+  
+          <ul>
+            <li>
+              <a href="index.html">
+                <i class="material-icons">recent_actors</i>
+                <span>Monitoring Absen</span>
+              </a>
+            </li>
+            <li>
+              <a href="rekap-bulanan.html">
+                <i class="material-icons">library_books</i>
+                <span>Rekap Bulanan</span>
+              </a>
+            </li>
+            <li class="active">
+              <a href="input-kinerja.html">
+                <i class="material-icons">assignment</i>
+                <span>Input Kinerja</span>
+              </a>
+            </li>
+            <li>
+              <a href="penilaian-kinerja.html">
+                  <i class="material-icons">how_to_reg</i>
+                  <span>Penilaian Kinerja</span>
+              </a>
+            </li>
+            <li>
+              <a href="tunjangan-kinerja.html">
+                  <i class="material-icons">insert_chart</i>
+                  <span>Tunjangan Kinerja</span>
+              </a>
+            </li>
+          </ul>
+          
+          <ul class="wrapToggle">
+              <li>
+                  <a href="panduan-monitoring-absen.html">
+                      Panduan Pengguna
+                      <i class="material-icons">help_outline</i>
+                  </a>
+              </li>
+              <li>
+                  <div class="toggleSwitch">
+                  <label class="mr-2">Mode Malam</label>
+                  <label class="switch">
+                      <input id="toggle-switch" type="checkbox">
+                      <span class="slider round"></span>
+                  </label>
+                  </div>
+              </li>
+          </ul>
+  
         </div>
-
-        <ul>
-          <li>
-            <a href="index.html">
-              <i class="far fa-calendar-alt"></i> Monitoring Absen
-            </a>
-          </li>
-          <li>
-            <a href="rekap-bulanan.html">
-              <i class="fas fa-file-signature"></i> Rekap Bulanan</a
-            >
-          </li>
-          <li>
-            <a href="input-kinerja.html" class="active">
-              <i class="far fa-file-alt"></i> Input Kinerja</a
-            >
-          </li>
-          <li>
-            <a href="penilaian-kinerja.html"
-              ><i class="fas fa-user-check"></i> Penilaian Kinerja</a
-            >
-          </li>
-          <li>
-            <a href="penilaian-etika.html">
-              <i class="far fa-thumbs-up"></i> Penilaian Etika</a
-            >
-          </li>
-          <li>
-            <a href="tunjangan-kinerja.html">
-              <i class="fas fa-chart-pie"></i> Tunjangan Kinerja</a
-            >
-          </li>
-        </ul>
-        <div class="toggleSwitch">
-          <label class="mr-2">Mode Malam</label>
-          <label class="switch">
-            <input id="toggle-switch" type="checkbox" />
-            <span class="slider round"></span>
-          </label>
-        </div>
-      </div>
 
       <div class="main">
         <div class="nav-top-container">
@@ -234,7 +244,12 @@
           </div>
 
           <div class="menu">
-            <div class="title-side-2"><h6>buat laporan kinerja</h6></div>
+            <div class="title-side-2">
+              <h6>
+                buat laporan kinerja
+                <i class="material-icons">arrow_drop_down</i>
+              </h6>
+            </div>
             <!-- <div> -->
             <ul class="nav nav-pills" id="myTab" role="tablist">
               <li>
@@ -324,15 +339,16 @@
                 <div class="col-md-8">
                   <div class="input-group hadir">
                     <!-- <input class="ml-2 mt-2" type="radio"> -->
-                    <h5>Hadir</h5>
+                    <h5 class="mb-4">Hadir</h5>
                     <label class="wrap-radio">
                       <input type="radio" name="radio" />
                       <span class="checkmark checkmark-blue"></span>
                     </label>
                   </div>
-                  <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
-                  <textarea autofocus rows="10" class="form-control">
-                  </textarea>
+                  <h6>Rincian Kinerja Harian</h6>
+                  <div class="rincianKinerja" contenteditable="true">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et praesentium rerum quisquam similique, soluta porro nesciunt id officia, repellendus voluptatem molestias? Natus, amet incidunt omnis sit vero nobis eius quaerat?
+                  </div>
                   <button class="btn btn-custom float-right mt-3">
                     Simpan
                   </button>
@@ -376,22 +392,18 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 date-group">
-                      <label class="mb-2 mt-4">Tgl. Mulai</label> <br />
+                      <label>Tgl. Mulai</label> <br />
                       <input class="datepicker" />
-                      <span class="icon-date"
-                        ><i class="fas fa-calendar-alt"></i
-                      ></span>
+                      <span class="icon-date"><i class="material-icons">event</i></span>
                     </div>
                     <div class="col-md-6 date-group">
-                      <label class="mb-2 mt-4">Tgl. Berakhir</label> <br />
+                      <label>Tgl. Berakhir</label> <br />
                       <input class="datepicker" />
-                      <span class="icon-date"
-                        ><i class="fas fa-calendar-alt"></i
-                      ></span>
+                      <span class="icon-date"><i class="material-icons">event</i></span>
                     </div>
                   </div>
                   <h6 class="mb-2">Rincian Kinerja Harian</h6>
-                  <textarea autofocus rows="10" class="form-control">
+                  <textarea autofocus rows="6" class="form-control">
                   </textarea>
                   <button class="btn btn-custom float-right mt-3">
                     Simpan
@@ -436,22 +448,18 @@
                   </div>
                   <div class="row">
                     <div class="col-md-6 date-group">
-                      <label class="mb-2 mt-4">Tgl. Mulai</label>
-                      <input class="datepicker" id="datepicker" />
-                      <span class="icon-date"
-                        ><i class="fas fa-calendar-alt"></i
-                      ></span>
-                    </div>
+                        <label>Tgl. Mulai</label> <br />
+                        <input class="datepicker" />
+                        <span class="icon-date"><i class="material-icons">event</i></span>
+                      </div>
                     <div class="col-md-6 date-group">
-                      <label class="mb-2 mt-4">Tgl. Berakhir</label>
-                      <input class="datepicker" id="datepicker1" />
-                      <span class="icon-date"
-                        ><i class="fas fa-calendar-alt"></i
-                      ></span>
+                      <label>Tgl. Berakhir</label> <br />
+                      <input class="datepicker" />
+                      <span class="icon-date"><i class="material-icons">event</i></span>
                     </div>
                   </div>
                   <h6 class="mb-2">Keterangan</h6>
-                  <textarea autofocus rows="10" class="form-control">
+                  <textarea autofocus rows="6" class="form-control">
                   </textarea>
                   <button class="btn btn-custom float-right mt-3">
                     Simpan
@@ -495,23 +503,19 @@
                     </label>
                   </div>
                   <div class="row">
-                    <div class="col-md-6 date-group">
-                      <label class="mb-2 mt-4">Tgl. Mulai</label>
-                      <input class="datepicker" id="datepicker" />
-                      <span class="icon-date"
-                        ><i class="fas fa-calendar-alt"></i
-                      ></span>
-                    </div>
-                    <div class="col-md-6 date-group">
-                      <label class="mb-2 mt-4">Tgl. Berakhir</label>
-                      <input class="datepicker" id="datepicker1" />
-                      <span class="icon-date"
-                        ><i class="fas fa-calendar-alt"></i
-                      ></span>
-                    </div>
+                      <div class="col-md-6 date-group">
+                          <label>Tgl. Mulai</label> <br />
+                          <input class="datepicker" />
+                          <span class="icon-date"><i class="material-icons">event</i></span>
+                        </div>
+                      <div class="col-md-6 date-group">
+                        <label>Tgl. Berakhir</label> <br />
+                        <input class="datepicker" />
+                        <span class="icon-date"><i class="material-icons">event</i></span>
+                      </div>
                   </div>
                   <h6 class="mb-2">Keterangan</h6>
-                  <textarea autofocus rows="10" class="form-control">
+                  <textarea autofocus rows="6" class="form-control">
                   </textarea>
                   <button class="btn btn-custom float-right mt-3">
                     Simpan
@@ -555,7 +559,7 @@
                     </label>
                   </div>
                   <h6 class="mb-2 mt-4">Keterangan</h6>
-                  <textarea autofocus rows="10" class="form-control">
+                  <textarea autofocus rows="6" class="form-control">
                   </textarea>
                   <button class="btn btn-custom float-right mt-3">
                     Simpan
