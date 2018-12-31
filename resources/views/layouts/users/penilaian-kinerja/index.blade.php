@@ -68,10 +68,10 @@
                   <div class="row" id='wrapReply'>
                       <div class="col-md-12">
                           <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
-                          <form id='formReply'>
+                          <form id='formReply' oninput="amount.value = (principal.valueAsNumber * rate.valueAsNumber) / 100">
                             <input id="id" type='hidden' name='id' required>
                             <input id="nip" type='hidden' name='nip' required>
-                            <input id="nilai_kinerja" type='text' name='nilai_kinerja' class="form-control" required>
+                            <input type="range" id="nilai_kinerja" name='nilai_kinerja' class="slider" min="0" max="100" id="rate" name="rate" value="0" oninput="thisRate.value = rate.value" required>
                             <textarea autofocus rows="8" name="keterangan_approve" class="form-control"></textarea>
                           </form>
                           <div class="mt-2 float-right">
