@@ -68,6 +68,7 @@ class PenilaianKinerjaController extends ApiController
     public function replyKinerja(Request $r)
     {
         $r->validate([
+        'nilai_kinerja'=>['numeric','required'],
         'nip' => ['numeric','required',Rule::in(Pegawai::pluck('nip')->toArray())],
         'type' => ['numeric','required',Rule::in([1,2])],
         'keterangan_approve' => ['required']
@@ -75,6 +76,7 @@ class PenilaianKinerjaController extends ApiController
         try {
             $kinerja = Kinerja::find($r->id);
             $kinerja->keterangan_approve = $r->keterangan_approve;
+            $kinerja->nilai_kinerja = $r->nilai_kinerja;
             $kinerja->approve = $r->type;
             $kinerja->save();
             return $this->ApiSpecResponses(['status'=>'HTTP_OK']);

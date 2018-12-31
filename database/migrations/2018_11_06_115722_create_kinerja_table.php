@@ -18,9 +18,10 @@ class CreateKinerjaTable extends Migration
             $table->string('nip')->index();
             $table->date('tgl_mulai');
             $table->date('tgl_selesai');
-            $table->enum('jenis_kinerja',['hadir','perjalanan_dinas','cuti','izin','sakit']);
+            $table->enum('jenis_kinerja', ['hadir','perjalanan_dinas','cuti','izin','sakit']);
             $table->text('rincian_kinerja');
             $table->boolean('approve')->nullable();
+            $table->float('nilai_kinerja', 0)->nullable();
             $table->text('keterangan_approve')->nullable();
             $table->timestamps();
         });
