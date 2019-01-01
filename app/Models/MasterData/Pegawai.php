@@ -28,6 +28,11 @@ class Pegawai extends Authenticatable
         return $this->belongsTo(Agama::class, 'id_agama');
     }
 
+    public function pegawaiTask()
+    {
+        return $this->hasMany('App\Models\MasterData\PegawaiSkpTask', 'nip', 'nip');
+    }
+
     public function jabatan()
     {
         return $this->belongsTo(Jabatan::class, 'id_jabatan');

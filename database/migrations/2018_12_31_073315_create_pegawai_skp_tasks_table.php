@@ -17,11 +17,25 @@ class CreatePegawaiSkpTasksTable extends Migration
             $table->increments('id');
             $table->uuid('uuid');
             $table->integer('skp_task_id')->unsigned()->index();
-            $table->integer('pegawai_id')->unsigned()->index();
-            $table->timestamps('tgl_penunjukan');
-            $table->timestamps('tgl_selesai');
-            $table->timestamps('tgl_tunda');
+            $table->string('nip')->index();
+            $table->timestamp('tgl_penunjukan');
+            $table->timestamp('tgl_tunda')->useCurrent();
+            $table->timestamp('tgl_selesai')->useCurrent();
             $table->timestamps();
+        });
+
+        Schema::table('pegawai_skp_tasks',function (Blueprint $table){
+            $table->foreign('skp_task_id')
+                ->on('skp_task')
+                ->references('id')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
+            $table->foreign('nip')
+                ->on('pegawai')
+                ->references('nip')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 
