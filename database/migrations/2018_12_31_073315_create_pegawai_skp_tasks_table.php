@@ -18,6 +18,9 @@ class CreatePegawaiSkpTasksTable extends Migration
             $table->uuid('uuid');
             $table->integer('skp_task_id')->unsigned()->index();
             $table->integer('pegawai_id')->unsigned()->index();
+            $table->timestamps('tgl_penunjukan');
+            $table->timestamps('tgl_selesai');
+            $table->timestamps('tgl_tunda');
             $table->timestamps();
         });
     }
