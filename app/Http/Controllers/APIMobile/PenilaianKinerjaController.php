@@ -75,14 +75,14 @@ class PenilaianKinerjaController extends ApiController
             $kinerja = Kinerja::where('nip', $pegawai->nip)
             ->whereDate('tgl_mulai', '<=', $r->date)
             ->whereDate('tgl_mulai', '>=', $r->date)
-            ->select('id', 'nip', 'tgl_mulai', 'tgl_selesai', 'jenis_kinerja', 'rincian_kinerja', 'approve', 'keterangan_approve')
+            ->select('id', 'nip', 'tgl_mulai', 'tgl_selesai', 'jenis_kinerja', 'rincian_kinerja', 'approve', 'nilai_kinerja', 'keterangan_approve')
             ->terbaru()
             ->first();
         } else {
             $kinerja = Kinerja::where('nip', $pegawai->nip)
             ->whereDate('tgl_mulai', '<=', date('Y-m-d'))
             ->whereDate('tgl_mulai', '>=', date('Y-m-d'))
-            ->select('id', 'nip', 'tgl_mulai', 'tgl_selesai', 'jenis_kinerja', 'rincian_kinerja', 'approve', 'keterangan_approve')
+            ->select('id', 'nip', 'tgl_mulai', 'tgl_selesai', 'jenis_kinerja', 'rincian_kinerja', 'approve', 'nilai_kinerja', 'keterangan_approve')
             ->terbaru()
             ->first();
         }
@@ -94,6 +94,7 @@ class PenilaianKinerjaController extends ApiController
   
     public function replyKinerja(Request $r) {
         $r->validate([
+            'nilai_kinerja'=>['numeric','required'],
             'nip' => ['numeric','required',Rule::in(Pegawai::pluck('nip')->toArray())],
             'type' => ['numeric','required',Rule::in([1,2])],
             'keterangan_approve' => ['required']
@@ -101,6 +102,7 @@ class PenilaianKinerjaController extends ApiController
         try {
             $kinerja = Kinerja::find($r->id);
             $kinerja->keterangan_approve = $r->keterangan_approve;
+            $kinerja->nilai_kinerja = $r->nilai_kinerja;
             $kinerja->approve = $r->type;
             $kinerja->save();
             return $this->ApiSpecResponses(['status'=>'OK']);

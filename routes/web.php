@@ -76,6 +76,15 @@ Route::group(['prefix' => 'master-data','namespace' => 'MasterData', 'middleware
         Route::post('{id}','JabatanController@update')->name('jabatan.update');
         Route::post('delete/{id}','JabatanController@delete')->name('jabatan.delete');
     });
+    Route::group(['prefix' => 'skp'],function (){
+        Route::get('','SkpController@index')->name('skp.index');
+        Route::get('add','SkpController@add')->name('skp.add');
+        Route::get('{id}','SkpController@show')->name('skp.detail');
+        Route::get('edit/{id}','SkpController@edit')->name('skp.edit');
+        Route::post('','SkpController@store')->name('skp.store');
+        Route::post('{id}','SkpController@update')->name('skp.update');
+        Route::post('delete/{id}','SkpController@delete')->name('skp.delete');
+    });
     Route::group(['prefix' => 'agama'],function (){
         Route::get('','StaticDataController@getAgama');
         Route::get('{id}','StaticDataController@showAgama');
@@ -155,6 +164,13 @@ Route::group(['prefix' => 'api-web','namespace' => 'API'],function (){
             Route::post('store','JabatanController@storeJabatan')->name('api.web.master-data.jabatan.store');
             Route::post('{id}','JabatanController@updateJabatan')->name('api.web.master-data.jabatan.update');
             Route::post('delete/{id}','JabatanController@deleteJabatan')->name('api.web.master-data.jabatan.delete');
+        });
+        Route::group(['prefix' => 'skp'],function (){
+            Route::get('','SkpController@listSkp')->name('api.web.master-data.skp');
+            Route::get('get-pagination','SkpController@getpage')->name('api.web.master-data.skp.page');
+            Route::post('store','SkpController@storeSkp')->name('api.web.master-data.skp.store');
+            Route::post('{id}','SkpController@updateSkp')->name('api.web.master-data.skp.update');
+            Route::post('delete/{id}','SkpController@deleteSkp')->name('api.web.master-data.skp.delete');
         });
         Route::group(['prefix' => 'eselon'],function (){
             Route::get('','EselonController@listEselon')->name('api.web.master-data.eselon');
