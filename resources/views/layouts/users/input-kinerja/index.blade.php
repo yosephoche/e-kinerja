@@ -368,7 +368,8 @@
                     .then(function (res) {
                         data = res.response;
                         $('#hadir').find('[name=id]').val(data.id)
-                        $('#hadir').find('[name=rincian_kinerja]').val(data.rincian_kinerja)
+                        $('#hadir').find('div.rincianKinerja').html(data.rincian_kinerja)
+                        // $('#hadir').find('[name=rincian_kinerja]').val(data.rincian_kinerja)
                         $('#hapus-kinerja').show();
                     }, function (err) {
                         $('#hadir').find('[name=id]').val('')
@@ -430,7 +431,11 @@
                 }).then((result) => {
                     if (result.value) {
                         $('.loading').show();
-                        $.post(action, data.serialize()+(status ? '&status='+status : ''))
+                        rincian_kinerja = ''
+                        if ($('[name=jenis_kinerja]').val() == 'hadir'){
+                            rincian_kinerja =  $('div.rincianKinerja').html();
+                        }
+                        $.post(action, data.serialize()+(status ? '&status='+status : '')+(rincian_kinerja != '' ? '&rincian_kinerja='+rincian_kinerja : ''))
                             .then(function (res) {
                                 $('.loading').hide();
                                 if (res.diagnostic.code == 200) {

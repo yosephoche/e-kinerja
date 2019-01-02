@@ -162,8 +162,13 @@
                                 <br>
                                 <label><span id="detail-jam-masuk">--:--</span> - <span id="detail-jam-pulang">--:--</span></label>
                                 <hr>
-                                <h4>Penilaian Kinerja</h4>
-                                <span id="detail-approve" class=" float-right"><i class="fas fa-lg"></i></span>
+                                <div class="title-values">
+                                    <h4>Penilaian Kinerja</h4>
+                                    <span id="detail-approve" class=" float-right"><i class="fas fa-lg"></i></span>
+                                    <div class="value-kinerja">
+                                        <h2>100%</h2>
+                                    </div>
+                                </div>
                                 <h6>Rincian Kinerja</h6>
                                 <p id="detail-kinerja"></p>
                                 <h6>Keterangan Penilaian</h6>
@@ -354,9 +359,20 @@
                                         color_persentase = ''
                                     }
                                 }*/
+                                var badge_kinerja = '';
+                                if (val.status == 'Hadir'){
+                                    if (val.absen.length > 0){
+                                        masuk = val.absen[0].checktime.split(" ");
+                                        pulang = val.absen[1].checktime.split(" ");
+                                        badge_kinerja = '<div class="presents"><div>Hadir</div><div>'+masuk[1]+'</div><div class="lines"></div><div>'+pulang[1]+'</div>'+(val.apel ? '<img src="assets/images/icons/upacara.svg" class="iconUpacara">' : '')+'</div>';
+                                    }
+                                } else {
+                                    if (val.absen.length > 0) {
+                                        badge_kinerja = '<div class="badge badge-gray text-white mr-2">Alpa</div>'
+                                    }
+                                }
                                 if (val.kinerja){
                                     kinerja = ( val.kinerja ? (val.kinerja.jenis_kinerja == 'hadir') ? val.status : capitalizeFirstLetter(val.kinerja.jenis_kinerja.replace('_',' ')) : '');
-                                    var badge_kinerja = '';
                                     if (kinerja == 'Hadir'){
                                         if (val.absen){
                                             masuk = val.absen[0].checktime.split(" ");
