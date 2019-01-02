@@ -118,7 +118,7 @@
                     var foto = val.foto ? "{{url('')}}/storage/" + val.foto : "{{url('assets/images/img-user.png')}}"
                     var status = '';
                     if (val.kinerja.length != 0) {
-                      if (val.kinerja[0].approve == 1) {
+                      if (val.kinerja[0].nilai_kinerja == 0) {
                         var attrClass = 'not-list';
                         var status = 'fa-times';
                       } else if(val.kinerja[0].approve == 2) {
@@ -266,32 +266,47 @@
           });
 
           $(document).on('click','.btn-approve',function(){
-            $("#formReply").serialize();
-            $.ajax({
-               type: "POST",
-               url: "{{route('api.web.reply-penilaian-kinerja')}}",
-               data: 'type='+$(this).data('action')+'&'+$("#formReply").serialize(),
-               success: function(data,xhr) {
-                 if (xhr == 'success') {
-                   $('#formReply').each(function(){
-                     this.reset();
-                     getBawahan();
-                   });
-                   swal({
-                      type: 'success',
-                      title: 'Berhasil',
-                      text: 'Penilaian Kinerja berhasil ditambahkan!'
-                    })
-                 }
-               },
-               error: function(xhr) {
-                 swal({
-                    type: 'error',
-                    title: 'Terjadi kesalahan',
-                    text: 'Silahkan periksa formulir kembali!'
-                  })
-               }
-             });
+            swal({
+              title: 'Anda yakin data yang diinput telah benar ?',
+              text: "",
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonText: 'Iya, simpan !',
+              cancelButtonText: 'Batalkan'
+            })
+            .then((result) => {
+              if (result.value) {
+                $("#formReply").serialize();
+                $.ajax({
+                  type: "POST",
+                  url: "{{route('api.web.reply-penilaian-kinerja')}}",
+                  data: 'type='+$(this).data('action')+'&'+$("#formReply").serialize(),
+                  success: function(data,xhr) {
+                    if (xhr == 'success') {
+                      $('#formReply').each(function(){
+                        this.reset();
+                        getBawahan();
+                      });
+                      swal({
+                          type: 'success',
+                          title: 'Berhasil',
+                          text: 'Penilaian Kinerja berhasil ditambahkan!'
+                      })
+                    }
+                  },
+                  error: function(xhr) {
+                    swal({
+                        type: 'error',
+                        title: 'Terjadi kesalahan',
+                        text: 'Silahkan periksa formulir kembali!'
+                      })
+                  }
+                });
+              } else {
+                swal("Penilaian kinerja berhasil dibatalkan.");
+              }
+            });
+
           });
       </script>
   @endpush
