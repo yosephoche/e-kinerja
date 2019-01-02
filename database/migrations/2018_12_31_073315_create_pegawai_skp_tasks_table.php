@@ -46,6 +46,10 @@ class CreatePegawaiSkpTasksTable extends Migration
      */
     public function down()
     {
+        Schema::table('pegawai_skp_tasks',function (Blueprint $table){
+            $table->dropForeign('pegawai_skp_tasks_skp_task_id_foreign');
+            $table->dropForeign('pegawai_skp_tasks_nip_foreign');
+        });
         Schema::dropIfExists('pegawai_skp_tasks');
     }
 }

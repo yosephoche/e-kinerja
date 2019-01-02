@@ -70,7 +70,7 @@ class LoginController extends Controller
             'nama' => $user->nama,
             'nip' => $user->nip,
             'foto' => $user->foto,
-            'jabatan' => $user->jabatan()->first()->jabatan,
+            'jabatan' => $user->jabatan()->first() ? $user->jabatan()->first()->jabatan : '',
             'tempat_lahir' => $user->tempat_lahir,
             'tanggal_lahir' => $user->tanggal_lahir,
             'bulan_lahir' => ucfirst(\App\Models\MasterData\Bulan::find((int)date('m', strtotime($user->tanggal_lahir)))->nama_bulan),

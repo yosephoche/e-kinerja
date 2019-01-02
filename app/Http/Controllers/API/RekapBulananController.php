@@ -65,6 +65,7 @@ class RekapBulananController extends ApiController
         }
         $data_inout = [];
         foreach ($hari_kerja AS $key => $hk) {
+            $apel= false;
             $kinerja = $pegawai->kinerja()->where('tgl_mulai', '<=', $hk->tanggal)->where('tgl_selesai', '>=', $hk->tanggal)->terbaru()->first();
             $kehadiran = $pegawai->checkinout()->where('checktime', 'like', '%' . $hk->tanggal . '%')->orderBy('checktype', 'desc')->get()->toArray();
             if (count($kehadiran) > 0) {
@@ -84,6 +85,11 @@ class RekapBulananController extends ApiController
                     if ((strtotime($pulang) - (strtotime($masuk))) >= (8.5 * 3600)) {
                         $kehadiran['status'] = 'hadir';
                     }
+                    if (date('N',strtotime($hk->tanggal)) != 1){
+                        if (strtotime($masuk) <= strtotime($hk->tanggal . " 07:30:00")) {
+                            $apel = true;
+                        }
+                    }
                 }
             }
 //            $etika = $pegawai->etika()->where('tanggal',$hk->tanggal)->first();
@@ -91,6 +97,7 @@ class RekapBulananController extends ApiController
             if ($status == 'Hadir') {
                 $status = ucfirst($kehadiran['status']);
             }
+
             $data_inout[] = [
                 'tgl_prev' => isset($hari_kerja[$key - 1]->tanggal) ? $hari_kerja[$key - 1]->tanggal : '',
                 'tgl_next' => isset($hari_kerja[$key + 1]->tanggal) ? $hari_kerja[$key + 1]->tanggal : '',
@@ -99,6 +106,7 @@ class RekapBulananController extends ApiController
                 'hari' => ucfirst($hk->Hari->nama_hari),
                 'checkinout' => $kehadiran,
                 'status' => $status,
+                'apel' => $apel,
 //                'persentase' => isset($etika->persentase)?$etika->persentase : '',
                 'approve' => isset($kinerja->approve) ? $kinerja->approve : ''
             ];
@@ -136,22 +144,53 @@ class RekapBulananController extends ApiController
         /* Data etika */
         $bulan = date('m', strtotime($tgl));
         $tahun = date('Y', strtotime($tgl));
-        $etika = Etika::where("nip", $pegawai->nip)
+        /*$etika = Etika::where("nip", $pegawai->nip)
             ->where("tanggal", 'like', $tahun . "-" . $bulan . "%")
             ->first();
         if ($etika)
-            $etika->tanggal_etika = ucfirst(Bulan::where('kode', $bulan)->first()->nama_bulan) . " " . $tahun;
+            $etika->tanggal_etika = ucfirst(Bulan::where('kode', $bulan)->first()->nama_bulan) . " " . $tahun;*/
 
         /* Data checkinout */
         $checkinout = Checkinout::where("nip", $pegawai->nip)
             ->whereDate("checktime", $tgl)
             ->get();
-
+        $apel = false;
+        if ($kinerja){
+            if ($kinerja->jenis_kinerja == 'hadir'){
+                $chk = $checkinout->toArray();
+                if (count($chk) > 0) {
+                    $kinerja->jenis_kinerja = 'alpa';
+                    $masuk = $pulang = null;
+                    foreach ($chk AS $kh) {
+                        if (isset($kh['checktype'])) {
+                            if ($kh['checktype'] == 0) {
+                                $masuk = $kh['checktime'];
+                            }
+                            if ($kh['checktype'] == 1) {
+                                $pulang = $kh['checktime'];
+                            }
+                        }
+                    }
+                    if (strtotime($masuk) <= strtotime($tgl . " 09:00:00")) {
+                        if ((strtotime($pulang) - (strtotime($masuk))) >= (8.5 * 3600)) {
+                            $kinerja->jenis_kinerja = 'hadir';
+                        }
+                        if (date('N',strtotime($tgl)) != 1){
+                            if (strtotime($masuk) <= strtotime($tgl . " 07:30:00")) {
+                                $apel = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         /* Data array */
         $result = [
             "kinerja" => $kinerja,
-            "etika" => $etika,
+            "jenis_kinerja" => ucwords(str_replace('_',' ',$kinerja->jenis_kinerja)),
+            "apel" => $apel,
+//            "etika" => $etika,
             "checkinout" => $checkinout,
             "tanggal" => $this->formatDate2($tgl),
         ];

@@ -19,15 +19,15 @@
         <div class="sidebar2">
 
             <div class="group-search" style="margin-bottom: 10px">
-                <span><i class="fas fa-search"></i></span>
+                <span><i class="material-icons">search</i></span>
                 <input id="search" type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
             </div>
             <div class="row">
                 <div class="col-md-12 mb-2">
                     <div class="skpd-rekap">
-                        <div class="input-group mb-3 skpd-option">
+                        <div class="input-group skpd-option">
                             <div class="input-group-prepend">
-                                <label class="input-group-text">SKPD</label>
+                                <label class="input-group-text">Nama Dinas</label>
                             </div>
                             <select id="skpd" class="custom-select select-custome">
                                 @foreach ($skpd as $key => $item)
@@ -73,10 +73,8 @@
 
                         <div class="col-md-3 col-6">
                             <div class="btn-control float-right">
-                                <button id="pegawai-sebelumnya" inc-index="-1" class="btn btn-rounded prev"><i
-                                        class="fas fa-angle-left"></i></button>
-                                <button id="pegawai-selanjutnya" inc-index="1" class="btn btn-rounded next active"><i
-                                        class="fas fa-angle-right"></i></button>
+                                <button id="pegawai-sebelumnya" inc-index="-1" class="btn btn-rounded prev"><i class="material-icons">chevron_left</i><</button>
+                                <button id="pegawai-selanjutnya" inc-index="1" class="btn btn-rounded next active"><i class="material-icons">chevron_right</i></button>
                             </div>
                         </div>
                         <div class="clearfix"></div>
@@ -84,15 +82,13 @@
                     <div class="row">
                         <div class="col-md-12 mt-3 control-date-btn">
                             <div class="date-group float-left">
-                                <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                <span class="icon-date"><i class="material-icons">event</i></span>
                                 <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan"/>
                             </div>
 
                             <div class="float-right">
-                                <button id="bulan-sebelumnya" data-value="-1" class="btn"><i
-                                        class="fas fa-angle-left"></i></button>
-                                <button id="bulan-selanjutnya" data-value="1" class="btn"><i
-                                        class="fas fa-angle-right"></i></button>
+                                <button id="bulan-sebelumnya" data-value="-1" class="btn btn-rounded"><i class="material-icons">chevron_left</i></button>
+                                <button id="bulan-selanjutnya" data-value="1" class="btn btn-rounded"><i class="material-icons">chevron_right</i></button>
                             </div>
 
                             <div class="clearfix"></div>
@@ -101,11 +97,11 @@
                             <table class="table table-responsive table-pegawai">
                                 <thead>
                                 <tr>
-                                    <th scope="col">Hari, Tanggal</th>
-                                    <th scope="col">Absen</th>
-                                    <th scope="col">Kinerja</th>
+                                    <th scope="col">HARI, TANGGAL</th>
+                                    <th scope="col">ABSEN</th>
+                                    <th scope="col">KINERJA</th>
                                     {{--<th scope="col">Etika</th>--}}
-                                    <th scope="col">Detail</th>
+                                    <th scope="col">DETAIL</th>
                                 </tr>
                                 </thead>
                                 <tbody id="detail-rekap-bulanan">
@@ -127,10 +123,10 @@
                 </div>
                 <!-- button control -->
                 <a class="controlLeft control-left" onclick="plusSlides(-1)">
-                    <i class="fas fa-angle-left"></i>
+                    <i class="material-icons">chevron_left</i>
                 </a>
                 <a class="controlRight control-right" onclick="plusSlides(1)">
-                    <i class="fas fa-angle-right"></i>
+                    <i class="material-icons">chevron_right</i>
                 </a>
                 <div class="container">
                     <div class="row">
@@ -144,51 +140,26 @@
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="desc-detail">
-                                    <h4>Hadir</h4>
+                                    <div class="title-detail">
+                                        <h4 style="width: 500px" id="jenis-kinerja"></h4>
+                                        <img src="assets/images/icons/upacara.svg" id="apel" class="iconUpacara">
+                                    </div>
+
                                     <small>Jam Masuk - Jam Pulang</small>
                                     <br>
                                     <label><span id='checkin'></span> - <span id='checkout'></span></label>
                                     <hr>
-                                    <h4>Penilaian Kinerja</h4>
-                                    <span class="check-list float-right"><i id="kinerja_status"
-                                                                            class="fas fa-lg"></i></span>
+                                    <div class="title-values">
+                                        <h4>Penilaian Kinerja</h4>
+                                        <span class="check-list"><i id="kinerja_status" class="material-icons"></i></span>
+                                        <div class="value-kinerja">
+                                            <h2>100%</h2>
+                                        </div>
+                                    </div>
                                     <h6>Rincian Kinerja</h6>
                                     <p id='kinerja_rinci'></p>
                                     <h6>Keterangan Penilaian</h6>
                                     <p id='kinerja_ket'></p>
-                                    <hr>
-                                    <div class="wrap-modal-value table-responsive">
-                                        <h4 class="float-left">Penilaian Etika</h4>
-                                        <span class="badge text-white float-right" id="tanggal_etika">-</span>
-                                        <table>
-                                            <tbody><tr>
-                                                <td>Upacara dan Apel 30(%)</td>
-                                                <td id="upacara">0%</td>
-                                                <td colspan="3" rowspan="3">
-                                                    <div class="value-percent">
-                                                        <div class="values">
-                                                            <h2 id="etika_val">0%</h2>
-                                                            <div class="clearfix"></div>
-                                                        </div>
-                                                        <div class="ket" id="keterangan_etika">-</div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Perilaku Kerja 30(%)</td>
-                                                <td id="prilaku">0%</td>
-                                            </tr>
-
-                                            <tr>
-                                                <td>Kegiatan Kebersamaan 40(%)</td>
-                                                <td id="kegiatan_kebersamaan">0%</td>
-                                            </tr>
-
-                                            </tbody></table>
-                                        <h6>Keterangan Penilaian</h6>
-                                        <p id='etika_ket'></p>
-                                    </div>
                                 </div>
                             </div>
 
@@ -329,10 +300,10 @@
                             var rekap = res.response.rekap_bulanan.map(function (val, i) {
                                 var color = approve = color_persentase = ''
                                 if (val.approve == 2) {
-                                    approve = 'fa-check';
+                                    approve = 'check';
                                     color = 'check-list'
                                 } else if (val.approve == 1) {
-                                    approve = 'fa-times'
+                                    approve = 'close'
                                     color = 'not-list'
                                 } else if (val.approve == 0) {
                                     color = ''
@@ -353,16 +324,16 @@
                                 }
                                 return '<tr rekap-index="' + i + '" rekap-status="' + val.status + '">\n' +
                                     '<td>' + val.hari + ', ' + val.tanggal + '</td>\n' +
-                                    '<td>' + val.status + '</td>\n' +
+                                    '<td>' + val.status +' '+(val.apel ? '<img src="assets/images/icons/upacara.svg" class="iconUpacara">' : '')+'</td>\n' +
                                     '<td>\n' +
-                                    '<span class="' + color + '"><i class="fas fa-lg ' + approve + '"></i></span>\n' +
+                                    '<span class="' + color + '"><i class="material-icons">'+approve+'</i></span>\n' +
                                     '</td>\n' +
                                     // '<td>\n' +
                                     // '<div class="' + color_persentase + ' text-white mr-2">' + (val.persentase) + ' ' + (typeof val.persentase == 'number' ? '%' : '') + '</div>\n' +
                                     // '</td>\n' +
                                     '<td>\n' +
                                     '<button class="btn rounded btn-detail detailRekap" ' + (val.status == "" ? "style='display : none'" : "") + ' id="detailRekap" list-index="' + i + '" data-prev="' + val.tgl_prev + '" data-start="' + val.tgl + '" data-next="' + val.tgl_next + '" title="Detail">\n' +
-                                    '<i class="fas fa-search-plus"></i>\n' +
+                                    '<i class="material-icons">more_horiz</i>\n' +
                                     '</button>\n' +
                                     '</td>\n' +
                                     '</tr>'
@@ -454,11 +425,17 @@
                             $('.control-left').hide();
                         }
                         rekapDetail = res.response; //return ke rekapDetail
-                        var etika = res.response.etika;
+                        // var etika = res.response.etika;
                         var kinerja = res.response.kinerja;
                         var chekinout = res.response.checkinout;
 
                         // Tampilkan ke view
+                        $('#jenis-kinerja').html(res.response.jenis_kinerja)
+                        if (res.response.apel) {
+                            $('#apel').show();
+                        } else {
+                            $('#apel').hide();
+                        }
                         $('#mdlNama').html($('#detail-nama').html());
                         $('#mdlNip').html($('#detail-nip').html());
                         $('#user-modal').attr('style', $('#detail-img').attr('style'));
@@ -467,7 +444,7 @@
                         $('#checkout').html(chekinout[1] ? chekinout[1].absen_time : '--:--');
                         $('#kinerja_rinci').html(kinerja.rincian_kinerja);
                         $('#kinerja_ket').html(kinerja.keterangan_approve);
-                        if (etika) {
+                        /*if (etika) {
                             if (etika.persentase < 25){
                                 ket = 'Buruk'
                             } else if (etika.persentase < 50){
@@ -493,9 +470,11 @@
                             $('#keterangan_etika').html("-");
                             $('#etika_ket').html("-");
                             $('#tanggal_etika').html("-");
-                        }
+                        }*/
                         if (kinerja.approve == 2) {
-                            $('#kinerja_status').addClass('fa-check');
+                            $('#kinerja_status').html('check');
+                        } else {
+                            $('#kinerja_status').html('');
                         }
                     }).catch((err) => {
                     console.log(err)

@@ -42,8 +42,12 @@
 
             <div class="menu">
                 <div class="title-side-2">
-                    <h6>Buat laporan kinerja</h6>
+                    <h6>
+                        buat laporan kinerja
+                        <i class="material-icons">arrow_drop_down</i>
+                    </h6>
                 </div>
+
                 <!-- <div> -->
                 <ul class="nav nav-pills" id="myTab" role="tablist">
                     <li><a class="active" id="hadir-tab" data-toggle="tab" href="#hadir" role="tab"
@@ -86,14 +90,17 @@
                             <div class="col-md-8">
                                 <div class="input-group hadir">
                                     <!-- <input class="ml-2 mt-2" type="radio"> -->
-                                    <h5>Hadir</h5> <label class="wrap-radio">
+                                    <h5 class="mb-4">Hadir</h5> <label class="wrap-radio">
                                         <input type="radio" name="radio" checked>
                                         <span class="checkmark checkmark-blue"></span>
                                     </label>
                                 </div>
-                                <h6 class="mb-2 mt-4">Rincian Kinerja Harian</h6>
-                                <textarea name="rincian_kinerja" autofocus rows="10" class="form-control"
-                                          required></textarea>
+                                <h6>Rincian Kinerja Harian</h6>
+                                {{--<textarea name="rincian_kinerja" autofocus rows="10" class="form-control"
+                                          required></textarea>--}}
+                                <div class="rincianKinerja" contenteditable="true">
+
+                                </div>
                                 <a style="color: white; display: none" id="hapus-kinerja" class="btn btn-warning mt-3">Hapus</a>
                                 <button type="submit" data-status="5" class="btn btn-custom mt-3">Simpan</button>
                                 <button type="submit" data-status="0"  class="btn btn-success float-right mt-3">Kirim</button>
@@ -137,20 +144,20 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 date-group">
-                                        <label class="mb-2 mt-4">Tgl. Mulai</label>
+                                        <label>Tgl. Mulai</label>
                                         <br>
                                         <input name="tgl_mulai" class="datepicker" autocomplete="off" required/>
-                                        <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                        <span class="icon-date"><i class="material-icons">event</i></span>
                                     </div>
                                     <div class="col-md-6 date-group">
-                                        <label class="mb-2 mt-4">Tgl. Berakhir</label>
+                                        <label>Tgl. Berakhir</label>
                                         <br>
                                         <input name="tgl_selesai" class="datepicker" autocomplete="off" required/>
-                                        <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                        <span class="icon-date"><i class="material-icons">event</i></span>
                                     </div>
                                 </div>
                                 <h6 class="mb-2">Rincian Kinerja Harian</h6>
-                                <textarea name="rincian_kinerja" autofocus rows="10" class="form-control"
+                                <textarea name="rincian_kinerja" autofocus rows="6" class="form-control"
                                           required></textarea>
                                 <button type="submit" class="btn btn-custom float-right mt-3">Kirim</button>
                             </div>
@@ -194,16 +201,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 date-group">
-                                        <label class="mb-2 mt-4">Tgl. Mulai</label>
+                                        <label>Tgl. Mulai</label>
+                                        <br>
                                         <input name="tgl_mulai" class="datepicker" autocomplete="off" id="datepicker"
                                                required/>
-                                        <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                                                <span class="icon-date"><i class="material-icons">event</i></span>
                                     </div>
                                     <div class="col-md-6 date-group">
-                                        <label class="mb-2 mt-4">Tgl. Berakhir</label>
+                                        <label>Tgl. Berakhir</label>
+                                        <br>
                                         <input name="tgl_selesai" class="datepicker" autocomplete="off" id="datepicker1"
                                                required/>
-                                        <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                                                <span class="icon-date"><i class="material-icons">event</i></span>
                                     </div>
                                 </div>
                                 <h6 class="mb-2">Keterangan</h6>
@@ -251,16 +260,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6 date-group">
-                                        <label class="mb-2 mt-4">Tgl. Mulai</label>
+                                        <label>Tgl. Mulai</label>
+                                        <br>
                                         <input name="tgl_mulai" class="datepicker" autocomplete="off" id="datepicker"
                                                required/>
-                                        <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                                                <span class="icon-date"><i class="material-icons">event</i></span>
                                     </div>
                                     <div class="col-md-6 date-group">
-                                        <label class="mb-2 mt-4">Tgl. Berakhir</label>
+                                        <label>Tgl. Berakhir</label>
+                                        <br>
                                         <input name="tgl_selesai" class="datepicker" autocomplete="off" id="datepicker1"
                                                required/>
-                                        <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                                                                <span class="icon-date"><i class="material-icons">event</i></span>
                                     </div>
                                 </div>
                                 <h6 class="mb-2">Keterangan</h6>

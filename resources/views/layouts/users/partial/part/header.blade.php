@@ -11,32 +11,32 @@
 
 </head>
 <body>
-    <div id="preload">
-      <img src="{{ asset('assets/images/loading_ekinerja.svg')}}" width="150">
+<div id="preload">
+    <img src="{{ asset('assets/images/loading_ekinerja.svg')}}" width="150">
+</div>
+<section class="@yield('class')">
+    <div class="burgerBtn">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
     </div>
-    <section class="@yield('class')">
-        <div class="burgerBtn">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-        <div class="overlayProfile"></div>
-        <div class="profile">
-            <div class="imgProfile">
-                <div class="closeProfile">&times;</div>
-                <img src="{{asset('assets/images/bg_login_whitebase.png')}}" class="bgImg" />
-                <div
+    <div class="overlayProfile"></div>
+    <div class="profile">
+        <div class="imgProfile">
+            <div class="closeProfile">&times;</div>
+            <img src="{{asset('assets/images/bg_login_whitebase.png')}}" class="bgImg"/>
+            <div
                 class="imgUser"
                 style="background-image: url('{{ session('user')->get('foto')?url('').'/storage/'.session('user')->get('foto'):asset('assets/images/img-user.png') }}')"
-                ></div>
-                <div class="descUser mt-2">
+            ></div>
+            <div class="descUser mt-2">
                 <h5 class="mb-1">{{ ucfirst(session('user')->get('nama')) }}</h5>
                 <p>{{ session('user')->get('nip') }}</p>
-                </div>
             </div>
-    
-            <div class="descProfile">
-                <div class="dataForm">
+        </div>
+
+        <div class="descProfile">
+            <div class="dataForm">
                 <h5 class="mb-2">Informasi</h5>
                 <div>
                     <span>Jabatan</span>
@@ -44,51 +44,57 @@
                 </div>
                 <div>
                     <span>Tempat, Tgl.Lahir</span>
-                    <p>{{ucwords(session('user')->get('tempat_lahir'))}}, {{ date('m',strtotime(session('user')->get('tanggal_lahir'))) }} , {{ session('user')->get('bulan_lahir') }} {{ date('Y',strtotime(session('user')->get('tanggal_lahir'))) }} </p>
+                    <p>{{ucwords(session('user')->get('tempat_lahir'))}}
+                        , {{ date('m',strtotime(session('user')->get('tanggal_lahir'))) }}
+                        , {{ session('user')->get('bulan_lahir') }} {{ date('Y',strtotime(session('user')->get('tanggal_lahir'))) }} </p>
                 </div>
                 <div>
                     <span>Agama</span>
                     <p>{{ ucwords(session('user')->get('agama')) }}</p>
                 </div>
                 <div>
-                    
+
                     <label for="password">Kata Sandi</label>
                     <div class="input-group">
                         <input
-                        id="password"
-                        type="password"
-                        disabled
-                        value="password"
-                        class="form-control"
+                            id="password"
+                            type="password"
+                            disabled
+                            value="password"
+                            class="form-control"
                         />
                         <div class="input-group-prepend">
-                        <button class="btn btn-warning btn-changePassword" title="Ganti Password">
-                            <i class="fa fa-edit"></i>
-                        </button>
+                            <button class="btn btn-warning btn-changePassword" title="Ganti Password">
+                                <i class="fa fa-edit"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
-                <button 
-                class="btn btn-block btn-out" 
-                id="btn-logout"
-                onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">Logout</button>
+                <button
+                    class="btn btn-block btn-out"
+                    id="btn-logout"
+                    onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">Logout
+                </button>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
+                    @csrf
                 </form>
-                </div>
+            </div>
 
-                <div class="formChangePassword">
+            <div class="formChangePassword">
                 <h5 class="mb-3">Ubah Kata Sandi</h5>
-                <form id="change-password-form" action="{{ route('api.web.master-data.pegawai.update-password') }}" method="POST">
+                <form id="change-password-form" action="{{ route('api.web.master-data.pegawai.update-password') }}"
+                      method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="oldPassword">Kata Sandi Lama</label>
-                        <input type="password" class="form-control" required name="oldPassword" id="oldPassword"placeholder="Kata Sandi Lama">
-                        </div>
+                        <input type="password" class="form-control" required name="oldPassword" id="oldPassword"
+                               placeholder="Kata Sandi Lama">
+                    </div>
                     <div class="form-group">
-                            <label for="newPassword">Kata Sandi Baru</label>
-                            <input type="password" class="form-control" required name="newPassword" id="newPassword"placeholder="Kata Sandi Baru">
+                        <label for="newPassword">Kata Sandi Baru</label>
+                        <input type="password" class="form-control" required name="newPassword" id="newPassword"
+                               placeholder="Kata Sandi Baru">
                     </div>
                     <div class="pt-4">
                         <button class="btn btn-custom-2 btn-cancelChange">Batal</button>
@@ -97,7 +103,7 @@
                 </form>
                 @push('script')
                     <script>
-                        $('#change-password-form').on('submit',function(e){
+                        $('#change-password-form').on('submit', function (e) {
                             e.preventDefault();
                             var data = $(e.target);
                             var form = this;
@@ -114,16 +120,16 @@
                                     $.post(form.action, data.serialize())
                                         .then(function (res) {
                                             $('.preload').hide();
-                                            
+
                                             if (res.diagnostic.code == 200) {
                                                 swal(
                                                     'Password berhasil di ubah!',
                                                     '',
                                                     'success'
                                                 );
-                                                setTimeout(function(){
+                                                setTimeout(function () {
                                                     location.reload();
-                                                },1000);
+                                                }, 1000);
 
                                             } else {
                                                 swal(
@@ -139,7 +145,7 @@
                                                 'warning'
                                             );
                                             $('.overlayProfile').removeClass('show');
-                                            
+
                                             $('.preload').hide();
                                         })
                                 }
@@ -147,38 +153,72 @@
                         })
                     </script>
                 @endpush
+            </div>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="close-side"><i class="fas fa-times"></i></div>
+    </div>
+    <div class="sidebar1">
+        <div class="brand">
+            <img src="{{ asset('assets/images/logo_ekinerja.png') }}" width="120">
+        </div>
+        <ul>
+            @can('monitoring-absen')
+                <li
+                    class="{{str_contains(url()->current(),route('monitoring.absen.index')) ? 'active' : ''}}"><a
+                        href="{{route('monitoring.absen.index')}}">
+                        <i class="material-icons">recent_actors</i>
+                        <span>Monitoring Absen</span>
+                    </a></li>
+            @endcan
+            @can('rekap-bulanan')
+                <li
+                    class="{{str_contains(url()->current(),route('rekap-bulanan.index')) ? 'active' : ''}}"><a
+                        href="{{route('rekap-bulanan.index')}}"><i class="material-icons">library_books</i>
+                        <span>Rekap Bulanan</span></a></li>
+            @endcan
+            @can('input-kinerja')
+                <li
+                    class="{{str_contains(url()->current(),route('input-kinerja.index')) ? 'active' : ''}}"><a
+                        href="{{route('input-kinerja.index')}}"><i class="material-icons">assignment</i>
+                        <span>Input Kinerja</span></a></li>
+            @endcan
+            @can('penilaian-kinerja')
+                <li
+                    class="{{str_contains(url()->current(),route('penilaian-kinerja.index')) ? 'active' : ''}}"><a
+                        href="{{route('penilaian-kinerja.index')}}"><i class="material-icons">how_to_reg</i>
+                        <span>Penilaian Kinerja</span></a></li>
+            @endcan
+            @can('tunjangan-kinerja')
+                <li
+                    class="{{str_contains(url()->current(),route('tunjangan-kinerja.index')) ? 'active' : ''}}"><a
+                        href="{{route('tunjangan-kinerja.index')}}"><i class="material-icons">insert_chart</i>
+                        <span>Tunjangan Kinerja</span></a></li>
+            @endcan
+        </ul>
+        {{--<div class="toggleSwitch">
+            <label class="mr-2">Mode Malam</label>
+            <label class="switch">
+                <input id="toggle-switch" type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>--}}
+        <ul class="wrapToggle">
+            <li>
+                <a href="panduan-monitoring-absen.html">
+                    Panduan Pengguna
+                    <i class="material-icons">help_outline</i>
+                </a>
+            </li>
+            <li>
+                <div class="toggleSwitch">
+                    <label class="mr-2">Mode Malam</label>
+                    <label class="switch">
+                        <input id="toggle-switch" type="checkbox">
+                        <span class="slider round"></span>
+                    </label>
                 </div>
-            </div>
-        </div>
-        <div class="overlay">
-            <div class="close-side"><i class="fas fa-times"></i></div>
-        </div>
-        <div class="sidebar1">
-            <div class="brand">
-                <img src="{{ asset('assets/images/logo_ekinerja.png') }}" width="120">
-            </div>
-            <ul>
-                @can('monitoring-absen')
-                <li><a href="{{route('monitoring.absen.index')}}" class="{{str_contains(url()->current(),route('monitoring.absen.index')) ? 'active' : ''}}"><i class="far fa-calendar-alt"></i> Monitoring Absen</a></li>
-                @endcan
-                @can('rekap-bulanan')
-                <li><a href="{{route('rekap-bulanan.index')}}" class="{{str_contains(url()->current(),route('rekap-bulanan.index')) ? 'active' : ''}}"><i class="fas fa-file-signature"></i> Rekap Bulanan</a></li>
-                @endcan
-                @can('input-kinerja')
-                <li><a href="{{route('input-kinerja.index')}}" class="{{str_contains(url()->current(),route('input-kinerja.index')) ? 'active' : ''}}"><i class="far fa-file-alt"></i> Input Kinerja</a></li>
-                @endcan
-                @can('penilaian-kinerja')
-                <li><a href="{{route('penilaian-kinerja.index')}}" class="{{str_contains(url()->current(),route('penilaian-kinerja.index')) ? 'active' : ''}}"><i class="fas fa-user-check"></i> Penilaian Kinerja</a></li>
-                @endcan
-                @can('tunjangan-kinerja')
-                <li><a href="{{route('tunjangan-kinerja.index')}}" class="{{str_contains(url()->current(),route('tunjangan-kinerja.index')) ? 'active' : ''}}"><i class="fas fa-chart-pie"></i>Tunjangan Kinerja</a></li>
-                @endcan
-            </ul>
-            <div class="toggleSwitch">
-                <label class="mr-2">Mode Malam</label>
-                <label class="switch">
-                    <input id="toggle-switch" type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-            </div>
-        </div>
+            </li>
+        </ul>
+    </div>

@@ -22,51 +22,59 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-12 mt-3 control-date-btn">
-                            <div class="date-group float-left">
-                                <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
+                            <div class="date-group">
+                                <h5>{{ucfirst(\App\Models\MasterData\Bulan::find((int)date('m'))->nama_bulan)}} {{date('Y')}}</h5>
+                            </div>
+                            <div class="date-group">
+                                <span class="icon-date"><i class="material-icons">event</i></span>
                                 <input id="date-rekap" class="datepicker" placeholder="Pilih Bulan"/>
                             </div>
 
-                            <div class="float-right">
+                            <div class="btn-control-group">
                                 <button class="btn btn-rounded active" id="bulan-sebelumnya" data-value="-1"><i
                                         class="fas fa-angle-left"></i></button>
                                 <button class="btn btn-rounded active" id="bulan-selanjutnya" data-value="1"><i
                                         class="fas fa-angle-right"></i></button>
                             </div>
-
-                            <div class="clearfix"></div>
                         </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 diagram-container">
                         <div class="box-diagram" id="diagram1">
                             <div class="persen">
                                 <label class="float-left">ABSEN (
                                     <x id="persentase-absen">0</x>
                                     %)</label>
-                                <span class="float-right"><span id="total-absen">0</span>%</span>
-                                <div class="clearfix"></div>
                             </div>
-                            <canvas id="chart-absen" height="30vh" width="40vw"></canvas>
-                            <div class="capaian text-center">
-                                Pencapaian <span id="pencapaian-absen">0</span>%
+                            <div class="subContainer">
+                                <div>
+                                    <canvas id="chart-absen" width="50hw" height="50vh"></canvas>
+                                </div>
+                                <div class="capaian text-center">
+                                    <h2><span id="total-absen">0</span>%</h2>
+                                    <span>Pencapaian <span id="pencapaian-absen">0</span>%</span>
+                                </div>
                             </div>
+
                         </div>
                         <div class="box-diagram" id="diagram2">
                             <div class="persen">
                                 <label class="float-left">KINERJA (
-                                    <x id="persentase-kinerja">0</x>
-                                    %)</label>
-                                <span class="float-right"><span id="total-kinerja">0</span>%</span>
-                                <div class="clearfix"></div>
+                                        <x id="persentase-kinerja">0</x>
+                                        %)</label>
                             </div>
-                            <canvas id="chart-kinerja" height="30vh" width="40vw"></canvas>
-                            <div class="capaian text-center">
-                                Pencapaian <span id="pencapaian-kinerja">0</span>%
+                            <div class="subContainer">
+                                <div>
+                                    <canvas id="chart-kinerja" width="50hw" height="50vh"></canvas>
+                                </div>
+                                <div class="capaian text-center">
+                                    <h2><span id="total-kinerja">0</span>%</h2>
+                                    <span>Pencapaian <span id="pencapaian-kinerja">0</span>%</span>
+                                </div>
                             </div>
                         </div>
-                        <div class="box-diagram" id="diagram3">
+                        {{--<div class="box-diagram" id="diagram3">
                             <div class="persen">
                                 <label class="float-left">ETIKA (
                                     <x id="persentase-etika">0</x>
@@ -78,19 +86,20 @@
                             <div class="capaian text-center">
                                 Pencapaian <span id="pencapaian-etika">0</span>%
                             </div>
-                        </div>
-                        <div class="box-diagram" id="diagram4">
-                            <div class="chart-container p-2">
-                                <canvas id="chart-tunjangan" height="50vh" width="50vw"></canvas>
+                        </div>--}}
+                        <div class="box-diagram" id="diagram3">
+                            <div class="persen">
+                                <label class="float-right">TUNJANGAN </label>
+                                <div class="clearfix"></div>
                             </div>
-                            <div class="container-desc">
-                                <label>TUNJANGAN</label>
-                                <br>
-                                <span>Rp <span id="total-tunjangan"></span></span>
+                            <div class="subContainer">
+                                <div>
+                                    <canvas id="chart-tunjangan" width="40hw" height="36vh"></canvas>
+                                </div>
                                 <div class="capaian text-center">
-                                    Pencapaian
-                                    <x id="total">0</x>
-                                    %
+                                    <h2><sup>Rp.</sup><span id="total-tunjangan"></span></h2>
+                                    <span>Pencapaian <x id="total">0</x>
+                                    %</span>
                                 </div>
                             </div>
                         </div>
@@ -102,11 +111,11 @@
                         <table class="table table-responsive table-pegawai">
                             <thead>
                             <tr>
-                                <th scope="col">Hari, Tanggal</th>
-                                <th scope="col">Absen</th>
-                                <th scope="col">Kinerja</th>
+                                <th scope="col">HARI, TANGGAL</th>
+                                <th scope="col">ABSEN</th>
+                                <th scope="col">KINERJA</th>
                                 {{--<th scope="col">Etika</th>--}}
-                                <th scope="col">Detail</th>
+                                <th scope="col">DETAIL</th>
                             </tr>
                             </thead>
                             <tbody id="data-tunjangan">
@@ -145,7 +154,10 @@
                                 <div class="clearfix"></div>
                             </div>
                             <div class="desc-detail">
-                                <h4 id="detail-jenis-kinerja"></h4>
+                                <div class="title-detail">
+                                    <h4 style="width: 500px" id="detail-jenis-kinerja"></h4>
+                                    <img src="assets/images/icons/upacara.svg" id="apel" class="iconUpacara">
+                                </div>
                                 <small>Jam Masuk - Jam Pulang</small>
                                 <br>
                                 <label><span id="detail-jam-masuk">--:--</span> - <span id="detail-jam-pulang">--:--</span></label>
@@ -160,7 +172,7 @@
                                     saepe odit officiis, ipsam excepturi maiores? Possimus odit alias fugiat
                                     excepturi dolorem doloripsa delectus tempora? Magni, atque totam dicta
                                     accusantium, velit itaque dolores magnam nihil repellendus!</p>
-                                <hr>
+                                {{--<hr>
                                 <div class="wrap-modal-value table-responsive">
                                     <h4 class="float-left">Penilaian Etika</h4>
                                     <span class="badge text-white float-right" id="tanggal_etika">-</span>
@@ -192,7 +204,7 @@
                                         </tbody></table>
                                     <h6>Keterangan Penilaian</h6>
                                     <p id="detail-etika-keterangan"></p>
-                                </div>
+                                </div>--}}
                             </div>
                         </div>
                     </div>
@@ -204,7 +216,7 @@
         <script>
             var ctx1 = document.getElementById("chart-absen").getContext("2d");
             var ctx2 = document.getElementById("chart-kinerja").getContext("2d");
-            var ctx3 = document.getElementById("chart-etika").getContext("2d");
+            // var ctx3 = document.getElementById("chart-etika").getContext("2d");
             var ctx4 = document.getElementById("chart-tunjangan").getContext("2d");
             var data_response;
             var max_index = 0;
@@ -252,7 +264,7 @@
                             ]
                         };
 
-                        var dataEtika = {
+                        /*var dataEtika = {
                             labels: ["Etika",""],
                             datasets: [
                                 {
@@ -262,7 +274,7 @@
                                     data: [parseInt(res.response.pencapaian.etika), 100 - parseInt(res.response.pencapaian.etika)]
                                 }
                             ]
-                        };
+                        };*/
 
                         var dataTunjangan = {
                             labels: ["Tunjangan",""],
@@ -281,8 +293,8 @@
                             chart.destroy();
                         if (chart2)
                             chart2.destroy();
-                        if (chart3)
-                            chart3.destroy();
+                        /*if (chart3)
+                            chart3.destroy();*/
                         if (chart4)
                             chart4.destroy();
 
@@ -304,14 +316,14 @@
                             }
                         });
 
-                        chart3 = new Chart(ctx3, {
+                        /*chart3 = new Chart(ctx3, {
                             type: "pie",
                             data: dataEtika,
                             options: {
                                 responsive: true,
                                 maintainAspectRatio: true
                             }
-                        });
+                        });*/
 
                         chart4 = new Chart(ctx4, {
                             type: "pie",
@@ -327,7 +339,7 @@
                             max_index = res.response.data.length - 1;
                             var data_tunjangan = res.response.data.map(function (val, i) {
                                 color_persentase = '';
-                                if (val.etika){
+                                /*if (val.etika){
                                     if (val.etika.persentase == 100) {
                                         color_persentase = 'badge badge-blue'
                                     } else if (val.etika.persentase >= 75) {
@@ -341,7 +353,7 @@
                                     } else if (val.etika.persentase == '') {
                                         color_persentase = ''
                                     }
-                                }
+                                }*/
                                 if (val.kinerja){
                                     kinerja = ( val.kinerja ? (val.kinerja.jenis_kinerja == 'hadir') ? val.status : capitalizeFirstLetter(val.kinerja.jenis_kinerja.replace('_',' ')) : '');
                                     var badge_kinerja = '';
@@ -349,7 +361,7 @@
                                         if (val.absen){
                                             masuk = val.absen[0].checktime.split(" ");
                                             pulang = val.absen[1].checktime.split(" ");
-                                            badge_kinerja = '<div class="badge badge-primary text-white mr-2">'+masuk[1]+' - '+pulang[1]+'</div>';
+                                            badge_kinerja = '<div class="presents"><div>Hadir</div><div>'+masuk[1]+'</div><div class="lines"></div><div>'+pulang[1]+'</div>'+(val.apel ? '<img src="assets/images/icons/upacara.svg" class="iconUpacara">' : '')+'</div>';
                                         }
                                     } else if (kinerja == "Perjalanan Dinas"){
                                         badge_kinerja = '<div class="badge badge-green text-white mr-2">'+kinerja+'</div>'
@@ -467,27 +479,36 @@
                 data = data_response.data[index];
                 kinerja = data.kinerja
                 absen = data.absen
-                etika = data.etika
+                // etika = data.etika
                 $('#current-index').val(index);
                 $('.modal-overlay').addClass('show');
                 $('#detail-nama').html(data_response.pegawai.nama)
                 $('#detail-nip').html(data_response.pegawai.nip)
                 $('#detail-tgl').html(data.tanggal_string2)
-                $('#detail-jenis-kinerja').html(kinerja ? capitalizeFirstLetter(kinerja.jenis_kinerja.replace('_',' ')) : '')
+                if (kinerja.jenis_kinerja != 'hadir') {
+                    $('#detail-jenis-kinerja').html(kinerja ? capitalizeFirstLetter(kinerja.jenis_kinerja.replace('_', ' ')) : '')
+                } else {
+                    $('#detail-jenis-kinerja').html(data.status)
+                }
+                if (data.apel){
+                    $('#apel').show();
+                } else {
+                    $('#apel').hide();
+                }
                 $('#detail-jam-masuk').html(absen ? (typeof absen[0] !== 'undefined' ? absen[0].absen_time : '--:--') : '--:--')
                 $('#detail-jam-pulang').html(absen ? (typeof absen[1] !== 'undefined' ? absen[1].absen_time : '--:--') : '--:--')
                 $('#detail-approve').addClass((kinerja ? (kinerja.approve ? (kinerja.approve == 2 ? 'check-list' : 'not-list') : '') : '')).removeClass((kinerja ? (kinerja.approve ? (kinerja.approve == 2 ? 'not-list' : 'check-list') : '') : ''));
                 $('#detail-approve').find('i').addClass((kinerja ? (kinerja.approve ? (kinerja.approve == 2 ? 'fa-check' : 'fa-times') : '') : '')).removeClass((kinerja ? (kinerja.approve ? (kinerja.approve == 2 ? 'fa-times' : 'fa-check') : '') : ''));
                 $('#detail-kinerja').html(kinerja ? kinerja.rincian_kinerja : '');
                 $('#detail-keterangan-approve').html(kinerja ? kinerja.keterangan_approve : '');
-                $('#detail-etika-persentase').html(etika ? etika.persentase+'%' : '');
-                $('#detail-etika-keterangan').html(etika ? etika.keterangan : '');
-                $('#upacara').html(etika ? etika.mengikuti_upacara + '%' : "-");
-                $('#kegiatan_kebersamaan').html(etika ? etika.kegiatan_kebersamaan + '%' : "-");
-                $('#prilaku').html(etika ? etika.perilaku_kerja + '%' : "-");
-                $('#tanggal_etika').html(data.tanggal_etika);
+                // $('#detail-etika-persentase').html(etika ? etika.persentase+'%' : '');
+                // $('#detail-etika-keterangan').html(etika ? etika.keterangan : '');
+                // $('#upacara').html(etika ? etika.mengikuti_upacara + '%' : "-");
+                // $('#kegiatan_kebersamaan').html(etika ? etika.kegiatan_kebersamaan + '%' : "-");
+                // $('#prilaku').html(etika ? etika.perilaku_kerja + '%' : "-");
+                // $('#tanggal_etika').html(data.tanggal_etika);
                 ket = "-";
-                if (etika){
+                /*if (etika){
                     if (etika.persentase < 25){
                         ket = 'Buruk'
                     } else if (etika.persentase < 50){
@@ -497,8 +518,8 @@
                     } else if (etika.persentase <= 100){
                         ket = 'Sangat Baik'
                     }
-                }
-                $('#keterangan_etika').html(ket);
+                }*/
+                // $('#keterangan_etika').html(ket);
                 if (i == 0){
                     $('.control-left').addClass('invisible')
                 } else {
