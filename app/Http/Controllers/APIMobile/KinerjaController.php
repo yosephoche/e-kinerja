@@ -141,7 +141,7 @@ class KinerjaController extends ApiController
 
         $persen_absen = FormulaVariable::where('variable','absen')->first()->persentase_nilai;
         $persen_kinerja = FormulaVariable::where('variable','kinerja')->first()->persentase_nilai;
-        $persen_etika = FormulaVariable::where('variable','etika')->first()->persentase_nilai;
+        // $persen_etika = FormulaVariable::where('variable','etika')->first()->persentase_nilai;
 
         $pegawai = auth('api')->user();
         $nip = $pegawai->nip;
@@ -158,18 +158,19 @@ class KinerjaController extends ApiController
         })->where('bulan',$bulan)->where('tahun',$tahun)->orderBy('tanggal', 'asc')->get();
         $jumlah_hari = $hari_kerja->count();
         $jumlah_kinerja = $jumlah_etika = $absen = 0;
-        $data_etika_kinerja = [];
-        $etika = Etika::where('nip', $nip)->where('tanggal','like', $tahun."-".$bulan."%")->first();
-        $jumlah_etika = $etika ? $etika->persentase : 0;
-        if ($etika){
-            $etika->tanggal_etika = ucfirst(Bulan::where('kode',$bulan)->first()->nama_bulan)." ".$tahun;
-        }
+        // $data_etika_kinerja = [];
+        // $etika = Etika::where('nip', $nip)->where('tanggal','like', $tahun."-".$bulan."%")->first();
+        // $jumlah_etika = $etika ? $etika->persentase : 0;
+        // if ($etika){
+        //     $etika->tanggal_etika = ucfirst(Bulan::where('kode',$bulan)->first()->nama_bulan)." ".$tahun;
+        // }
         if ($jumlah_hari > 0) {
             foreach ($hari_kerja AS $hk) {
                 $knj = Kinerja::where('nip', $nip)->where('tgl_mulai', '<=', $hk->tanggal)->where('tgl_selesai', '>=', $hk->tanggal)->terbaru();
                 // $etk = Etika::where('nip', $nip)->where('tanggal', '=', $hk->tanggal)->first();
                 $abs = Checkinout::where('nip', $nip)->whereDate('checktime', $hk->tanggal)->get();
-                $status = 'alpa';                
+                $status = 'alpa';
+                $apel = false;                
                 if ($abs->count() > 0) {
                     $in = false;
                     $out = false;
@@ -189,14 +190,20 @@ class KinerjaController extends ApiController
                             $absen++;
                             $status = 'hadir';
                         }
+                        if (date('N',strtotime($hk->tanggal)) != 1){
+                            if (strtotime($masuk) <= strtotime($hk->tanggal . " 07:30:00")) {
+                                $apel = true;
+                            }
+                        }
                     }
                 }
                 $data_etika_kinerja[] = [
                     'tanggal' => $hk->tanggal,
                     'hari' => ucfirst($hk->Hari->nama_hari),
                     'approve' => $knj->first() ? $knj->first()->approve : 0,
-                    'etika' => $etika ? $etika->persentase : 0,
-                    'status' => ucfirst($status)
+                    // 'etika' => $etika ? $etika->persentase : 0,
+                    'status' => ucfirst($status),
+                    'apel' => $apel
                 ];
                 // $etika[] = $etk ? $etk->toArray() : null;
                 // if ($etk) {
@@ -213,12 +220,12 @@ class KinerjaController extends ApiController
                 'absen' => ($absen / $jumlah_hari) * 100,
                 'kinerja' => ($jumlah_kinerja / $jumlah_hari) * 100,
                 // 'etika' => ($jumlah_etika / (100 * $jumlah_hari)) * 100
-                'etika' => $jumlah_etika
+                // 'etika' => $jumlah_etika
             ];
             $persentase_total = [
                 'absen' => $persentase['absen'] * $persen_absen / 100,
                 'kinerja' => $persentase['kinerja'] * $persen_kinerja / 100,
-                'etika' => $persentase['etika'] * $persen_etika / 100
+                // 'etika' => $persentase['etika'] * $p ersen_etika / 100
             ];
             $total_persentase_tunjangan = 0;
             foreach ($persentase_total AS $key => $value) {
@@ -230,21 +237,21 @@ class KinerjaController extends ApiController
             'pencapaian' => [
                 'absen' => $jumlah_hari > 0 ? $this->toFloat($persentase['absen']) : 0,
                 'kinerja' => $jumlah_hari > 0 ? $this->toFloat($persentase['kinerja']) : 0,
-                'etika' => $jumlah_hari > 0 ? $this->toFloat($persentase['etika']) : 0,
+                // 'etika' => $jumlah_hari > 0 ? $this->toFloat($persentase['etika']) : 0,
             ],
             'persentase' => [
                 'absen' => $persen_absen,
                 'kinerja' => $persen_kinerja,
-                'etika' => $persen_etika,
+                // 'etika' => $persen_etika,
             ],
             'total' => [
                 'absen' => $jumlah_hari > 0 ? $this->toFloat($persentase_total['absen']) : 0,
                 'kinerja' => $jumlah_hari > 0 ? $this->toFloat($persentase_total['kinerja']) : 0,
-                'etika' => $jumlah_hari > 0 ?  $this->toFloat($persentase_total['etika']) : 0,
+                // 'etika' => $jumlah_hari > 0 ?  $this->toFloat($persentase_total['etika']) : 0,
                 'total' => $jumlah_hari > 0 ? $this->toFloat($total_persentase_tunjangan) : 0
             ],
             'jumlah_tunjagan' => $jumlah_hari > 0 ? $this->toDecimal($jumlah_tunjangan) : 0,
-            'total_tunjangan_diterima' => $jumlah_hari > 0 ? $this->toDecimal($total_tunjangan) : 0,
+            'total_tunjangan_diterima' => $jumlah_hari > 0 ? $this->toDecimal($total_tunjangan / 1000000).' jt' : 0,
             'data' => $data_etika_kinerja,
             'min_date' => $min_date->tanggal
         ];
@@ -282,12 +289,12 @@ class KinerjaController extends ApiController
         /* Data etika */
         $bulan = date('m',strtotime($tgl));
         $tahun = date('Y',strtotime($tgl));
-        $etika = Etika::where("nip",$pegawai->nip)
-            ->where("tanggal",'like',$tahun."-".$bulan."%")
-            ->select('persentase', 'mengikuti_upacara', 'perilaku_kerja', 'kegiatan_kebersamaan', 'keterangan')
-            ->first();
-        if ($etika)
-        $etika->tanggal_etika = $tahun.'-'.$bulan;
+        // $etika = Etika::where("nip",$pegawai->nip)
+        //     ->where("tanggal",'like',$tahun."-".$bulan."%")
+        //     ->select('persentase', 'mengikuti_upacara', 'perilaku_kerja', 'kegiatan_kebersamaan', 'keterangan')
+        //     ->first();
+        // if ($etika)
+        // $etika->tanggal_etika = $tahun.'-'.$bulan;
 
 
         /* Data checkinout */
@@ -296,6 +303,37 @@ class KinerjaController extends ApiController
         ->whereDate("checktime",$tgl)
         ->get();
 
+        $apel = false;
+        if ($kinerja){
+            if ($kinerja->jenis_kinerja == 'hadir'){
+                $chk = $checkinout->toArray();
+                if (count($chk) > 0) {
+                    $kinerja->jenis_kinerja = 'alpa';
+                    $masuk = $pulang = null;
+                    foreach ($chk AS $kh) {
+                        if (isset($kh['checktype'])) {
+                            if ($kh['checktype'] == 0) {
+                                $masuk = $kh['checktime'];
+                            }
+                            if ($kh['checktype'] == 1) {
+                                $pulang = $kh['checktime'];
+                            }
+                        }
+                    }
+                    if (strtotime($masuk) <= strtotime($tgl . " 09:00:00")) {
+                        if ((strtotime($pulang) - (strtotime($masuk))) >= (8.5 * 3600)) {
+                            $kinerja->jenis_kinerja = 'hadir';
+                        }
+                        if (date('N',strtotime($tgl)) != 1){
+                            if (strtotime($masuk) <= strtotime($tgl . " 07:30:00")) {
+                                $apel = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         /* Data array */
         $result = [
             'uuid' => $pegawai->uuid,
@@ -303,7 +341,7 @@ class KinerjaController extends ApiController
             'nip' => $pegawai->nip,
             'foto' => $pegawai->foto,
             'kinerja' => $kinerja,
-            'etika' => $etika,
+            'apel' => $apel,
             'checkinout' => [
                     'in' => (count($checkinout)) ? $checkinout[0]->checktime : "",
                     'out' => (count($checkinout) > 1) ? $checkinout[1]->checktime : "",

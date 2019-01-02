@@ -108,6 +108,7 @@ class RekapBulananController extends ApiController
         }
         $data_inout = [];
         foreach ($hari_kerja AS $key => $hk){
+            $apel = false;
             $kinerja = $pegawai->kinerja()->where('tgl_mulai','<=',$hk->tanggal)->where('tgl_selesai','>=',$hk->tanggal)->terbaru()->first();
             $kehadiran = $pegawai->checkinout()->where('checktime','like','%'.$hk->tanggal.'%')->orderBy('checktype','desc')->get()->toArray();
             if (count($kehadiran) > 0){
@@ -124,25 +125,28 @@ class RekapBulananController extends ApiController
                     }
                 }
                 if (strtotime($masuk) <= strtotime($hk->tanggal." 09:00:00") ){
-                    if ((strtotime($pulang)-(strtotime($masuk))) >= (8.5 * 3600)){
+                    if ((strtotime($pulang) - (strtotime($masuk))) >= (8.5 * 3600)){
                         $kehadiran['status'] = 'hadir';
+                    }
+                    if (date('N',strtotime($hk->tanggal)) != 1){
+                        if (strtotime($masuk) <= strtotime($hk->tanggal . " 07:30:00")) {
+                            $apel = true;
+                        }
                     }
                 }
             }
-//            $etika = $pegawai->etika()->where('tanggal',$hk->tanggal)->first();
+
             $status = ucfirst(str_replace('_',' ',isset($kinerja->jenis_kinerja)?$kinerja->jenis_kinerja:''));
             if ($status == 'Hadir'){
                 $status = ucfirst($kehadiran['status']);
             }
             $data_inout[] = [
-                // 'tgl_prev' => isset($hari_kerja[$key-1]->tanggal) ? $hari_kerja[$key-1]->tanggal : '',
-                // 'tgl_next' => isset($hari_kerja[$key+1]->tanggal) ? $hari_kerja[$key+1]->tanggal : '',
-                // 'tgl' => $hk->tanggal,
+               
                 'tanggal' => $hk->tanggal,
                 'hari' => ucfirst($hk->Hari->nama_hari),
                 // 'checkinout' => $kehadiran,
                 'status' => $status,
-                // 'persentase' => isset($etika->persentase)?$etika->persentase : 0,
+                'apel' => $apel,
                 'approve' => isset($kinerja->approve) ? $kinerja->approve : 0
             ];
         }
@@ -187,18 +191,49 @@ class RekapBulananController extends ApiController
         /* Data etika */
         $bulan = date('m',strtotime($tgl));
         $tahun = date('Y',strtotime($tgl));
-        $etika = Etika::where("nip",$pegawai->nip)
-            ->where("tanggal",'like',$tahun."-".$bulan."%")
-            ->select('persentase', 'mengikuti_upacara', 'perilaku_kerja', 'kegiatan_kebersamaan', 'keterangan')
-            ->first();
-        if ($etika)
-        $etika->tanggal_etika = $tahun.'-'.$bulan;
+        // $etika = Etika::where("nip",$pegawai->nip)
+        //     ->where("tanggal",'like',$tahun."-".$bulan."%")
+        //     ->select('persentase', 'mengikuti_upacara', 'perilaku_kerja', 'kegiatan_kebersamaan', 'keterangan')
+        //     ->first();
+        // if ($etika)
+        // $etika->tanggal_etika = $tahun.'-'.$bulan;
 
         /* Data checkinout */
         $checkinout = Checkinout::where("nip",$pegawai->nip)
         ->select('checktime')
         ->whereDate("checktime",$tgl)
         ->get();
+
+        $apel = false;
+        if ($kinerja){
+            if ($kinerja->jenis_kinerja == 'hadir'){
+                $chk = $checkinout->toArray();
+                if (count($chk) > 0) {
+                    $kinerja->jenis_kinerja = 'alpa';
+                    $masuk = $pulang = null;
+                    foreach ($chk AS $kh) {
+                        if (isset($kh['checktype'])) {
+                            if ($kh['checktype'] == 0) {
+                                $masuk = $kh['checktime'];
+                            }
+                            if ($kh['checktype'] == 1) {
+                                $pulang = $kh['checktime'];
+                            }
+                        }
+                    }
+                    if (strtotime($masuk) <= strtotime($tgl . " 09:00:00")) {
+                        if ((strtotime($pulang) - (strtotime($masuk))) >= (8.5 * 3600)) {
+                            $kinerja->jenis_kinerja = 'hadir';
+                        }
+                        if (date('N', strtotime($tgl)) != 1){
+                            if (strtotime($masuk) <= strtotime($tgl . " 07:30:00")) {
+                                $apel = true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         /* Data array */
         $result = [
@@ -207,7 +242,8 @@ class RekapBulananController extends ApiController
             'nip' => $pegawai->nip,
             'foto' => $pegawai->foto,
             'kinerja' => $kinerja,
-            'etika' => $etika,
+            // "jenis_kinerja" => ucwords(str_replace('_',' ',$kinerja->jenis_kinerja)),
+            'apel' => $apel,
             'checkinout' => [
                 'in' => (count($checkinout)) ? $checkinout[0]->checktime : "",
                 'out' => (count($checkinout) > 1) ? $checkinout[1]->checktime : "",
