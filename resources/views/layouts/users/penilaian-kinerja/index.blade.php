@@ -90,8 +90,8 @@
                             <textarea autofocus rows="8" name="keterangan_approve" class="form-control" placeholder="Ket. Penilaian"></textarea>
                           </form>
                           <div class="mt-2 float-right">
-                            <button type="button" data-action='1' class="btn-approve btn btn-custom-2">Tolak</button>
-                            <button type="button" data-action='2' class="btn-approve btn btn-custom">Terima</button>
+                            {{-- <button type="button" data-action='1' class="btn-approve btn btn-custom-2">Tolak</button> --}}
+                            <button type="button" data-action='2' class="btn-approve btn btn-custom">Simpan</button>
                           </div>
                       </div>
                   </div>
