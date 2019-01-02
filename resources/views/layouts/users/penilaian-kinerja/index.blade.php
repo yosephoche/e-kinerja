@@ -67,12 +67,27 @@
                   <div id="boxReply"></div>
                   <div class="row" id='wrapReply'>
                       <div class="col-md-12">
-                          <h6 class="mb-2 mt-4">Keterangan Penilaian Kinerja</h6>
                           <form id='formReply' oninput="amount.value = (principal.valueAsNumber * rate.valueAsNumber) / 100">
                             <input id="id" type='hidden' name='id' required>
                             <input id="nip" type='hidden' name='nip' required>
-                            <input type="range" id="nilai_kinerja" name='nilai_kinerja' class="slider" min="0" max="100" id="rate" name="rate" value="0" oninput="thisRate.value = rate.value" required>
-                            <textarea autofocus rows="8" name="keterangan_approve" class="form-control"></textarea>
+                            <div class="row">
+                              <div class="col-md-9">
+                                <h6 class="mt-4">Nilai Kinerja</h6>
+                                <div class="btn-slider">
+                                  <div class="slidecontainer">
+                                    <input type="range" class="slider" min="0" step="5" max="100" id="rate" name="nilai_kinerja" value="0" oninput="thisRate.value = rate.value">
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-3 mt-4 value-slider">
+                                <div class="values">
+                                  <output name="thisRate" for="rate" id='valueKinerja'></output><span>%</span></p>
+                                  <div class="clearfix"></div>
+                                </div>
+                              </div>
+                            </div>                    
+                            <br>        
+                            <textarea autofocus rows="8" name="keterangan_approve" class="form-control" placeholder="Ket. Penilaian"></textarea>
                           </form>
                           <div class="mt-2 float-right">
                             <button type="button" data-action='1' class="btn-approve btn btn-custom-2">Tolak</button>
@@ -146,8 +161,10 @@
                     if (res.response.now != null) {
                       $('#id').val(res.response.now.id);
                       $('#nip').val(res.response.now.nip);
-                      $('#nilai_kinerja').val(res.response.now.nilai_kinerja);
+                      $('#rate').val(res.response.now.nilai_kinerja);
+                      $('#valueKinerja').val(res.response.now.nilai_kinerja);                      
                       $('#ket_kinerja').html(res.response.now.rincian_kinerja);
+
                       $('textarea').val(res.response.now.keterangan_approve);
                     } else {
                       $('#ket_kinerja').html('Belum ada rincian kinerja hari ini.');
