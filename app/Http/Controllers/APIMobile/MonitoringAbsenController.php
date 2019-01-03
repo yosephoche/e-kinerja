@@ -93,19 +93,11 @@ class MonitoringAbsenController extends Controller
                     }
                     else{
                         $k = (['data' => 'hadir']);
-                        $time = $p['checkinout']->where('checktype', 0)->first()->checktime;
-                        if (Carbon::parse($time) <= Carbon::parse($this->jam_masuk_upacara)) {
-                            $apel = true;
-                        }
                     }
                 }
                 else{
                     if (count($p->kinerja)) {
                         $k = (['data' => $p['kinerja'][0]['jenis_kinerja']]);
-                        $time = $p['checkinout']->where('checktype', 0)->first()->checktime;
-                        if (Carbon::parse($time) <= Carbon::parse($this->jam_masuk_upacara)) {
-                            $apel = true;
-                        }
                     } else {
                         $k = (['data' => 'alpa']);
                     }
