@@ -2,142 +2,349 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>E-Kinerja Kabupaten Kolaka</title>
-    <!-- inject:css -->
-    <link rel="stylesheet" href="assets/css/app.min.css">
-    <!-- endinject -->
-    <!-- inject:js -->
-    <script src="assets/js/bundle.min.js"></script>
-    <!-- endinject -->
-    <link rel="stylesheet" href="assets/css/datepicker3.css">
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>E-Kinerja Kabupaten Kolaka</title>
+<!-- inject:css -->
+<link rel="stylesheet" href="assets/css/app.min.css">
+<link rel="stylesheet" href="assets/css/datepicker3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+<!-- endinject -->
+<script src="assets/js/bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
 </head>
 
 <body>
-    <!-- start sidebar -->
+<!-- start sidebar -->
 
-    <div id="preload">
-        <img src="assets/images/loading_ekinerja.svg" width="150">
-        <script>
-            $("#preload")
-                .delay(500)
-                .fadeOut("slow");
-        </script>
+<div id="preload">
+<img src="assets/images/loading_ekinerja.svg" width="150">
+<script>
+$("#preload")
+.delay(500)
+.fadeOut("slow");
+</script>
+</div>
+
+<!-- mobile burger btn -->
+<div class="burgerBtn">
+<div class="bar1"></div>
+<div class="bar2"></div>
+<div class="bar3"></div>
+</div>
+
+<div class="overlay">
+<div class="close-side"><i class="fas fa-times"></i></div>
+</div>
+
+<div class="sidebar1">
+<div class="brand">
+<img src="assets/images/logo_ekinerja.png" width="120">
+</div>
+
+<ul>
+<li>
+<a href="#">
+<span>Monitoring Absen</span>
+</a>
+</li>
+<li>
+<a href="#">
+<span>Rekap Bulanan</span>
+</a>
+</li>
+<li>
+<a href="#">
+<span>Input Kinerja</span>
+</a>
+</li>
+<li>
+<a href="#">
+  <span>Penilaian Kinerja</span>
+</a>
+</li>
+<li>
+<a href="#">
+  <span>Tunjangan Kinerja</span>
+</a>
+</li>
+<li class="active">
+<a href="#">
+    <span>Component</span>
+</a>
+</li>
+</ul>
+
+<ul class="wrapToggle">
+<li>
+  <a href="panduan-monitoring-absen.html">
+      Panduan Pengguna
+      <i class="material-icons">help_outline</i>
+  </a>
+</li>
+<li>
+  <div class="toggleSwitch">
+  <label class="mr-2">Mode Malam</label>
+  <label class="switch">
+      <input id="toggle-switch" type="checkbox">
+      <span class="slider round"></span>
+  </label>
+  </div>
+</li>
+</ul>
+</div>
+<!-- end sidebar -->
+
+<!-- wrap main component -->
+<section class="component">
+<div class="main">
+<div class="nav-top-container">
+
+<div class="group-search">
+    <span><i class="material-icons">search</i></span>
+    <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
+</div>
+
+<div class="nav-top">
+    <div class="img-profile" id="user-profile" style="background-image: url('assets/images/img-user.png');">
     </div>
 
-    <!-- mobile burger btn -->
-    <div class="burgerBtn">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
+    <div class="profile">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="profile-img">
+                    <!-- image profile show -->
+                    <div class="img-profile" style="background-image: url('assets/images/img-user.png');">
+                    </div>
+                    <!-- end -->
+                </div>
+                <br>
+                <div class="profile-name">
+                    <label>Administrator</label>
+                </div>
+            </div>
+        </div>
+        <a href="login.html" class="btn btn-block" id="btn-logout">Logout</a>
     </div>
+</div>
 
-    <div class="overlay">
-        <div class="close-side"><i class="fas fa-times"></i></div>
+</div>
+<div class="main-content tab-content">
+
+<!--example form input-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="mb-2">Example Form Input</h2>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="text" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Notes</label>
+                <textarea rows="6" class="form-control" placeholder="Your Notes">
+
+                </textarea>
+            </div>
+            <h3 class="mb-2">Vertical Radio</h3>
+            <label class="wrap-radio">
+                <input type="radio" name="radio">
+                <h5>Radio</h5>
+                <span class="checkmark checkmark-green"></span>
+            </label>
+            <label class="wrap-radio">
+                <input type="radio" name="radio">
+                <h5>Radio</h5>
+                <span class="checkmark checkmark-red"></span>
+            </label>
+
+            <label class="wrap-radio">
+                <input type="radio" name="radio">
+                <h5>Radio</h5>
+                <span class="checkmark checkmark-orange"></span>
+            </label>
+
+            <h3 class="mb-2">Horizontal Radio</h3>
+            <label class="wrap-radio horizontal-radio">
+                <input type="radio" name="radio">
+                <h5>Radio</h5>
+                <span class="checkmark checkmark-green"></span>
+            </label>
+            <label class="wrap-radio horizontal-radio">
+                <input type="radio" name="radio">
+                <h5>Radio</h5>
+                <span class="checkmark checkmark-red"></span>
+            </label>
+
+            <label class="wrap-radio horizontal-radio">
+                <input type="radio" name="radio">
+                <h5>Radio</h5>
+                <span class="checkmark checkmark-orange"></span>
+            </label>
+
+            <h3 class="mb-3">Checkbox</h3>
+            <label class="container-check">
+                Checkbox 2
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+
+            <label class="container-check">
+                Checkbox 1
+                <input type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label>Select Option</label>
+                <select class="form-control form-control-lg select-custome">
+                    <option>Large select</option>
+                    <option>Large select</option>
+                    <option>Large select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Option</label>
+                <select class="form-control select-custome">
+                    <option>Default select</option>
+                    <option>Default select</option>
+                    <option>Default select</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Select Option</label>
+                <select class="form-control form-control-sm select-custome">
+                    <option>Small select</option>
+                    <option>Small select</option>
+                    <option>Small select</option>
+                </select>
+            </div>
+
+            <h3 class="mb-2">Example Button</h3>
+            <button class="btn btn-lg btn-custom btn-blue">Button</button>
+            <button class="btn btn-custom btn-green">Button</button>
+            <br><br>
+            <button class="btn btn-sm btn-custom btn-orange">Button</button>
+            <button class="btn btn-custom btn-red">Button</button>
+            <br><br>
+            <button class="btn btn-lg btn-block btn-custom btn-blue">Button</button>
+
+            <h3 class="mb-2 mt-3">Example Datepicker</h3>
+            <div class="col-md-12 date-group">
+                <input class="datepicker" />
+                <span class="icon-date"><i class="material-icons">event</i></span>
+            </div>
+            <div class='col-sm-6 mb-4'>
+                <input id="timepicker" />
+                <script>
+                    $('#timepicker').timepicker();
+                </script>
+            </div>
+            <div class='col-sm-6'>
+                <input id="input" />
+                <script>
+                    $('#input').datetimepicker({
+                        footer: true,
+                        modal: true
+                    }); 
+                </script>
+            </div>
+        </div>
     </div>
+    <hr>
 
-    <div class="sidebar1">
-        <div class="brand">
-            <img src="assets/images/logo_ekinerja.png" width="120">
+    <div class="row">
+        <h3 class="mb-3">Example Alert</h3>
+        <div class="col-md-12">
+            <div class="alert alert-primary" role="alert">
+                A simple primary alert—check it out!
+            </div>
+            <div class="alert alert-secondary" role="alert">
+                A simple secondary alert—check it out!
+            </div>
+            <div class="alert alert-success" role="alert">
+                A simple success alert—check it out!
+            </div>
+            <div class="alert alert-danger" role="alert">
+                A simple danger alert—check it out!
+            </div>
         </div>
 
-        <ul>
-            <li>
-              <a href="#">
-                <span>Monitoring Absen</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>Rekap Bulanan</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <span>Input Kinerja</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                  <span>Penilaian Kinerja</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                  <span>Tunjangan Kinerja</span>
-              </a>
-            </li>
-            <li class="active">
-                <a href="#">
-                    <span>Component</span>
-                </a>
-              </li>
-          </ul>
-          
-          <ul class="wrapToggle">
-              <li>
-                  <a href="panduan-monitoring-absen.html">
-                      Panduan Pengguna
-                      <i class="material-icons">help_outline</i>
-                  </a>
-              </li>
-              <li>
-                  <div class="toggleSwitch">
-                  <label class="mr-2">Mode Malam</label>
-                  <label class="switch">
-                      <input id="toggle-switch" type="checkbox">
-                      <span class="slider round"></span>
-                  </label>
-                  </div>
-              </li>
-          </ul>
-    </div>
-    <!-- end sidebar -->
-
-    <!-- wrap main component -->
-    <section class="component">
-        <div class="main">
-            <div class="nav-top-container">
-
-                <div class="group-search">
-                    <span><i class="material-icons">search</i></span>
-                    <input type="text" class="form-control" placeholder="Cari Nama / NIP Pegawai">
-                </div>
-
-                <div class="nav-top">
-                    <div class="img-profile" id="user-profile" style="background-image: url('assets/images/img-user.png');">
-                    </div>
-
-                    <div class="profile">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="profile-img">
-                                    <!-- image profile show -->
-                                    <div class="img-profile" style="background-image: url('assets/images/img-user.png');">
-                                    </div>
-                                    <!-- end -->
-                                </div>
-                                <br>
-                                <div class="profile-name">
-                                    <label>Administrator</label>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="login.html" class="btn btn-block" id="btn-logout">Logout</a>
-                    </div>
-                </div>
-
+        <div class="col-md-12">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Example Alert!</strong> You should check in on some of those fields below.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="main-content tab-content">
 
-                <!--example form input-->
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2 class="mb-2">Example Form Input</h2>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Example Alert!</strong> You should check in on some of those fields below.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
+                Launch demo modal
+            </button>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalForm">
+                Launch demo modal with form
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat ut,
+                            tenetur dolo ?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-custom btn-red" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-sm btn-custom">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
                             <div class="form-group">
                                 <label for="name">Name</label>
                                 <input type="text" class="form-control" placeholder="Name">
@@ -147,439 +354,310 @@
                                 <label for="password">Password</label>
                                 <input type="text" class="form-control" placeholder="Password">
                             </div>
-
-                            <div class="form-group">
-                                <label for="name">Notes</label>
-                                <textarea rows="6" class="form-control" placeholder="Your Notes">
-
-                                </textarea>
-                            </div>
-                            <h3 class="mb-2">Vertical Radio</h3>
-                            <label class="wrap-radio">
-                                <input type="radio" name="radio">
-                                <h5>Radio</h5>
-                                <span class="checkmark checkmark-green"></span>
-                            </label>
-                            <label class="wrap-radio">
-                                <input type="radio" name="radio">
-                                <h5>Radio</h5>
-                                <span class="checkmark checkmark-red"></span>
-                            </label>
-
-                            <label class="wrap-radio">
-                                <input type="radio" name="radio">
-                                <h5>Radio</h5>
-                                <span class="checkmark checkmark-orange"></span>
-                            </label>
-
-                            <h3 class="mb-2">Horizontal Radio</h3>
-                            <label class="wrap-radio horizontal-radio">
-                                <input type="radio" name="radio">
-                                <h5>Radio</h5>
-                                <span class="checkmark checkmark-green"></span>
-                            </label>
-                            <label class="wrap-radio horizontal-radio">
-                                <input type="radio" name="radio">
-                                <h5>Radio</h5>
-                                <span class="checkmark checkmark-red"></span>
-                            </label>
-
-                            <label class="wrap-radio horizontal-radio">
-                                <input type="radio" name="radio">
-                                <h5>Radio</h5>
-                                <span class="checkmark checkmark-orange"></span>
-                            </label>
-
-                            <h3 class="mb-3">Checkbox</h3>
-                            <label class="container-check">
-                                Checkbox 2
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-
-                            <label class="container-check">
-                                Checkbox 1
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat ut,
+                            tenetur dolores asperiores totam reprehenderit ad aperiam, corporis beatae
+                            eaque exercitationem quasi nesciunt officiis, non nulla sapiente sunt.
+                            Accusantium.
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Select Option</label>
-                                <select class="form-control form-control-lg select-custome">
-                                    <option>Large select</option>
-                                    <option>Large select</option>
-                                    <option>Large select</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Select Option</label>
-                                <select class="form-control select-custome">
-                                    <option>Default select</option>
-                                    <option>Default select</option>
-                                    <option>Default select</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label>Select Option</label>
-                                <select class="form-control form-control-sm select-custome">
-                                    <option>Small select</option>
-                                    <option>Small select</option>
-                                    <option>Small select</option>
-                                </select>
-                            </div>
-
-                            <h3 class="mb-2">Example Button</h3>
-                            <button class="btn btn-lg btn-custom btn-blue">Button</button>
-                            <button class="btn btn-custom btn-green">Button</button>
-                            <br><br>
-                            <button class="btn btn-sm btn-custom btn-orange">Button</button>
-                            <button class="btn btn-custom btn-red">Button</button>
-                            <br><br>
-                            <button class="btn btn-lg btn-block btn-custom btn-blue">Button</button>
-
-                            <h3 class="mb-2 mt-3">Example Datepicker</h3>
-                            <div class="col-md-12 date-group">
-                                <label class="mb-2 mt-4">Date</label>
-                                <br>
-                                <input class="datepicker" />
-                                <span class="icon-date"><i class="fas fa-calendar-alt"></i></span>
-                            </div>
-                            <div class='col-sm-6 mb-4'>
-                                <input id="timepicker" />
-                                <script>
-                                    $('#timepicker').timepicker();
-                                </script>
-                            </div>
-                            <div class='col-sm-6'>
-                                <input id="input" />
-                                <script>
-                                    $('#input').datetimepicker({
-                                        footer: true,
-                                        modal: true
-                                    }); 
-                                </script>
-                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-sm btn-custom btn-red" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-sm btn-custom">Save changes</button>
                         </div>
                     </div>
-                    <hr>
-
-                    <div class="row">
-                        <h3 class="mb-3">Example Alert</h3>
-                        <div class="col-md-12">
-                            <div class="alert alert-primary" role="alert">
-                                A simple primary alert—check it out!
-                            </div>
-                            <div class="alert alert-secondary" role="alert">
-                                A simple secondary alert—check it out!
-                            </div>
-                            <div class="alert alert-success" role="alert">
-                                A simple success alert—check it out!
-                            </div>
-                            <div class="alert alert-danger" role="alert">
-                                A simple danger alert—check it out!
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Example Alert!</strong> You should check in on some of those fields below.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <strong>Example Alert!</strong> You should check in on some of those fields below.
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <hr>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
-                                Launch demo modal
-                            </button>
-
-                            <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModalForm">
-                                Launch demo modal with form
-                            </button>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat ut,
-                                            tenetur dolo ?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-sm btn-custom btn-red" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-sm btn-custom">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModalForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label for="name">Name</label>
-                                                <input type="text" class="form-control" placeholder="Name">
-                                            </div>
-
-                                            <div class="form-group">
-                                                <label for="password">Password</label>
-                                                <input type="text" class="form-control" placeholder="Password">
-                                            </div>
-                                            Lorem ipsum dolor sit amet consectetur adipisicing elit. A fugiat ut,
-                                            tenetur dolores asperiores totam reprehenderit ad aperiam, corporis beatae
-                                            eaque exercitationem quasi nesciunt officiis, non nulla sapiente sunt.
-                                            Accusantium.
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-sm btn-custom btn-red" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-sm btn-custom">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-
-
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h2 class="mt-4 mb-2">Example Table</h2>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col"></th>
-                                            <th scope="col">NIP Pegawai</th>
-                                            <th scope="col">Nama Pegawai</th>
-                                            <th scope="col">Jam Masuk - Jam Pulang</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="img-user" id="user1" style="background-image: url('assets/images/img-user.png');">
-                                                </div>
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Alfian Labeda</td>
-                                            <td>07:15 <span>-</span> 16:00</td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img-user" id="user2" style="background-image: url('assets/images/bill.jpg');">
-                                                </div>
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Gifa Arianto</td>
-                                            <td>
-                                                <span class="badge badge-table badge-green">Perjalanan Dinas</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img-user" id="user3" style="background-image: url('assets/images/steve.jpg');">
-                                                </div>
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Gifa Arianto</td>
-                                            <td>
-                                                <span class="badge badge-table badge-red">Sakit</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img-user" id="user4" style="background-image: url('assets/images/img-user.png');">
-                                                </div>
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <span class="badge badge-table badge-purple">Cuti</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                <div class="img-user" id="user5" style="background-image: url('assets/images/img-user.png');">
-                                                </div>
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Muhammad Ali Malaka</td>
-                                            <td>
-                                                <span class="badge badge-table badge-gray">Alpha</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-                    </div>
-
-
-                    <div class="row mb-5">
-                        <div class="col-md-12">
-                            <h2 class="mt-4 mb-3">Example Table 2</h2>
-                            <div class="table-responsive">
-                                <table class="table table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">NIP Pegawai</th>
-                                            <th scope="col">Nama Pegawai</th>
-                                            <th scope="col">Jam Masuk - Jam Pulang</th>
-                                            <th scope="col">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1929298282929000</td>
-                                            <td>Alfian Labeda</td>
-                                            <td>07:15 <span>-</span> 16:00</td>
-                                            <td>
-                                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
-                                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
-                                                        class="far fa-edit"></i></a>
-                                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                2
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Gifa Arianto</td>
-                                            <td>
-                                                <span class="badge badge-table badge-green">Perjalanan Dinas</span>
-                                            </td>
-                                            <td>
-                                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
-                                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
-                                                        class="far fa-edit"></i></a>
-                                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                3
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Gifa Arianto</td>
-                                            <td>
-                                                <span class="badge badge-table badge-red">Sakit</span>
-                                            </td>
-                                            <td>
-                                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
-                                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
-                                                        class="far fa-edit"></i></a>
-                                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                4
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>John Doe</td>
-                                            <td>
-                                                <span class="badge badge-table badge-purple">Cuti</span>
-                                            </td>
-                                            <td>
-                                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
-                                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
-                                                        class="far fa-edit"></i></a>
-                                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                5
-                                            </td>
-                                            <td>1929298282929000</td>
-                                            <td>Muhammad Ali Malaka</td>
-                                            <td>
-                                                <span class="badge badge-table badge-gray">Alpha</span>
-                                            </td>
-                                            <td>
-                                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
-                                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
-                                                        class="far fa-edit"></i></a>
-                                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <nav aria-label="...">
-                                <ul class="pagination pagination-custome">
-                                    <li class="page-item disabled">
-                                        <span class="page-link">Previous</span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                    <li class="page-item active">
-                                        <span class="page-link">
-                                            2
-                                            <span class="sr-only">(current)</span>
-                                        </span>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-
-                        </div>
-                    </div>
-
-
-
                 </div>
-                <!-- end example for input -->
-
             </div>
         </div>
+    </div>
+    <hr>
 
-    </section>
 
-    <!-- inject:js -->
-    <script src="assets/js/bundle.min.js"></script>
-    <!-- endinject -->
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="mt-4 mb-2">Example Table</h2>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">NIP Pegawai</th>
+                            <th scope="col">Nama Pegawai</th>
+                            <th scope="col">Jam Masuk - Jam Pulang</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="img-user" id="user1" style="background-image: url('assets/images/img-user.png');">
+                                </div>
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Alfian Labeda</td>
+                            <td>07:15 <span>-</span> 16:00</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="img-user" id="user2" style="background-image: url('assets/images/bill.jpg');">
+                                </div>
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Gifa Arianto</td>
+                            <td>
+                                <span class="badge badge-table badge-green">Perjalanan Dinas</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="img-user" id="user3" style="background-image: url('assets/images/steve.jpg');">
+                                </div>
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Gifa Arianto</td>
+                            <td>
+                                <span class="badge badge-table badge-red">Sakit</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="img-user" id="user4" style="background-image: url('assets/images/img-user.png');">
+                                </div>
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>John Doe</td>
+                            <td>
+                                <span class="badge badge-table badge-purple">Cuti</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="img-user" id="user5" style="background-image: url('assets/images/img-user.png');">
+                                </div>
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Muhammad Ali Malaka</td>
+                            <td>
+                                <span class="badge badge-table badge-gray">Alpha</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="row mb-5">
+        <div class="col-md-12">
+            <h2 class="mt-4 mb-3">Example Table 2</h2>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">NIP Pegawai</th>
+                            <th scope="col">Nama Pegawai</th>
+                            <th scope="col">Jam Masuk - Jam Pulang</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1929298282929000</td>
+                            <td>Alfian Labeda</td>
+                            <td>07:15 <span>-</span> 16:00</td>
+                            <td>
+                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
+                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
+                                        class="far fa-edit"></i></a>
+                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                2
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Gifa Arianto</td>
+                            <td>
+                                <span class="badge badge-table badge-green">Perjalanan Dinas</span>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
+                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
+                                        class="far fa-edit"></i></a>
+                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                3
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Gifa Arianto</td>
+                            <td>
+                                <span class="badge badge-table badge-red">Sakit</span>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
+                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
+                                        class="far fa-edit"></i></a>
+                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                4
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>John Doe</td>
+                            <td>
+                                <span class="badge badge-table badge-purple">Cuti</span>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
+                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
+                                        class="far fa-edit"></i></a>
+                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                5
+                            </td>
+                            <td>1929298282929000</td>
+                            <td>Muhammad Ali Malaka</td>
+                            <td>
+                                <span class="badge badge-table badge-gray">Alpha</span>
+                            </td>
+                            <td>
+                                <a href="" class="btn btn-custome btn-red btn-sm text-white"><i class="far fa-trash-alt"></i></a>
+                                <a href="" class="btn btn-custome btn-orange btn-sm text-white"><i
+                                        class="far fa-edit"></i></a>
+                                <a href="" class="btn btn-custome btn-blue btn-sm text-white"><i class="fas fa-search"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <nav aria-label="...">
+                <ul class="pagination pagination-custome">
+                    <li class="page-item disabled">
+                        <span class="page-link">Previous</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active">
+                        <span class="page-link">
+                            2
+                            <span class="sr-only">(current)</span>
+                        </span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+
+        </div>
+    </div>
+<!-- === -->
+    <div class="row">
+      <div class="col-md-12">
+				<div class="form-group mb-2">
+				<h4 class="mb-2">Example Multiple Select</h4>
+					<select id="multiple" class="select2-multiple col-md-12" multiple>
+					<optgroup label="Alaskan/Hawaiian Time Zone">
+						<option value="AK">Alaska</option>
+						<option value="HI" disabled="disabled">Hawaii</option>
+					</optgroup>
+					<optgroup label="Pacific Time Zone">
+						<option value="CA">California</option>
+						<option value="NV">Nevada</option>
+						<option value="OR">Oregon</option>
+						<option value="WA">Washington</option>
+					</optgroup>
+					<optgroup label="Central Time Zone">
+						<option value="AL">Alabama</option>
+						<option value="AR">Arkansas</option>
+						<option value="IL">Illinois</option>
+						<option value="SD">South Dakota</option>
+						<option value="TX">Texas</option>
+						<option value="TN">Tennessee</option>
+						<option value="WI">Wisconsin</option>
+					</optgroup>
+					<optgroup label="Eastern Time Zone">
+						<option value="CT">Connecticut</option>
+						<option value="DE">Delaware</option>
+						<option value="FL">Florida</option>
+						<option value="GA">Georgia</option>
+						<option value="IN">Indiana</option>
+						<option value="ME">Maine</option>
+					</optgroup>
+					<option value="TNOGZ" disabled="disabled">The No Optgroup Zone</option>
+					<option value="TPZ">The Panic Zone</option>
+					<option value="TTZ">The Twilight Zone</option>
+					</select>
+				</div>
+
+				<div class="form-group mb-2">
+						<h4 class="mb-2">Example Multiple Select</h4>
+							<select id="multiple" class="select2-multiple col-md-6" multiple>
+							<optgroup label="Alaskan/Hawaiian Time Zone">
+								<option value="AK">Alaska</option>
+								<option value="HI" disabled="disabled">Hawaii</option>
+							</optgroup>
+							<optgroup label="Pacific Time Zone">
+								<option value="CA">California</option>
+								<option value="NV">Nevada</option>
+								<option value="OR">Oregon</option>
+								<option value="WA">Washington</option>
+							</optgroup>
+							<optgroup label="Central Time Zone">
+								<option value="AL">Alabama</option>
+								<option value="AR">Arkansas</option>
+								<option value="IL">Illinois</option>
+								<option value="SD">South Dakota</option>
+								<option value="TX">Texas</option>
+								<option value="TN">Tennessee</option>
+								<option value="WI">Wisconsin</option>
+							</optgroup>
+							<optgroup label="Eastern Time Zone">
+								<option value="CT">Connecticut</option>
+								<option value="DE">Delaware</option>
+								<option value="FL">Florida</option>
+								<option value="GA">Georgia</option>
+								<option value="IN">Indiana</option>
+								<option value="ME">Maine</option>
+							</optgroup>
+							<option value="TNOGZ" disabled="disabled">The No Optgroup Zone</option>
+							<option value="TPZ">The Panic Zone</option>
+							<option value="TTZ">The Twilight Zone</option>
+							</select>
+						</div>
+                    </div>
+		        </div>
+		
+		<!-- ====== -->
+</div>
+<!-- end example for input -->
+
+</div>
+</div>
+
+</section>
+
+<!-- inject:js -->
+<script src="assets/js/bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.full.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.select2-multiple').select2({placeholder: "Multi Select"});
+    });
+</script>
+<!-- endinject -->
 </body>
 
 </html>
