@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\APIMobile;
+namespace App\Http\Controllers\APIMobile\V2;
 
 use App\Http\Controllers\Controller;
 use App\Models\MasterData\Bulan;
