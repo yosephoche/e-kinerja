@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\MasterData\Pegawai;
 use App\Models\Absen\Kinerja;
+use App\Models\MasterData\AbsenUpacara;
 use Carbon\Carbon;
 
 class MonitoringAbsenController extends Controller
@@ -63,6 +64,7 @@ class MonitoringAbsenController extends Controller
             return $this->ApiSpecResponses(
                 [
                     'pegawai' => $pegawai,
+                    'mesin_absen' => AbsenUpacara::all()->pluck('SN'),
                     'dayBefore' => Carbon::parse($date)->addDays(-1)->format('m/d/Y'),
                     'dayAfter' => Carbon::parse($date)->addDays(1)->format('m/d/Y'),
                     'today' => Carbon::parse($date)->format('m/d/Y'),

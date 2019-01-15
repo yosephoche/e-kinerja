@@ -173,7 +173,7 @@
             }
         })
 
-        var parseAbsen = function(absen,kinerja,jam_masuk,jam_masuk_upacara){
+        var parseAbsen = function(absen,kinerja,jam_masuk,jam_masuk_upacara,status_upacara,master_mesin_absen){
             let absenin = '';
             let absenout = '';
             let alpa = '';
@@ -181,11 +181,14 @@
             let upacara = '';
             let absensi = '';
 
-            if (absen.length > 0) {
+            let d = new Date();
 
+            if (absen.length > 0) {
                 try{
                     var res = absen.forEach(function(val){
+
                         let checkdate = new Date(val.absen_timestamp);
+
                         if (val.checktype =='0' && checkdate > jam_masuk) {
                             alpa = true;   
                             throw BreakException;
@@ -193,8 +196,18 @@
                         else{
                             alpa = false;
                             if (val.checktype == '0') {
-                                if (checkdate < jam_masuk_upacara ) {
-                                    upacara = '<img src="{{url('')}}/assets/images/icons/upacara.svg" class="iconUpacara">'
+                                if (d.getDay() == 1) {
+                                    if (status_upacara == 1) {
+                                        if (mesinAbsen(master_mesin_absen,val.sn)) {
+                                            upacara = '<img src="{{url('')}}/assets/images/icons/upacara.svg" class="iconUpacara">'        
+                                        }
+                                    }
+                                    
+                                }
+                                else{
+                                    if (checkdate < jam_masuk_upacara ) {
+                                        upacara = '<img src="{{url('')}}/assets/images/icons/upacara.svg" class="iconUpacara">'
+                                    }
                                 }
                                 absenin = val.absen_time?val.absen_time:'';
                             }else if(val.checktype == '1'){
@@ -285,12 +298,12 @@
                     $('.count-alpha').text(res.response.summary.alpha);
                     let jam_masuk = new Date(res.response.jam_masuk_timestamp);
                     let jam_masuk_upacara = new Date(res.response.jam_masuk_upacara_timestamp); 
+                    let mesin_absen = res.response.mesin_absen;
                     if (res.response.pegawai.data.length > 0) {
                         var data = res.response.pegawai.data.map(function (val) { 
                             let row = '';
                             let foto = val.foto ? "{{url('')}}/storage/" + val.foto : "{{url('assets/images/img-user.png')}}"
-                            let absen = parseAbsen(val.checkinout,val.kinerja,jam_masuk,jam_masuk_upacara);
-                            // console.log(absen);
+                            let absen = parseAbsen(val.checkinout,val.kinerja,jam_masuk,jam_masuk_upacara,val.status_upacara,mesin_absen);
                             row += "<tr data-nip='"+val.nip+"' >";
                             row += "<td><div class='img-user' id='user1' style='background-image: url(" + foto + ");'></div></td>";
                             row += "<td><a href=''>" + val.nip + "</a></td>";
@@ -319,6 +332,16 @@
             setInterval(function () {
                 getTime()
             },1000)
+        }
+
+        var mesinAbsen = function (mesin_absen,value){
+            mesin_absen.map(function(sn){
+                if (sn == value) {
+                    return true;
+                }
+
+                return false;
+            });
         }
     </script>
 @endpush
