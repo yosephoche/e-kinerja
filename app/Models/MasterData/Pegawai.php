@@ -2,6 +2,7 @@
 
 namespace App\Models\MasterData;
 
+use App\Models\Absen\Etika;
 use App\Models\Absen\Kinerja;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
@@ -46,6 +47,11 @@ class Pegawai extends Authenticatable
     public function checkinout()
     {
         return $this->hasMany('App\Models\Absen\Checkinout', 'nip', 'nip');
+    }
+
+    public function etika()
+    {
+        return $this->hasMany(Etika::class, 'nip', 'nip');
     }
 
     public function kinerja()

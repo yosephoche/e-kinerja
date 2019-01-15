@@ -46,6 +46,11 @@ Route::group(['prefix' => 'v1'], function () {
             Route::get('/{tgl?}', 'KinerjaController@detailKinerja')->name('api.mobile.detail-kinerja.get');
             Route::get('/{bulan?}/{tahun?}', 'KinerjaController@tunjanganKinerja')->name('api.mobile.tunjangan-kinerja.get');
         });
+        Route::group(['prefix' => 'penilaian-etika', 'middleware' => 'can:penilaian-kinerja'], function () {
+            Route::get('/get-pegawai', 'PenilaianEtikaController@getPegawai')->name('api.mobile.penilaian-etika.get-pegawai');
+            Route::get('/{nip}', 'PenilaianEtikaController@getEtika')->name('api.mobile.get-penilaian-etika');
+            Route::post('reply', 'PenilaianEtikaController@storePenilaian')->name('api.mobile.penilaian-etika.store.penilaian');
+        });
         Route::group(['prefix' => 'master-data'], function () {
             Route::group(['prefix' => 'skpd'], function () {
                 Route::get('', 'SkpdController@listSkpd')->name('api.mobile.master-data.skpd');
