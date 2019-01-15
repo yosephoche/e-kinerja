@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\APIMobile;
+namespace App\Http\Controllers\APIMobile\V2;
 
 use App\Models\MasterData\HariKerja;
 use App\Models\MasterData\Pegawai;

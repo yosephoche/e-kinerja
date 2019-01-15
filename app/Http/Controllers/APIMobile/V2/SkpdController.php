@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\APIMobile;
+namespace App\Http\Controllers\APIMobile\V2;
 use App\Models\MasterData\Skpd;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

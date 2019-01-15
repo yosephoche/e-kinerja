@@ -85,6 +85,16 @@ Route::group(['prefix' => 'master-data','namespace' => 'MasterData', 'middleware
         Route::post('{id}','SkpController@update')->name('skp.update');
         Route::post('delete/{id}','SkpController@delete')->name('skp.delete');
     });
+
+    Route::group(['prefix' => 'pegawai-skp'],function (){
+        Route::get('','PegawaiSkpTaskController@index')->name('pegawaiSkpTask.index');
+        Route::get('add','PegawaiSkpTaskController@add')->name('pegawaiSkpTask.add');
+        Route::get('edit/{id}','PegawaiSkpTaskController@edit')->name('pegawaiSkpTask.edit');
+        Route::post('','PegawaiSkpTaskController@store')->name('pegawaiSkpTask.store');
+        Route::post('{id}','PegawaiSkpTaskController@update')->name('pegawaiSkpTask.update');
+        Route::post('delete/{id}','PegawaiSkpTaskController@delete')->name('pegawaiSkpTask.delete');
+    });
+
     Route::group(['prefix' => 'agama'],function (){
         Route::get('','StaticDataController@getAgama');
         Route::get('{id}','StaticDataController@showAgama');
@@ -172,6 +182,15 @@ Route::group(['prefix' => 'api-web','namespace' => 'API'],function (){
             Route::post('{id}','SkpController@updateSkp')->name('api.web.master-data.skp.update');
             Route::post('delete/{id}','SkpController@deleteSkp')->name('api.web.master-data.skp.delete');
         });
+
+        Route::group(['prefix' => 'pegawai-skp'],function (){
+            Route::get('','PegawaiSkpTaskController@listSkpTask')->name('api.web.master-data.pegawaiSkpTask');
+            Route::get('get-pagination','PegawaiSkpTaskController@getpage')->name('api.web.master-data.pegawaiSkpTask.page');
+            Route::post('store','PegawaiSkpTaskController@storeSkpTask')->name('api.web.master-data.pegawaiSkpTask.store');
+            Route::post('{id}','PegawaiSkpTaskController@updateSkpTask')->name('api.web.master-data.pegawaiSkpTask.update');
+            Route::post('delete/{id}','PegawaiSkpTaskController@deleteSkpTask')->name('api.web.master-data.pegawaiSkpTask.delete');
+        });
+
         Route::group(['prefix' => 'eselon'],function (){
             Route::get('','EselonController@listEselon')->name('api.web.master-data.eselon');
             Route::get('get-pagination','EselonController@getpage')->name('api.web.master-data.eselon.page');

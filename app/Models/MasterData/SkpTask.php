@@ -11,7 +11,13 @@ class SkpTask extends Model
         'task','id_skp','uuid'
     ];
 
-    public function skp(){
-        return $this->belongsTo(Skp::class,'id_skp');
+    public function skp()
+    {
+        return $this->belongsTo(Skp::class, 'id_skp');
+    }
+
+    public function PegawaiTask()
+    {
+        return $this->hasMany(PegawaiSkpTask::class);
     }
 }
